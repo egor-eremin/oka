@@ -1,0 +1,150 @@
+@import "functions/rem";
+
+:root {
+	/* --font-- */
+	--font-primary: "ONYOne", arial, sans-serif;
+	--font-secondary: "WilliamTextLC", "times new roman", serif;
+	--font-onysemimono: "Ony Semimono", arial, sans-serif;
+
+	/* --color-- */
+	--color-greyscale-black: #2b323a;
+	--color-full-black: #000;
+	--color-black: #171717;
+	--color-white: #fff;
+	--color-beige: #F1EDEB;
+	--color-grey-10: #EAEBEC;
+	--color-grey-20: #D5D6D8;
+	--color-grey-40: #AAADB0;
+	--color-grey-60: #808489;
+	--color-grey-70: #6B7076;
+	--color-grey-80: #555B61;
+	--color-grey-90: #41474E;
+	--color-grey-100: #FAFAFA;
+	--color-grey: #2B323A;
+	--color-grey-second: #25272a;
+	--color-burgundy: #5F1224;
+	--color-orange: #fe6e36;
+	--color-light-orange: #FE8B5E;
+	--color-light-orange_2: #FFE9E1;
+	--color-dark-orange: #ED5A2B;
+	--color-orange-10: #FFE4D9;
+	--color-pink: #FFE3D9;
+	--color-turquoise: #41BCBC;
+	--color-light-turquoise: #E5F3F3;
+	--color-blue-light: #C2E4F7;
+	--color-blue: #6FBEFE;
+	--color-yellow-light: #FEFFD9;
+
+	--color-error: #F43E25;
+	--color-red: #FF0C0C;
+	--color-green: #5DBF5E;
+
+
+}
+
+/* --grid-- */
+$padding-content: rem(25px);
+$padding-content_laptop: rem(24px);
+$padding-content_mobile: rem(16px);
+
+/* --paddings-- */
+$padding-header-top: rem(15px);
+$padding-header-top_laptop: rem(24px);
+$padding-header-top_mobile: rem(20px);
+
+$padding-header-bottom: rem(11px);
+$padding-header-bottom_laptop: rem(24px);
+$padding-header-bottom_mobile: rem(20px);
+
+/* --viewports-- */
+$ultraSmall-width: 480;
+$mobile-width: 650;
+$tablet-width: 768;
+$tablet-width_2: 1024;
+$laptop-width: 1200;
+$promo-laptop: 800;
+$only-desktop: 1201;
+$content-width: 1440;
+
+/* --new font variable-- */
+//h1
+$new-font-size__title-1: rem(108px);
+$new-line-height__title-1: rem(108px);
+$new-line-height__title-1_primary: rem(117px);
+
+$new-font-size__title-1_tablet-primary: rem(93px);
+$new-line-height__title-1_tablet-primary: rem(84px);
+$new-font-size__title-1_tablet: rem(86px);
+$new-line-height__title-1_tablet: rem(84px);
+
+$new-line-height__title-1_short_tablet: rem(100px);
+
+$new-font-size__title-1_mobile-primary: rem(40px);
+$new-line-height__title-1_mobile-primary: rem(37px);
+$new-font-size__title-1_mobile: rem(37px);
+$new-line-height__title-1_mobile: rem(37px);
+
+$new-font-size__title-1_short_mobile: rem(74px);
+$new-line-height__title-1_short_mobile: rem(74px);
+
+//h2
+$new-font-size__title-2: rem(68px);
+$new-line-height__title-2: rem(74px);
+
+$new-font-size__title-2_tablet: rem(48px);
+$new-line-height__title-2_tablet: rem(58px);
+
+$new-font-size__title-2_mobile: rem(26px);
+$new-line-height__title-2_mobile: rem(32px);
+
+$new-font-size__title-2-second: rem(56px);
+$new-line-height__title-2-second: rem(64px);
+
+$new-font-size__title-2-second_tablet: rem(32px);
+$new-line-height__title-2-second_tablet: rem(37px);
+
+$new-font-size__title-2-second_mobile: rem(24px);
+$new-line-height__title-2-second_mobile: rem(28px);
+
+//h3
+$new-font-size__title-3: rem(30px);
+$new-line-height__title-3: rem(36px);
+
+$new-font-size__title-3_tablet: rem(20px);
+$new-line-height__title-3_tablet: rem(26px);
+
+//h4
+$new-font-size__title-4: rem(22px);
+$new-line-height__title-4: rem(28px);
+$new-line-height__title-4_small: rem(26px);
+
+$new-font-size__title-4_tablet: rem(18px);
+$new-line-height__title-4_tablet: rem(26px);
+$new-line-height__title-4_small-tablet: rem(22px);
+
+$new-line-height__title-4_mobile: rem(24px);
+
+//body-base
+$new-font-size__body-base: rem(18px);
+$new-line-height__body-base: rem(26px);
+$new-line-height__body-base_small: rem(24px);
+
+$new-font-size__body-base_tablet: rem(16px);
+$new-line-height__body-base_tablet: rem(22px);
+$new-line-height__body-base_small-tablet: rem(20px);
+
+//body-second
+$new-font-size__body-second: rem(16px);
+$new-line-height__body-second: rem(22px);
+$new-line-height__body-second_2: rem(18px);
+
+//small
+$new-font-size__small: rem(12px);
+$new-line-height__small: rem(16px);
+
+//ultra-small
+$new-font-size__ultra-small: rem(10px);
+$new-line-height__ultra-small: rem(14px);
+
+
+//path for images

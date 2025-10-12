@@ -1,0 +1,21 @@
+extends ../pug/base
+
+append vars
+	- baseDir = './'
+	- title = "Ростелеком-Солар официальный сайт компании. Ростелеком-Солар - Гарантия Кибербезопасности"
+	- description = "Ростелеком-Солар - официальный сайт компании. Ростелеком-Солар комплекс сервисов для защиты каналов связи, защиты от угроз кибербезопасности, противодействие кибератакам."
+	- link.icon = "/favicons/favicon.ico"
+	- link.iconSvg = "/favicons/favicon.svg"
+	- link.appleTouchIcon = "/favicons/180.png"
+	- link.manifest = "/favicons/site.webmanifest"
+
+block body-start
+	header.page-header
+		include ../pug/blocks/header
+block content
+	include ../pug/blocks/consultation-form
+	include ../pug/blocks/success-form
+
+block footer
+	include ../pug/blocks/footer
+

@@ -1,0 +1,42 @@
+nav.wrapper.page-header__nav.main-nav-second.page-header-cyberchampionship__nav
+	button.main-nav-second__burger.js-burger-init
+		span.main-nav-second__burger-item
+		span.main-nav-second__burger-item
+	.main-nav-second__logo-wrapper
+		a.main-nav-second__logo.main-nav-second__logo_rt-solar(href="/")
+			img(width="106" height="20" src=`${baseDirImg}logo.svg` alt=(lang === "en" ? "Logo «Solar»" : "Логотип «Солар»"))
+		a.main-nav-second__logo.main-nav-second__logo_kaspersky(href=(lang === "en" ? "https://www.kaspersky.com/" : "https://www.kaspersky.ru/") target="_blank")
+			img(width="93" height="27" src=`${baseDirImg}logo-kaspersky.svg` alt=(lang === "en" ? "Logo «Kaspersky»" : "Логотип «Kaspersky»"))
+		a.main-nav-second__logo.main-nav-second__logo_mincifr(class=(lang === "en" ? "main-nav-second__logo_mincifr-en" : "main-nav-second__logo_mincifr-ru") href="https://digital.gov.ru/" target="_blank" rel="nofollow")
+			if lang === 'en'
+				img(width="150" height="26" src=`${baseDirImg}logo-mincifry-en.png` alt="Logo «Ministry of Digital Development, Communications and Mass Media of the Russian Federation»")
+			else if lang === 'ru'
+				img(width="128" height="27" src=`${baseDirImg}logo-mincifry.svg` alt="Логотип «Минцифры России»")
+		a.main-nav-second__logo.main-nav-second__logo_cipr(href=(lang === "en" ? "https://cipr.ru/en/home-en/" : "https://cipr.ru/") target="_blank" rel="nofollow")
+			img(width="106" height="10" src=`${baseDirImg}logo-cipr.png`)
+		if lang === 'en'
+			a.main-nav-second__logo.main-nav-second__logo_rt.main-nav-second__logo_rt-en(href="https://www.company.rt.ru/en/" target="_blank" rel="nofollow")
+				img(width="123" height="34" src=`${baseDirImg}logo-rostelecom_en.svg` alt="Logo «Rostelecom»")
+		else if lang === 'ru'
+			a.main-nav-second__logo.main-nav-second__logo_rt.main-nav-second__logo_rt-ru(href="https://www.company.rt.ru/" target="_blank" rel="nofollow")
+				img(width="133" height="34" src=`${baseDirImg}logo-rostelecom.svg` alt="Логотип «Ростелеком»")
+		a.main-nav-second__logo.main-nav-second__logo_nkcki(href="https://cert.gov.ru/" target="_blank")
+			img(width="94" height="38" src=`${baseDirImg}logo-nkcki.svg` alt=(lang === "en" ? "" : "Логотип «НКЦКИ»"))
+	.main-nav-second__list-wrapper.js-mobile-menu
+		ul.main-nav-second__list
+			li.main-nav-second__item
+				p.text.text_small-2.main-nav-second__link.js-go-to-form(data-target="about")= menuItemText.menuItem1[lang]
+			li.main-nav-second__item
+				p.text.text_small-2.main-nav-second__link.js-go-to-form(data-target="participants")= menuItemText.menuItem3[lang]
+			li.main-nav-second__item
+				p.text.text_small-2.main-nav-second__link.js-go-to-form(data-target="order-of-conduct")= menuItemText.menuItem2[lang]
+			li.main-nav-second__item
+				p.text.text_small-2.main-nav-second__link.js-go-to-form(data-target="faq")= menuItemText.menuItem4[lang]
+		//button.btn.btn_orange.btn_small.main-nav-second__btn-consultation.mobile.js-consultation-btn.js-go-to-form(data-target="callback-form")= participateBtn[lang]
+	.main-nav-second__right-wrapper
+		ul.main-nav-second__languages-list
+			li.main-nav-second__languages-item(class={active : lang == "ru"})
+				a.text.text_small-2.main-nav-second__link.main-nav-second__link_languages(href="/products/solar_cybermir/cyberchampionship/") RU
+			li.main-nav-second__languages-item(class={active : lang == "en"})
+				a.text.text_small-2.main-nav-second__link.main-nav-second__link_languages(href="/products/solar_cybermir/en/cyberchampionship/") EN
+		//button.btn.btn_orange.btn_small.main-nav-second__btn-consultation.desctop.js-go-to-form(data-target="callback-form")= participateBtn[lang]

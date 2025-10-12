@@ -1,0 +1,21 @@
+extends ../pug/base
+
+append vars
+	- baseDir = './'
+	- title = "404 Not Found"
+	- meta.description = "404 Not Found"
+	- meta.robots = "index, follow"
+	- link.icon = "/favicons/favicon.ico"
+	- link.iconSvg = "/favicons/favicon.svg"
+	- link.appleTouchIcon = "/favicons/180.png"
+	- link.manifest = "/favicons/site.webmanifest"
+
+
+block body-start
+	header.page-header.page-header_404.page-header_not-fix-height
+		+header('')
+block content
+
+block footer
+	include ../pug/blocks/footer
+

@@ -1,0 +1,35 @@
+.list {
+	display: grid;
+	gap: rem(12px);
+
+	@include laptop {
+		gap: rem(10px);
+	}
+}
+
+.list__item {
+	padding-left: rem(30px);
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: rem(6px);
+		height: rem(6px);
+		border-radius: 50%;
+		background-color: var(--color-orange);
+		top: rem(10px);
+		left: rem(8px);
+
+		@include laptop {
+			width: rem(4px);
+			height: rem(4px);
+			top: rem(9px);
+			left: rem(7px);
+		}
+	}
+
+	@include laptop {
+		padding-left: rem(24px);
+	}
+}

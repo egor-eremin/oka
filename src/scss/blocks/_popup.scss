@@ -1,0 +1,48 @@
+.popup {
+	max-width: rem(683px);
+	width: 100%;
+	margin: rem(50px) auto;
+	position: relative;
+	border: 1px solid var(--color-white);
+	background-color: var(--color-greyscale-black);
+	padding: rem(24px);
+
+	@include laptop {
+		max-width: rem(472px);
+		padding: rem(24px) rem(20px);
+	}
+}
+
+.mfp-bg {
+	background: var(--color-greyscale-black);
+	opacity: 1;
+}
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+	opacity: 0;
+
+	transition: all 0.3s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 1;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	transition: all 0.3s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}

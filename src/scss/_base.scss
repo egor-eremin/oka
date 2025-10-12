@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	vertical-align: top;
+	text-decoration: none;
+	transition: 0.3s ease-out;
+	color: inherit;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+button {
+	transition: 0.3s ease-out;
+	cursor: pointer;
+	background: transparent;
+	padding: 0;
+	border: none;
+}
+
+img {
+	vertical-align: top;
+	height: auto;
+	max-width: 100%;
+}
+
+div[id^="wait_comp_"] {
+	display: none !important;
+}

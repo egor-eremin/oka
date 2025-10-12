@@ -1,0 +1,68 @@
+$sprites: (
+	"bonus-desktop": (
+		normal: (
+			x: 0,
+			y: 0,
+			width: 70,
+			height: 97,
+			image: "sprites.png",
+			total_width: 154,
+			total_height: 97,
+		),
+		retina: (
+			x: 0,
+			y: 0,
+			width: 140,
+			height: 194,
+			image: "sprites@2x.png",
+			total_width: 308,
+			total_height: 194,
+		),
+	),
+	"bonus-tablet": (
+		normal: (
+			x: 72,
+			y: 0,
+			width: 40,
+			height: 56,
+			image: "sprites.png",
+			total_width: 154,
+			total_height: 97,
+		),
+		retina: (
+			x: 144,
+			y: 0,
+			width: 80,
+			height: 112,
+			image: "sprites@2x.png",
+			total_width: 308,
+			total_height: 194,
+		),
+	),
+	"bonus": (
+		normal: (
+			x: 114,
+			y: 0,
+			width: 40,
+			height: 48,
+			image: "sprites.png",
+			total_width: 154,
+			total_height: 97,
+		),
+		retina: (
+			x: 228,
+			y: 0,
+			width: 80,
+			height: 96,
+			image: "sprites@2x.png",
+			total_width: 308,
+			total_height: 194,
+		),
+	),
+);
+
+@each $name in map-keys($sprites) {
+	.sprite-#{$name} {
+		@include sprite($name);
+	}
+}

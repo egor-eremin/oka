@@ -1,0 +1,95 @@
+.section {
+	padding-top: rem(50px);
+	padding-bottom: rem(50px);
+
+	&_second {
+		padding-top: rem(60px);
+		padding-bottom: rem(60px);
+	}
+
+	@include laptop {
+		padding-top: rem(40px);
+		padding-bottom: rem(40px);
+	}
+
+	@include mobile {
+		padding-top: rem(20px);
+		padding-bottom: rem(20px);
+	}
+
+	&_last {
+		padding-bottom: rem(72px);
+
+		@include laptop {
+			padding-bottom: rem(64px);
+		}
+
+		@include mobile {
+			padding-bottom: rem(40px);
+		}
+	}
+
+	&_first {
+		padding-top: rem(72px);
+
+		@include laptop {
+			padding-top: rem(64px);
+		}
+
+		@include mobile {
+			padding-top: rem(40px);
+		}
+	}
+}
+
+.section__title-h1 {
+	margin-bottom: rem(80px);
+
+	@include laptop {
+		margin-bottom: rem(56px);
+	}
+
+	@include mobile {
+		margin-bottom: rem(32px);
+	}
+
+	&_short-margin {
+		margin-bottom: rem(36px);
+
+		@include laptop {
+			margin-bottom: rem(16px);
+		}
+	}
+}
+
+.section__prev-line {
+	margin-bottom: rem(32px);
+
+	@include laptop {
+		margin-bottom: rem(16px);
+	}
+
+	&_short {
+		margin-bottom: rem(24px);
+		
+		@include laptop {
+			margin-bottom: rem(16px);
+		}
+
+		@include mobile {
+			margin-bottom: rem(8px);
+		}
+	}
+}
+
+.section__prev-text {
+	margin-bottom: rem(80px);
+
+	@include laptop {
+		margin-bottom: rem(56px);
+	}
+
+	@include mobile {
+		margin-bottom: rem(32px);
+	}
+}

@@ -1,0 +1,49 @@
+@font-face {
+	src: local("ONYOne-Regular"),
+		url("/fonts/ONYOne-Regular.woff2") format("woff2"),
+		url("/fonts/ONYOne-Regular.woff") format("woff");
+	font-family: "ONYOne";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src: local("ONYOne-Medium"),
+	url("/fonts/ONYOne-Medium.woff2") format("woff2"),
+	url("/fonts/ONYOne-Medium.woff") format("woff");
+	font-family: "ONYOne";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src: local("ONYSemimono-Regular"),
+		url("/fonts/onysemimono-regular-new.woff2") format("woff2"),
+		url("/fonts/onysemimono-regular-new.woff") format("woff");
+	font-family: "Ony Semimono";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src: local("ONYSemimono-Medium"),
+	url("/fonts/onysemimono-medium.woff2") format("woff2"),
+	url("/fonts/onysemimono-medium.woff") format("woff");
+	font-family: "Ony Semimono";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src: local("WilliamTextLC-Regular"),
+		url("/fonts/WilliamTextLC-Regular.woff2") format("woff2"),
+		url("/fonts/WilliamTextLC-Regular.woff") format("woff");
+	font-family: "WilliamTextLC";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}

@@ -1,0 +1,39 @@
+.popup.mfp-hide.js-callback-popup
+	.callback
+		button.close-popup-button.js-close-popup
+			+svg("close-button")(class="close-popup-button__svg")
+		p.callback__text Для получения бесплатной консультации заполните форму ниже и отправьте заявку. Наш менеджер свяжется с вами в ближайшее время.
+		.form.js-custom-validation
+			form(method="post")
+				.form__item
+					input#user-name.form__input(type="text" name="user_name" required)
+					label.form__label(for="user-name") Укажите ваши ФИО
+					button.form__button-remove.js-remove-input-button
+						+svg("close-button")(class="form__button-remove__svg")
+					span.form__border
+				.form__item
+					input#user-phone.form__input.js-phone-input(type="tel" name="user_phone" required minlength="18" maxlength="18")
+					label.form__label(for="user-phone") Укажите ваш номер телефона
+					button.form__button-remove.js-remove-input-button
+						+svg("close-button")(class="form__button-remove__svg")
+					span.form__border
+				.form__item.form__item-email
+					input#user-mail.form__input(type="email" name="user_mail" required)
+					label.form__label(for="user-mail") Укажите ваш email
+					button.form__button-remove.js-remove-input-button
+						+svg("close-button")(class="form__button-remove__svg")
+					span.form__border
+				.form__item.form__item-checkbox
+					label.form__label-checkbox
+						input.form__checkbox.visually-hidden(type="checkbox" name="personal_mailing")
+						span.form__fake-checked
+						span.form__checkbox-text <a href="/about_company/doc/soglasie-na-poluchenie-poslednih-novostej-kompanii-soobshchenij-reklamnogo-i-informacionnogo-haraktera.docx">Согласие на получение последних новостей компании, сообщений рекламного и информационного характера.</a>
+				.form__item.form__item-checkbox
+					label.form__label-checkbox
+						input.form__checkbox.visually-hidden(type="checkbox" name="personal_data" required)
+						span.form__fake-checked
+						span.form__checkbox-text Нажимая «Отправить», вы даете согласие на обработку своих данных согласно <a href="/about_company/information/legal/">политике обработки персональных данных</a>.
+				.form__item.form__item-submit
+					button.btn.form__submit(name="web_form_submit" type="submit") Отправить заявку
+	//.preloader
+	//	canvas.preloader__svg-wrapper.js-animation-preloader

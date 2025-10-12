@@ -1,0 +1,302 @@
+include mixins
+
+block vars
+	-
+		var baseDir = './'
+	-
+		var title = typeof title !== 'undefined' ? title : null
+		var image = typeof image !== 'undefined' ? image : null
+	-
+		var html = {
+			attrs: {
+				lang: 'ru'
+			},
+			classList: ""
+		}
+	-
+		var body = {
+			attrs: {},
+			classList: ""
+		}
+	-
+		var main = {
+			classList: ""
+		}
+	-
+		var meta = {
+			appleMobileWebAppCapable: null,
+			appleMobileWebAppStatusBarStyle: null,
+			appleMobileWebAppTitle: null,
+			appvarouchFullscreen: null,
+			applicationName: null,
+			charset: 'utf-8',
+			description: null,
+			formatDetection: {
+				address: true,
+				date: true,
+				email: true,
+				telephone: true
+			},
+			keywords: [],
+			robots: null,
+			msapplicationTileColor: null,
+			msapplicationTileImage: null,
+			msapplicationNotification: null,
+			msapplicationSquare70x70logo: null,
+			msapplicationSquare150x150logo: null,
+			msapplicationSquare310x310logo: null,
+			msapplicationWide310x150logo: null,
+			msapplicationConfig: null,
+			ogDescription: null,
+			ogImage: image,
+			ogImageType: null,
+			ogImageWidth: null,
+			ogImageHeight: null,
+			ogImageAlt: null,
+			ogLocale: 'ru_RU',
+			ogTitle: title,
+			ogType: 'website',
+			ogUrl: null,
+			themeColor: null,
+			twitterCard: 'summary_large_image',
+			twitterSite: null,
+			twitterCreator: null,
+			twitterTitle: title,
+			twitterDescription: null,
+			twitterImage: image,
+			viewport: 'width=device-width, initial-scale=1',
+			XUACompatible: 'IE=edge'
+		}
+	-
+		var link = {
+			appvarouchIcon: null,
+			appvarouchIcon40x40: null,
+			appvarouchIcon57x57: null,
+			appvarouchIcon58x58: null,
+			appvarouchIcon60x60: null,
+			appvarouchIcon72x72: null,
+			appvarouchIcon76x76: null,
+			appvarouchIcon80x80: null,
+			appvarouchIcon87x87: null,
+			appvarouchIcon114x114: null,
+			appvarouchIcon120x120: null,
+			appvarouchIcon144x144: null,
+			appvarouchIcon152x152: null,
+			appvarouchIcon167x167: null,
+			appvarouchIcon180x180: null,
+			appvarouchIcon1024x1024: null,
+			appvarouchIconPrecomposed: null,
+			appvarouchIconPrecomposed40x40: null,
+			appvarouchIconPrecomposed57x57: null,
+			appvarouchIconPrecomposed58x58: null,
+			appvarouchIconPrecomposed60x60: null,
+			appvarouchIconPrecomposed72x72: null,
+			appvarouchIconPrecomposed76x76: null,
+			appvarouchIconPrecomposed80x80: null,
+			appvarouchIconPrecomposed87x87: null,
+			appvarouchIconPrecomposed114x114: null,
+			appvarouchIconPrecomposed120x120: null,
+			appvarouchIconPrecomposed144x144: null,
+			appvarouchIconPrecomposed152x152: null,
+			appvarouchIconPrecomposed167x167: null,
+			appvarouchIconPrecomposed180x180: null,
+			appvarouchIconPrecomposed1024x1024: null,
+			canonical: null,
+			icon: null,
+			iconSvg: null,
+			icon16x16: null,
+			icon32x32: null,
+			icon96x96: null,
+			icon128x128: null,
+			icon192x192: null,
+			icon194x194: null,
+			icon196x196: null,
+			imageSrc: image,
+			manifest: null,
+			maskIcon: {
+				href: null,
+				color: null
+			}
+		}
+
+doctype html
+html(class="page " + html.classList)&attributes(html.attrs)
+	head
+		block head-start
+		block meta
+			if meta.charset !== null
+				meta(charset!=meta.charset)
+			if meta.XUACompatible !== null
+				meta(http-equiv="X-UA-Compatible" content!=meta.XUACompatible)
+			if meta.viewport !== null
+				meta(name="viewport" content!=meta.viewport)
+			if meta.description !== null
+				meta(name="description" content!=meta.description)
+			if meta.keywords !== null && !(Array.isArray(meta.keywords) && !meta.keywords.length)
+				meta(name="keywords" content!=(Array.isArray(meta.keywords) ? meta.keywords.join(', ') : meta.keywords))
+			if meta.robots !== null
+				meta(name="robots" content!=meta.robots)
+			if meta.ogType !== null && (meta.ogUrl || meta.ogTitle || meta.ogDescription || meta.ogImage)
+				meta(property="og:type" content!=meta.ogType)
+			if meta.ogUrl !== null
+				meta(property="og:url" content!=meta.ogUrl)
+			if meta.ogLocale !== null && (meta.ogUrl || meta.ogTitle || meta.ogDescription || meta.ogImage)
+				meta(property="og:locale" content!=meta.ogLocale)
+			if meta.ogTitle !== null
+				meta(property="og:title" content!=meta.ogTitle)
+			if meta.ogDescription !== null
+				meta(property="og:description" content!=meta.ogDescription)
+			if meta.ogImage !== null
+				meta(property="og:image" content!=meta.ogImage)
+			if meta.ogImageType !== null
+				meta(property="og:image:type" content!=meta.ogImageType)
+			if meta.ogImageWidth !== null
+				meta(property="og:image:width" content!=meta.ogImageWidth)
+			if meta.ogImageHeight !== null
+				meta(property="og:image:height" content!=meta.ogImageHeight)
+			if meta.ogImageAlt !== null
+				meta(property="og:image:alt" content!=meta.ogImageAlt)
+			if meta.twitterCard !== null && (meta.twitterSite || meta.twitterCreator || meta.twitterTitle || meta.twitterDescription || meta.twitterImage)
+				meta(name="twitter:card" content!=meta.twitterCard)
+			if meta.twitterSite !== null
+				meta(name="twitter:site" content!=meta.twitterSite)
+			if meta.twitterCreator !== null
+				meta(name="twitter:creator" content!=meta.twitterCreator)
+			if meta.twitterTitle !== null
+				meta(name="twitter:title" content!=meta.twitterTitle)
+			if meta.twitterDescription !== null
+				meta(name="twitter:description" content!=meta.twitterDescription)
+			if meta.twitterImage !== null
+				meta(name="twitter:image" content!=meta.twitterImage)
+			if meta.appleMobileWebAppCapable !== null
+				meta(name="apple-mobile-web-app-capable" content!=meta.appleMobileWebAppCapable)
+			if meta.appleMobileWebAppStatusBarStyle !== null
+				meta(name="apple-mobile-web-app-status-bar-style" content!=meta.appleMobileWebAppStatusBarStyle)
+			if meta.appleMobileWebAppTitle !== null
+				meta(name="apple-mobile-web-app-title" content!=meta.appleMobileWebAppTitle)
+			if meta.applicationName !== null
+				meta(name="application-name" content!=meta.applicationName)
+			if meta.msapplicationTileColor !== null
+				meta(name="msapplication-TileColor" content!=meta.msapplicationTileColor)
+			if meta.msapplicationTileImage !== null
+				meta(name="msapplication-TileImage" content!=meta.msapplicationTileImage)
+			if meta.msapplicationSquare70x70logo !== null
+				meta(name="msapplication-square70x70logo" content!=meta.msapplicationSquare70x70logo)
+			if meta.msapplicationSquare150x150logo !== null
+				meta(name="msapplication-square150x150logo" content!=meta.msapplicationSquare150x150logo)
+			if meta.msapplicationWide310x150logo !== null
+				meta(name="msapplication-wide310x150logo" content!=meta.msapplicationWide310x150logo)
+			if meta.msapplicationSquare310x310logo !== null
+				meta(name="msapplication-square310x310logo" content!=meta.msapplicationSquare310x310logo)
+			if meta.msapplicationNotification !== null
+				meta(name="msapplication-notification" content!=meta.msapplicationNotification)
+			if meta.msapplicationConfig !== null
+				meta(name="msapplication-config" content!=meta.msapplicationConfig)
+			if meta.themeColor !== null
+				meta(name="theme-color" content!=meta.themeColor)
+			if meta.formatDetection !== null && (typeof meta.formatDetection === 'string' || Object.values(meta.formatDetection).some(function (value) { return !value }))
+				meta(name="format-detection" content!=(typeof meta.formatDetection === 'string' ? meta.formatDetection : Object.entries(meta.formatDetection).filter(function (entry) { return !entry[1] || entry[1] === 'no' }).map(function (entry) { return `${entry[0]}=no` }).join(',')))
+		if title !== null
+			title!= title
+		block links
+			if link.appvarouchIconPrecomposed !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed)
+			if link.appvarouchIconPrecomposed40x40 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed40x40 sizes="40x40")
+			if link.appvarouchIconPrecomposed57x57 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed57x57 sizes="57x57")
+			if link.appvarouchIconPrecomposed58x58 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed58x58 sizes="58x58")
+			if link.appvarouchIconPrecomposed60x60 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed60x60 sizes="60x60")
+			if link.appvarouchIconPrecomposed72x72 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed72x72 sizes="72x72")
+			if link.appvarouchIconPrecomposed76x76 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed76x76 sizes="76x76")
+			if link.appvarouchIconPrecomposed80x80 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed80x80 sizes="80x80")
+			if link.appvarouchIconPrecomposed87x87 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed87x87 sizes="87x87")
+			if link.appvarouchIconPrecomposed114x114 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed114x114 sizes="114x114")
+			if link.appvarouchIconPrecomposed120x120 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed120x120 sizes="120x120")
+			if link.appvarouchIconPrecomposed144x144 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed144x144 sizes="144x144")
+			if link.appvarouchIconPrecomposed152x152 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed152x152 sizes="152x152")
+			if link.appvarouchIconPrecomposed167x167 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed167x167 sizes="167x167")
+			if link.appvarouchIconPrecomposed180x180 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed180x180 sizes="180x180")
+			if link.appvarouchIconPrecomposed1024x1024 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed1024x1024 sizes="1024x1024")
+			if link.appvarouchIcon !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon)
+			if link.appvarouchIcon40x40 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon40x40 sizes="40x40")
+			if link.appvarouchIcon57x57 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon57x57 sizes="57x57")
+			if link.appvarouchIcon58x58 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon58x58 sizes="58x58")
+			if link.appvarouchIcon60x60 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon60x60 sizes="60x60")
+			if link.appvarouchIcon72x72 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon72x72 sizes="72x72")
+			if link.appvarouchIcon76x76 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon76x76 sizes="76x76")
+			if link.appvarouchIcon80x80 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon80x80 sizes="80x80")
+			if link.appvarouchIcon87x87 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon87x87 sizes="87x87")
+			if link.appvarouchIcon114x114 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon114x114 sizes="114x114")
+			if link.appvarouchIcon120x120 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon120x120 sizes="120x120")
+			if link.appvarouchIcon144x144 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon144x144 sizes="144x144")
+			if link.appvarouchIcon152x152 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon152x152 sizes="152x152")
+			if link.appvarouchIcon167x167 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon167x167 sizes="167x167")
+			if link.appvarouchIcon180x180 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon180x180 sizes="180x180")
+			if link.appvarouchIcon1024x1024 !== null
+				link(rel="apple-touch-icon" href!=link.appvarouchIcon1024x1024 sizes="1024x1024")
+			if link.icon !== null
+				link(rel="icon" href!=link.icon)
+			if link.iconSvg !== null
+				link(rel="icon" href!=link.iconSvg type="image/svg+xml")
+			if link.icon16x16 !== null
+				link(rel="icon" href!=link.icon16x16 sizes="16x16")
+			if link.icon32x32 !== null
+				link(rel="icon" href!=link.icon32x32 sizes="32x32")
+			if link.icon96x96 !== null
+				link(rel="icon" href!=link.icon96x96 sizes="96x96")
+			if link.icon128x128 !== null
+				link(rel="icon" href!=link.icon128x128 sizes="128x128")
+			if link.icon192x192 !== null
+				link(rel="icon" href!=link.icon192x192 sizes="192x192")
+			if link.icon194x194 !== null
+				link(rel="icon" href!=link.icon194x194 sizes="194x194")
+			if link.icon196x196 !== null
+				link(rel="icon" href!=link.icon196x196 sizes="196x196")
+			if link.canonical !== null
+				link(rel="canonical" href!=link.canonical)
+			if link.manifest !== null
+				link(rel="manifest" href!=link.manifest)
+			if link.maskIcon.href !== null
+				link(rel="mask-icon" href!=link.maskIcon.href color=link.maskIcon.color)
+		block preload-font
+		block styles
+			link(rel="stylesheet" href!=`${baseDir}css/main.css?v=${Date.now()}`)
+		block head-end
+	body(class="page__body " + body.classList)&attributes(body.attrs)
+		block body-start
+		main(class="page__main " + main.classList)
+			block content
+		block footer
+		block scripts
+			script(src!=`${baseDir}js/vendor.js?v=${Date.now()}`)
+			script(src!=`${baseDir}js/main.js?v=${Date.now()}`)
+		block body-end

@@ -1,0 +1,28 @@
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: rem(1440px);
+	padding: {
+		left: $padding-content;
+		right: $padding-content;
+	};
+
+	@include laptop {
+		padding: {
+			left: $padding-content_laptop;
+			right: $padding-content_laptop;
+		};
+	}
+
+	@include mobile {
+		padding: {
+			left: $padding-content_mobile;
+			right: $padding-content_mobile;
+		};
+	}
+
+	&_no-padding {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

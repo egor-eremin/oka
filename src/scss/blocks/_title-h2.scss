@@ -1,0 +1,23 @@
+.title-h2 {
+	margin: 0;
+	font-size: $new-font-size__title-2-second;
+	line-height: $new-line-height__title-2-second;
+
+	&_orange {
+		color: var(--color-orange);
+	}
+
+	&_burgundy {
+		color: var(--color-burgundy);
+	}
+
+	@include laptop {
+		font-size: $new-font-size__title-2-second_tablet;
+		line-height: $new-line-height__title-2-second_tablet;
+	}
+
+	@include mobile {
+		font-size: $new-font-size__title-2-second_mobile;
+		line-height: $new-line-height__title-2-second_mobile;
+	}
+}
