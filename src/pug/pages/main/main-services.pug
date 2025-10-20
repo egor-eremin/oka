@@ -1,0 +1,70 @@
+section.section.main-services.animation(data-aos)
+    .wrapper.animation__wrapper
+        .section__header.main-services__header
+            h2.title-h2.main-services__title Услуги
+            .main-services__controls.slider-nav
+                button.slider-nav__arrow.slider-nav__arrow-prev.main-services__nav.main-services__nav_prev(type="button")
+                    span.visually-hidden Предыдущий слайд
+                    .slider-nav__disabled-bg
+                    | <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+                    |     <path d="M0 0L22 0" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,27,16)" />
+                    |     <path d="M0 0L9 9L0 18" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,14,7)" />
+                    | </svg>
+                button.slider-nav__arrow.slider-nav__arrow-next.main-services__nav.main-services__nav_next(type="button")
+                    span.visually-hidden Следующий слайд
+                    .slider-nav__disabled-bg
+                    | <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+                    |     <path d="M5 16L27 16" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    |     <path d="M18 7L27 16L18 25" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    | </svg>
+        .main-services__slider.swiper.js-main-services
+            .main-services__track.swiper-wrapper
+                a.main-services__slide.swiper-slide(href=`${langPrefix}/services/`)
+                    article.main-services__card
+                        h3.title-h4.main-services__card-title Жизнь
+                        ul.main-services__card-list
+                            li.text.text_medium-1.main-services__card-item Помощь с&nbsp;миграцией и&nbsp;документами (оформление РВП, ВНЖ, гражданства);
+                            li.text.text_medium-1.main-services__card-item Поиск и&nbsp;аренда жилья;
+                            li.text.text_medium-1.main-services__card-item Юридическая поддержка;
+                            li.text.text_medium-1.main-services__card-item Адаптация и&nbsp;организация краткосрочных поездок.
+                        .text.text_second.text_second-no-spacing.link.main-services__card-link <b>Подробнее</b>
+                a.main-services__slide.swiper-slide(href=`${langPrefix}/services/`)
+                    article.main-services__card
+                        h3.title-h4.main-services__card-title Образование
+                        ul.main-services__card-list
+                            li.text.text_medium-1.main-services__card-item Помощь детям при поступлении в&nbsp;школы;
+                            li.text.text_medium-1.main-services__card-item Помощь детям взрослым в&nbsp;обучении русскому&nbsp;языку;
+                            li.text.text_medium-1.main-services__card-item Консультации по&nbsp;профессиональной переподготовке.
+                        .text.text_second.text_second-no-spacing.link.main-services__card-link <b>Подробнее</b>
+                a.main-services__slide.swiper-slide(href=`${langPrefix}/services/`)
+                    article.main-services__card
+                        h3.title-h4.main-services__card-title Карьера и&nbsp;работа
+                        ul.main-services__card-list
+                            li.text.text_medium-1.main-services__card-item Помощь в&nbsp;составлении резюме;
+                            li.text.text_medium-1.main-services__card-item Подготовка к&nbsp;собеседованиям;
+                            li.text.text_medium-1.main-services__card-item Подбор вакансий и&nbsp;сопровождение найма в&nbsp;компании&#8209;партнёры.
+                        .text.text_second.text_second-no-spacing.link.main-services__card-link <b>Подробнее</b>
+                a.main-services__slide.swiper-slide(href=`${langPrefix}/services/`)
+                    article.main-services__card
+                        h3.title-h4.main-services__card-title Недвижимость
+                        ul.main-services__card-list
+                            li.text.text_medium-1.main-services__card-item Помощь в&nbsp;сопровождении сделок с&nbsp;недвижимостью.
+                        .text.text_second.text_second-no-spacing.link.main-services__card-link <b>Подробнее</b>
+                a.main-services__slide.swiper-slide(href=`${langPrefix}/services/`)
+                    article.main-services__card
+                        h3.title-h4.main-services__card-title Миграция
+                        ul.main-services__card-list
+                            li.text.text_medium-1.main-services__card-item Комплексное сопровождение на&nbsp;всех этапах получения РВП;
+                            li.text.text_medium-1.main-services__card-item Консультации по&nbsp;основаниям и&nbsp;помощь в&nbsp;подачи документов и&nbsp;получения готового ВНЖ;
+                            li.text.text_medium-1.main-services__card-item Подбираем для вас самый быстрый и&nbsp;надежный путь получения гражданства&nbsp;РФ.
+                        .text.text_second.text_second-no-spacing.link.main-services__card-link <b>Подробнее</b>
+                a.main-services__slide.swiper-slide(href=`${langPrefix}/services/`)
+                    article.main-services__card
+                        h3.title-h4.main-services__card-title Бизнес и&nbsp;финансы
+                        ul.main-services__card-list
+                            li.text.text_medium-1.main-services__card-item Помощь в&nbsp;выборе оптимальной формы бизнеса (ИП&nbsp;или&nbsp;ООО);
+                            li.text.text_medium-1.main-services__card-item Подготовка документов для регистрации;
+                            li.text.text_medium-1.main-services__card-item Помощь по&nbsp;налогам и&nbsp;установлению контактов с&nbsp;потенциальными партнерами.
+                        .text.text_second.text_second-no-spacing.link.main-services__card-link <b>Подробнее</b>
+            .main-services__pagination.pagination
+                span.visually-hidden Пагинация слайдера

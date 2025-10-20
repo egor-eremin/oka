@@ -1,75 +1,66 @@
 .text {
 	margin: 0;
 
-	&_medium-2 {
-		line-height: $new-line-height__body-base_small;
+	&_medium {
+		font-weight: 700;
+		font-size: $font-size-medium;
+		letter-spacing: rem(0.2px);
 
 		@include laptop {
-			line-height: $new-line-height__body-base_small-tablet;
+			font-size: $font-size-base;
+		}
+	}
+
+	&_medium-1 {
+		font-size: $font-size-medium-1;
+		line-height: 1.3;
+		letter-spacing: rem(-0.1px);
+
+		@include laptop {
+			font-size: $font-size-base;
 		}
 	}
 
 	&_small {
-		font-size: $new-font-size__body-second;
-		line-height: $new-line-height__body-second;
-
-		@include laptop {
-			font-size: $new-font-size__small;
-			line-height: $new-line-height__small;
-		}
+		font-size: $font-size-small;
+		line-height: $line-height-small;
+		letter-spacing: rem(-0.15px);
 	}
 
-	&_small-2 {
-		font-size: $new-font-size__body-second;
-		line-height: $new-line-height__body-second;
-	}
-
-	&_ultra-small {
-		font-size: $new-font-size__small;
-		line-height: $new-line-height__small;
-	}
-
-	&_big {
-		font-size: $new-font-size__title-4;
-		line-height: $new-line-height__title-4;
-
-		@include laptop {
-			font-size: $new-font-size__title-4_tablet;
-			line-height: $new-line-height__title-4_tablet;
-		}
-
-		@include mobile {
-			line-height: $new-line-height__title-4_mobile;
-		}
-	}
-
-	&_big-2 {
-		font-size: $new-font-size__title-4;
-		line-height: $new-line-height__title-4_small;
-
-		@include laptop {
-			font-size: $new-font-size__title-3_tablet;
-			line-height: $new-line-height__title-3_tablet;
-		}
-	}
-
-	&_burgundy {
-		color: var(--color-burgundy);
+	&_grey {
+		color: var(--color-grey);
 	}
 
 	&_white {
 		color: var(--color-white);
 	}
 
-	&_orange {
-		color: var(--color-orange);
+	&_green {
+		color: var(--color-green);
 	}
+}
 
-	&_center {
-		text-align: center;
-	}
+.text_second {
+	font-size: $font-size-second;
+	letter-spacing: rem(0.18px);
 
-	&_uppercase {
-		text-transform: uppercase;
+	&-no-spacing {
+		letter-spacing: 0;
 	}
+}
+
+.text_mid {
+	font-size: $font-size-medium;
+}
+
+.text_mid-1 {
+	font-size: $font-size-medium-1;
+}
+
+.text_sm {
+	font-size: $font-size-second;
+}
+
+.text_no-spacing {
+	letter-spacing: 0;
 }

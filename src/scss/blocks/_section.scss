@@ -1,6 +1,6 @@
 .section {
-	padding-top: rem(50px);
-	padding-bottom: rem(50px);
+	padding-top: rem(80px);
+	padding-bottom: rem(80px);
 
 	&_second {
 		padding-top: rem(60px);
@@ -12,20 +12,11 @@
 		padding-bottom: rem(40px);
 	}
 
-	@include mobile {
-		padding-top: rem(20px);
-		padding-bottom: rem(20px);
-	}
-
 	&_last {
 		padding-bottom: rem(72px);
 
 		@include laptop {
 			padding-bottom: rem(64px);
-		}
-
-		@include mobile {
-			padding-bottom: rem(40px);
 		}
 	}
 
@@ -34,10 +25,6 @@
 
 		@include laptop {
 			padding-top: rem(64px);
-		}
-
-		@include mobile {
-			padding-top: rem(40px);
 		}
 	}
 }
@@ -71,7 +58,7 @@
 
 	&_short {
 		margin-bottom: rem(24px);
-		
+
 		@include laptop {
 			margin-bottom: rem(16px);
 		}
@@ -90,6 +77,14 @@
 	}
 
 	@include mobile {
+		margin-bottom: rem(32px);
+	}
+}
+
+.section__header {
+	margin-bottom: rem(50px);
+
+	@include laptop {
 		margin-bottom: rem(32px);
 	}
 }

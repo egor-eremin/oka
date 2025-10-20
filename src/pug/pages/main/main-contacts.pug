@@ -1,0 +1,27 @@
+section.section.main-contacts.animation(data-aos)
+	.wrapper.animation__wrapper
+		.section__header.main-contacts__header
+			h2.title-h2.main-contacts__title Контакты
+		.main-contacts__content
+			.main-contacts__map
+				|<iframe class="main-contacts__iframe" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9074de447a07fc7bfebb616f6e80702dec418e456d0c47b8c2a37d31d4a6ced&amp;source=constructor" width="570" height="570" frameborder="0"></iframe>
+			.main-contacts__info
+				.main-contacts__card-wrapper
+					.main-contacts__card.glass-card
+						p.text.main-contacts__label
+							b Режим работы:
+						p.text.main-contacts__text Пн–Пт
+						p.text.main-contacts__text с&nbsp;09:00 до&nbsp;18:00<br> (Московское время, UTC+3)
+					.main-contacts__card.glass-card
+						.main-contacts__card-item
+							p.text.main-contacts__label
+								b Почта:
+							a.text.link.main-contacts__text(href="mailto:info@okakreml.ru") info@okakreml.ru
+						.main-contacts__card-item
+							p.text.main-contacts__label
+								b Телефон:
+							a.text.link.main-contacts__text(href="tel:+79300357823") +7&nbsp;930 035-78-23
+				.main-contacts__cta.green-block
+					p.text.text_white.main-contacts__cta-title Подача заявки <b>займёт всего пару минут.</b>
+					a.btn.btn_white-second.main-contacts__cta-btn(href=`${langPrefix}/request-form/`) Заказать консультацию
+					p.text.text_white.text_sm.main-contacts__cta-note Гарантируем вам 100% конфиденциальности личных данных

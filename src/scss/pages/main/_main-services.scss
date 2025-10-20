@@ -1,0 +1,132 @@
+.main-services {
+	padding-top: rem(80px);
+	padding-bottom: rem(80px);
+	overflow: hidden;
+
+	@include laptop {
+		padding-top: rem(40px);
+		padding-bottom: rem(40px);
+	}
+}
+
+.main-services__card {
+	border-radius: rem(20px);
+	padding: rem(30px);
+	position: relative;
+	background: linear-gradient(270deg, rgba(216, 233, 213, 0.6), rgba(216, 233, 213, 0.3));
+	border: 1px solid rgba(216, 233, 213, 0.2);
+	height: 100%;
+	min-height: rem(500px);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: radial-gradient(443% 81% at 19% 50%, rgba(51, 118, 51, 1), rgba(9, 89, 9, 1) 100%);
+		opacity: 0;
+		transition: opacity 0.3s ease-out;
+		pointer-events: none;
+	}
+
+	&:hover {
+		border: 1px solid rgba(216, 233, 213, 0);
+
+		&::before {
+			opacity: 0;
+		}
+
+		&::after {
+			opacity: 1;
+		}
+
+		.main-services__card-title,
+		.main-services__card-item,
+		.main-services__card-link {
+			color: var(--color-white);
+		}
+	}
+
+	@include laptop {
+		//aspect-ratio: 1 / 1;
+		//max-width: 100%;
+		min-height: auto;
+	}
+}
+
+.main-services__slide {
+	padding-right: rem(15px);
+	padding-left: rem(15px);
+	height: auto; // объединён дублирующий селектор
+}
+
+.main-services__track {
+	height: auto;
+}
+
+.main-services__slider {
+	overflow: initial;
+	margin-right: rem(-15px);
+	margin-left: rem(-15px);
+}
+
+.main-services__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: rem(24px);
+}
+
+.main-services__controls {
+	gap: rem(20px);
+
+	@include laptop {
+		gap: rem(16px);
+	}
+}
+
+.main-services__card-title {
+	letter-spacing: rem(-1.1px);
+	margin-bottom: rem(60px);
+	position: relative;
+	z-index: 1;
+	transition: color 0.3s ease-out;
+
+	@include laptop {
+		margin-bottom: rem(24px);
+	}
+}
+
+.main-services__card-list {
+	list-style: disc;
+	padding-left: rem(30px);
+	position: relative;
+	z-index: 1;
+	margin-bottom: rem(32px);
+}
+
+.main-services__card-link {
+	margin-top: auto;
+	transition: 0.3s ease-out;
+	margin-bottom: rem(16px);
+	position: relative;
+	z-index: 1;
+}
+
+.main-services__card-item {
+	transition: color 0.3s ease-out;
+}
+
+.main-services__pagination {
+	margin-top: rem(50px);
+
+	@include laptop {
+		margin-top: 32px;
+	}
+}

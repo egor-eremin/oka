@@ -31,12 +31,12 @@ mixin header(additionalClass)
 					| <path d="M9.58625 2H10.9963L7.09625 13.115H5.65625L9.58625 2Z" fill="white"/>
 					| </svg>
 					a.page-header__menu-tab-link.hidden(href="") Для государства
-			a.page-header__link-logo(href="/")
+			a.page-header__link-logo(href=`${langPrefix}/`)
 				img.page-header__logo(src=`${baseDir}images/logo.svg` alt="Логотип компании Ростелеком Солар" width="107" height="20")
 			.page-header__additional-information
 				a.page-header__link-phone(href="tel:88003028523") 8 (800) 302-85-23
 				button.btn.btn_orange.page-header__consultation.page-header__consultation_desctop.js-open-consultation-popup Запросить консультацию
-		.page-header__search-links.page-header__search-links_desktop.wrapper 
+		.page-header__search-links.page-header__search-links_desktop.wrapper
 			a.page-header__search-link(href="")
 				p.text Система защиты данных
 			a.page-header__search-link(href="")
@@ -44,5 +44,5 @@ mixin header(additionalClass)
 				p.text Solar 4RAYS
 		.page-header__wrapper-nav.page-header__wrapper-nav_hidden
 			include ../blocks/main-nav
-		
+
 

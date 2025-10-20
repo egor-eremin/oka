@@ -1,49 +1,39 @@
 @font-face {
-	src: local("ONYOne-Regular"),
-		url("/fonts/ONYOne-Regular.woff2") format("woff2"),
-		url("/fonts/ONYOne-Regular.woff") format("woff");
-	font-family: "ONYOne";
+	src: local("Inter-Regular"),
+		url("../fonts/Inter-Regular.woff2") format("woff2"),
+		url("../fonts/Inter-Regular.woff") format("woff");
+	font-family: "Inter";
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	src: local("ONYOne-Medium"),
-	url("/fonts/ONYOne-Medium.woff2") format("woff2"),
-	url("/fonts/ONYOne-Medium.woff") format("woff");
-	font-family: "ONYOne";
+	src: local("Inter-Bold"),
+	url("../fonts/Inter-Bold.woff2") format("woff2"),
+	url("../fonts/Inter-Bold.woff") format("woff");
+	font-family: "Inter";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src: local("Inter-ExtraBold"),
+	url("../fonts/Inter-ExtraBold-2.woff2") format("woff2"),
+	url("../fonts/Inter-ExtraBold-2.woff") format("woff");
+	font-family: "Inter";
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src: local("Inter-SemiBold"),
+	url("../fonts/Inter-SemiBold.woff2") format("woff2"),
+	url("../fonts/Inter-SemiBold.woff") format("woff");
+	font-family: "Inter";
 	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	src: local("ONYSemimono-Regular"),
-		url("/fonts/onysemimono-regular-new.woff2") format("woff2"),
-		url("/fonts/onysemimono-regular-new.woff") format("woff");
-	font-family: "Ony Semimono";
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	src: local("ONYSemimono-Medium"),
-	url("/fonts/onysemimono-medium.woff2") format("woff2"),
-	url("/fonts/onysemimono-medium.woff") format("woff");
-	font-family: "Ony Semimono";
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	src: local("WilliamTextLC-Regular"),
-		url("/fonts/WilliamTextLC-Regular.woff2") format("woff2"),
-		url("/fonts/WilliamTextLC-Regular.woff") format("woff");
-	font-family: "WilliamTextLC";
-	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }

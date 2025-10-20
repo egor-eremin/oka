@@ -1,0 +1,60 @@
+section.promo-slider
+    .promo-slider__slider.swiper.js-promo-slider
+        .promo-slider__slider-wrapper.swiper-wrapper
+
+            //- Слайд 1
+            .promo-slider__slider-item.swiper-slide
+                img.promo-slider__img(
+                    src=`${baseDirImg}promo-slider-1.webp`
+                    srcset=`${baseDirImg}promo-slider-1@2x.webp 2x`
+                    alt="Закат над городом"
+                    loading="eager"
+                    decoding="async"
+                )
+                .wrapper.promo-slider__content
+                    .promo-slider__card
+                        p.text.promo-slider__title(role="heading" aria-level="2")
+                            | Поможем вам переехать в&nbsp;Россию
+                        p.text.text_medium.promo-slider__text
+                            | Сопровождаем вас от&nbsp;подачи заявки&nbsp;до&nbsp;получения гражданства
+                        a.btn.btn_green.promo-slider__btn(href=`${langPrefix}/services/`)
+                            span Наши услуги
+
+            //- Слайд 2
+            .promo-slider__slider-item.swiper-slide
+                img.promo-slider__img(
+                    src=`${baseDirImg}promo-slider-1.webp`
+                    srcset=`${baseDirImg}promo-slider-1@2x.webp 2x`
+                    alt="Город и река"
+                    loading="lazy"
+                    decoding="async"
+                )
+                .wrapper.promo-slider__content
+                    .promo-slider__card
+                        p.text.promo-slider__title(role="heading" aria-level="2")
+                            | Полное сопровождение на&nbsp;всех этапах
+                        p.text.text_medium.promo-slider__text
+                            | Помогаем собрать документы, оформить ВНЖ и&nbsp;гражданство
+                        a.btn.btn_green.promo-slider__btn(href=`${langPrefix}/services/`)
+                            span Наши услуги
+
+            //- Слайд 3
+            .promo-slider__slider-item.swiper-slide
+                img.promo-slider__img(
+                    src=`${baseDirImg}promo-slider-1.webp`
+                    srcset=`${baseDirImg}promo-slider-1@2x.webp 2x`
+                    alt="Панорама России"
+                    loading="lazy"
+                    decoding="async"
+                )
+                .wrapper.promo-slider__content
+                    .promo-slider__card
+                        p.text.promo-slider__title(role="heading" aria-level="2")
+                            | Консультация перед стартом
+                        p.text.text_medium.promo-slider__text
+                            | Разберём вашу ситуацию и&nbsp;предложим оптимальный путь
+                        a.btn.btn_green.promo-slider__btn(href=`${langPrefix}/services/`)
+                            span Наши услуги
+
+        .wrapper.promo-slider__pagination.pagination
+            span.visually-hidden Пагинация слайдера

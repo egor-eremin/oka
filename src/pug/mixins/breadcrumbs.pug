@@ -1,0 +1,14 @@
+mixin breadcrumbs(items)
+	nav.breadcrumbs__nav
+		ul.breadcrumbs__list
+			- let path = langPrefix || ''
+			each item, i in items
+				- const isLast = i === items.length - 1
+				if item.href
+					- path += `/${item.href}`
+				if !isLast
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href=path + '/')= item.title
+				else
+					li.breadcrumbs__item.breadcrumbs__item_current
+						span.breadcrumbs__current= item.title

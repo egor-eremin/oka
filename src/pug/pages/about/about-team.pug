@@ -1,0 +1,87 @@
+section.section.about-team.animation(data-aos)
+	.wrapper.animation__wrapper
+		.section__header.about-team__header
+			h2.title-h2.about-team__title Наша команда
+			.about-team__controls.slider-nav
+				button.slider-nav__arrow.slider-nav__arrow-prev.about-team__nav.about-team__nav_prev(type="button")
+					span.visually-hidden Предыдущий слайд
+					.slider-nav__disabled-bg
+					| <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M0 0L22 0" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,27,16)"/><path d="M0 0L9 9L0 18" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,14,7)"/></svg>
+				button.slider-nav__arrow.slider-nav__arrow-next.about-team__nav.about-team__nav_next(type="button")
+					span.visually-hidden Следующий слайд
+					.slider-nav__disabled-bg
+					| <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M5 16L27 16" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M18 7L27 16L18 25" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+		// slick-контейнер: прямые дети — это слайды
+		.about-team__slider.js-about-team
+			.about-team__slide
+				.article.about-team-card.about-team-card_photo
+					img.about-team-card__img(src=`${baseDirCurImg}team-1.webp` srcset=`${baseDirCurImg}team-1@2x.webp 2x` width="270" height="500" alt="Александр Иванов — фото")
+					.about-team-card__caption
+						p.text.text_white.text_mid.about-team-card__name Александр Иванов
+						p.text.text_white.text_sm.text_second.about-team-card__role Должность
+				.article.about-team-card.about-team-card_info.green-block
+					p.text.text_white.text_mid.about-team-card__name Александр Иванов
+					p.text.text_white.text_sm.about-team-card__role Должность
+					.about-team-card__info
+						a.link.text.text_white.about-team-card__row(href="tel:89000000000") Тел.: 8 (900) 000-00-00
+						a.link.text.text_white.about-team-card__row(href="mailto:mail@mail.com") Email: mail@mail.com
+						p.text.text_white.about-team-card__row График работы: пн–пт
+						p.text.text_white.about-team-card__row 9:00 — 18:00
+			.about-team__slide
+				.article.about-team-card.about-team-card_photo
+					img.about-team-card__img(src=`${baseDirCurImg}team-2.webp` srcset=`${baseDirCurImg}team-2@2x.webp 2x` width="270" height="500" alt="Анастасия Морозова — фото")
+					.about-team-card__caption
+						p.text.text_white.text_mid.about-team-card__name Анастасия Морозова
+						p.text.text_white.text_sm.text_second.about-team-card__role Должность
+				.article.about-team-card.about-team-card_info.green-block
+					p.text.text_white.text_mid.about-team-card__name Анастасия Морозова
+					p.text.text_white.text_sm.about-team-card__role Должность
+					.about-team-card__info
+						a.link.text.text_white.about-team-card__row(href="tel:89000000000") Тел.: 8 (900) 000-00-00
+						a.link.text.text_white.about-team-card__row(href="mailto:mail@mail.com") Email: mail@mail.com
+						p.text.text_white.about-team-card__row График работы: пн–пт
+						p.text.text_white.about-team-card__row 9:00 — 18:00
+			.about-team__slide
+				.article.about-team-card.about-team-card_photo
+					img.about-team-card__img(src=`${baseDirCurImg}team-3.webp` srcset=`${baseDirCurImg}team-3@2x.webp 2x` width="270" height="500" alt="Екатерина Белова — фото")
+					.about-team-card__caption
+						p.text.text_white.text_mid.about-team-card__name Екатерина Белова
+						p.text.text_white.text_sm.text_second.about-team-card__role Должность
+				.article.about-team-card.about-team-card_info.green-block
+					p.text.text_white.text_mid.about-team-card__name Екатерина Белова
+					p.text.text_white.text_sm.about-team-card__role Должность
+					.about-team-card__info
+						a.link.text.text_white.about-team-card__row(href="tel:89000000000") Тел.: 8 (900) 000-00-00
+						a.link.text.text_white.about-team-card__row(href="mailto:mail@mail.com") Email: mail@mail.com
+						p.text.text_white.about-team-card__row График работы: пн–пт
+						p.text.text_white.about-team-card__row 9:00 — 18:00
+			.about-team__slide
+				.article.about-team-card.about-team-card_photo
+					img.about-team-card__img(src=`${baseDirCurImg}team-4.webp` srcset=`${baseDirCurImg}team-4@2x.webp 2x` width="270" height="500" alt="Дмитрий Соколов — фото")
+					.about-team-card__caption
+						p.text.text_white.text_mid.about-team-card__name Дмитрий Соколов
+						p.text.text_white.text_sm.text_second.about-team-card__role Должность
+				.article.about-team-card.about-team-card_info.green-block
+					p.text.text_white.text_mid.about-team-card__name Дмитрий Соколов
+					p.text.text_white.text_sm.about-team-card__role Должность
+					.about-team-card__info
+						a.link.text.text_white.about-team-card__row(href="tel:89000000000") Тел.: 8 (900) 000-00-00
+						a.link.text.text_white.about-team-card__row(href="mailto:mail@mail.com") Email: mail@mail.com
+						p.text.text_white.about-team-card__row График работы: пн–пт
+						p.text.text_white.about-team-card__row 9:00 — 18:00
+			.about-team__slide
+				.article.about-team-card.about-team-card_photo
+					img.about-team-card__img(src=`${baseDirCurImg}team-4.webp` srcset=`${baseDirCurImg}team-4@2x.webp 2x` width="270" height="500" alt="Дмитрий Соколов — фото")
+					.about-team-card__caption
+						p.text.text_white.text_mid.about-team-card__name Дмитрий Соколов
+						p.text.text_white.text_sm.text_second.about-team-card__role Должность
+				.article.about-team-card.about-team-card_info.green-block
+					p.text.text_white.text_mid.about-team-card__name Дмитрий Соколов
+					p.text.text_white.text_sm.about-team-card__role Должность
+					.about-team-card__info
+						a.link.text.text_white.about-team-card__row(href="tel:89000000000") Тел.: 8 (900) 000-00-00
+						a.link.text.text_white.about-team-card__row(href="mailto:mail@mail.com") Email: mail@mail.com
+						p.text.text_white.about-team-card__row График работы: пн–пт
+						p.text.text_white.about-team-card__row 9:00 — 18:00
+		.about-team__pagination.pagination
+			span.visually-hidden Пагинация слайдера

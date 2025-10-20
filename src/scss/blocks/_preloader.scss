@@ -9,18 +9,6 @@
 	top: 0;
 	left: 0;
 	z-index: 3;
-
-	&_dark {
-		background-color: var(--color-greyscale-black);
-	}
-
-	&_black {
-		background-color: var(--color-full-black);
-	}
-
-	&_burgundy {
-		background-color: var(--color-burgundy);
-	}
 }
 
 .preloader__animation-svg {

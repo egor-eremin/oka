@@ -1,0 +1,9 @@
+.title-h4 {
+	margin: 0;
+	font-weight: 800;
+	font-size: $font-size-title-h4;
+
+	@include laptop {
+		font-size: $font-size-medium;
+	}
+}

@@ -5,11 +5,12 @@
 @import "fonts";
 @import "vendor";
 @import "base";
-@import "blocks/orange-link";
+@import "blocks/link";
 @import "blocks/button";
 @import "blocks/title-h1";
 @import "blocks/title-h2";
 @import "blocks/title-h3";
+@import "blocks/title-h4";
 @import "blocks/section";
 @import "blocks/tabs";
 @import "blocks/text";
@@ -25,6 +26,27 @@
 @import "blocks/preloader";
 @import "blocks/list";
 @import "blocks/footer";
+@import "blocks/slider-nav";
+@import "blocks/glass-card";
+@import "blocks/green-block";
+@import "blocks/animation";
+@import "pages/main/promo-slider";
+@import "pages/main/main-about";
+@import "blocks/lead-section";
+@import "pages/main/lead-section-main";
+@import "pages/main/main-services";
+@import "pages/main/success-stories";
+@import "pages/main/lead-section-main-2";
+@import "pages/main/main-advantages";
+@import "pages/main/main-stages";
+@import "pages/main/lead-section-main-3";
+@import "pages/main/main-news";
+@import "pages/main/main-contacts";
+@import "blocks/ai-helper";
+@import "pages/about/about-intro";
+@import "pages/about/about-advantages";
+@import "pages/about/lead-section-about";
+@import "pages/about/about-approach";
 
 //Всегда самый последний!
 @import "helpers";

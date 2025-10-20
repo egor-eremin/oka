@@ -1,0 +1,66 @@
+section.section.main-stages.animation(data-aos)
+	.wrapper.animation__wrapper
+		.section__header.main-stages__header
+			h2.title-h2.main-stages__title Этапы рабочего процесса
+		.main-stages__container
+			.main-stages__header-slider.swiper.js-stages-header-slider
+				.main-stages__header-slider-wrapper.swiper-wrapper
+					.main-stages__header-slider-item.swiper-slide
+						p.title-h4.main-stages__header-title 1 этап (подготовительный)
+						p.text.text_medium.main-stages__header-text Взаимодействия с&nbsp;клиентом за&nbsp;рубежом от&nbsp;2&nbsp;мес.
+					.main-stages__header-slider-item.swiper-slide
+						p.title-h4.main-stages__header-title 2 этап (основной)
+						p.text.text_medium.main-stages__header-text Подача и&nbsp;ожидания документов в&nbsp;РФ от&nbsp;6&nbsp;мес.
+			.main-stages__controls.slider-nav
+				button.slider-nav__arrow.slider-nav__arrow-prev.main-stages__nav.main-stages__nav_prev(type="button")
+					span.visually-hidden 1 этап
+					p.text.text_medium.main-stages__nav-text 1 этап
+					.main-stages__arrow-wrapper
+						| <svg class="main-stages__svg slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M0 0L22 0" stroke="rgba(9, 89, 9, 1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,27,16)" /><path d="M0 0L9 9L0 18" fill-rule="nonzero" stroke="rgba(9, 89, 9, 1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,14,7)" /></svg>
+				button.slider-nav__arrow.slider-nav__arrow-next.main-stages__nav.main-stages__nav_next(type="button")
+					span.visually-hidden 2 этап
+					p.text.text_medium.main-stages__nav-text 2 этап
+					.main-stages__arrow-wrapper
+						| <svg class="main-stages__svg slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M5 16L27 16" stroke="rgba(9, 89, 9, 1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><path d="M18 7L27 16L18 25" fill-rule="nonzero" stroke="rgba(9, 89, 9, 1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></svg>
+		.main-stages__steps-slider.swiper.js-steps-header-slider
+			.main-stages__steps-slider-wrapper.swiper-wrapper
+				// 1 слайд (этап 1)
+				.main-stages__steps-item.swiper-slide
+					.main-stages__steps-header
+						p.title-h4.main-stages__header-title 1 этап (подготовительный)
+						p.text.text_medium.main-stages__header-text Взаимодействия с&nbsp;клиентом за&nbsp;рубежом от&nbsp;2&nbsp;мес.
+					.main-stages__steps-container.main-stages__steps-container_1
+						.main-stages__steps-item
+							img.main-stages__img(width="270" height="270" src=`${baseDirImg}main-stages-1.webp` srcset=`${baseDirImg}main-stages-1@2x.webp 2x` alt="Клиент работает за ноутбуком, заполняя документы")
+							p.text.main-stages__duration от 5 дней
+							p.text.text_medium.main-stages__steps-title Обращение клиента
+							p.text.main-stages__steps-text Прояснение запроса потребности и&nbsp;документов
+						.main-stages__steps-item
+							img.main-stages__img(width="270" height="270" src=`${baseDirImg}main-stages-2.webp` srcset=`${baseDirImg}main-stages-2@2x.webp 2x` alt="Подписание документов клиентом за рубежом")
+							p.text.main-stages__duration от 30 дней
+							p.text.text_medium.main-stages__steps-title Подготовка документов клиентом за&nbsp;рубежом
+						.main-stages__steps-item
+							img.main-stages__img(width="270" height="270" src=`${baseDirImg}main-stages-3.webp` srcset=`${baseDirImg}main-stages-3@2x.webp 2x` alt="Юрист проверяет документы с клиентом")
+							p.text.main-stages__duration от 1 дня
+							p.text.text_medium.main-stages__steps-title Юридическая проверка
+							p.text.main-stages__steps-text Оценка шансов на&nbsp;легализацию
+						.main-stages__steps-item
+							img.main-stages__img(width="270" height="270" src=`${baseDirImg}main-stages-4.webp` srcset=`${baseDirImg}main-stages-4@2x.webp 2x` alt="Предприниматель передаёт клиенту коммерческое предложение")
+							p.text.main-stages__duration от 1 дня
+							p.text.text_medium.main-stages__steps-title Коммерческое предложение клиенту
+							p.text.main-stages__steps-text Расчёт стоимости
+				// 2 слайд (этап 2)
+				.main-stages__steps-item.swiper-slide
+					.main-stages__steps-header
+						p.title-h4.main-stages__header-title 2 этап (основной)
+						p.text.text_medium.main-stages__header-text Подача и&nbsp;ожидания документов в&nbsp;РФ от&nbsp;6&nbsp;мес.
+					.main-stages__steps-container.main-stages__steps-container_2
+						.main-stages__steps-item
+							img.main-stages__img(width="570" height="272" src=`${baseDirImg}main-stages-5.webp` srcset=`${baseDirImg}main-stages-5@2x.webp 2x` alt="Сотрудник помогает заполнить и подать документы в МВД")
+							p.text.main-stages__duration от 30 дней
+							p.text.text_medium.main-stages__steps-title Подготовка и&nbsp;сопровождения для подачи документов в&nbsp;МВД Нижнем Новгороде
+							p.text.main-stages__steps-text Регистрация жилья, переводы документов, мед. комиссия, получение СНИЛС, SIM-карт, открытие банковских счетов, биометрия, Госуслуги
+						.main-stages__steps-item
+							img.main-stages__img(width="570" height="272" src=`${baseDirImg}main-stages-6.webp` srcset=`${baseDirImg}main-stages-6@2x.webp 2x` alt="Клиент получает готовые документы")
+							p.text.main-stages__duration от 5 мес.
+							p.text.text_medium.main-stages__steps-title Ожидание документов РВП/ВНЖ клиентом

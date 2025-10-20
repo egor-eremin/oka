@@ -1,0 +1,48 @@
+.about-intro__img {
+	border-radius: rem(20px);
+
+	@include laptop {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+	}
+}
+
+.about-intro__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+
+	@include laptop {
+		grid-template-columns: 1fr;
+	}
+}
+
+.about-intro__text {
+	margin-bottom: rem(22px);
+	letter-spacing: rem(0.15px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.about-intro__text-wrapper {
+	margin-bottom: rem(20px);
+}
+
+.about-intro__note_green {
+	padding: rem(20px);
+	margin-bottom: rem(20px);
+	border-radius: rem(20px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.about-intro__note_light {
+	padding: rem(30px);
+	border-radius: rem(30px);
+}
+
+.about-intro__note-text {
+	letter-spacing: rem(0.2px);
+}

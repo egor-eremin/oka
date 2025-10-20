@@ -4,7 +4,6 @@
 	margin: rem(50px) auto;
 	position: relative;
 	border: 1px solid var(--color-white);
-	background-color: var(--color-greyscale-black);
 	padding: rem(24px);
 
 	@include laptop {
@@ -14,7 +13,6 @@
 }
 
 .mfp-bg {
-	background: var(--color-greyscale-black);
 	opacity: 1;
 }
 

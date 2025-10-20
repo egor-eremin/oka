@@ -1,39 +1,80 @@
 .page-header__head
-	.wrapper.page-header__top-line
-		.page-header__right-wrapper
-			.page-header__client-area
-				button.page-header__burger-menu.js-menu-burger
-				form.page-header__search.page-header__search_desctop.js-search-form
-					.page-header__search-form-wrapper
-						button.page-header__open-search-btn.js-open-button(type="button")
-							| <svg class="page-header__search-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-							| <path d="M11 25.1076L13.886 22.2207" stroke="white"/>
-							| <path d="M19.1014 21.6741C22.0482 21.6741 24.4371 19.2619 24.4371 16.2863C24.4371 13.3107 22.0482 10.8984 19.1014 10.8984C16.1545 10.8984 13.7656 13.3107 13.7656 16.2863C13.7656 19.2619 16.1545 21.6741 19.1014 21.6741Z" stroke="white" stroke-miterlimit="10"/>
-							| <circle cx="18" cy="18" r="17.5" stroke="white"/>
+	.wrapper
+		.page-header__wrapper
+			a.page-header__link-logo(href=`${langPrefix}/`)
+				img.page-header__logo(src=`${baseDirImg}logo.svg` alt="Logo «OKA Agency»" width="100" height="33")
+			button.page-header__burger.js-open-menu
+				span.page-header__burger-item
+				span.page-header__burger-item
+			nav.page-header__nav.main-nav
+				ul.main-nav__list.page-header__menu-list
+					li.main-nav__item(class={active: currentPage == "about"})
+						a.main-nav__link(href=`${langPrefix}/about/`) О нас
+							span.main-nav__decor-line
+					li.main-nav__item(class={active: currentPage == "services"})
+						a.main-nav__link(href=`${langPrefix}/services/`) Услуги
+							span.main-nav__decor-line
+					li.main-nav__item(class={active: currentPage == "blog"})
+						a.main-nav__link(href=`${langPrefix}/blog/`) Статьи
+							span.main-nav__decor-line
+					li.main-nav__item(class={active: currentPage == "faq"})
+						a.main-nav__link(href=`${langPrefix}/faq/`) FAQ
+							span.main-nav__decor-line
+					li.main-nav__item(class={active: currentPage == "cases"})
+						a.main-nav__link(href=`${langPrefix}/cases/`) Кейсы
+							span.main-nav__decor-line
+					li.main-nav__item(class={active: currentPage == "contacts"})
+						a.main-nav__link(href=`${langPrefix}/contacts/`) Контакты
+							span.main-nav__decor-line
+					li.main-nav__item.main-nav__item-lang-wrapper.mobile
+						each language in ['ru', 'en', 'de', 'fr']
+							- const langPrefix = (language === 'en') ? '' : `/${language}`;
+							.page-header__language-item
+								a.page-header__language-link(
+									class=`page-header__language-link_${language}`
+									href=`${langPrefix}/${currentPage ? currentPage + '/' : ''}`
+									data-lang=language
+								) #{language.toUpperCase()}
+
+			button.page-header__close-search.js-close-search
+				span.visually-hidden Закрыть окно поиска
+				.page-header__circle
+				.page-header__circle
+				.page-header__circle
+			a.btn.btn_white.page-header__consultation(href=`${langPrefix}/request-form/`)
+				span Консультация
+			.page-header__search
+				.page-header__search-wrapper
+					form.page-header__search-form.js-search-form(action="/search/")
+						input.page-header__search-input(type="text" name="search" placeholder="Введите запрос например, \"вид на жительство\"" required)
+						button.page-header__btn(type="submit")
+							span.visually-hidden Найти
+							| <svg class="page-header__search-svg page-header__svg-submit" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+							|     <path d="M14 24C8.47715 24 4 19.5228 4 14C4 8.47715 8.47715 4 14 4C19.5228 4 24 8.47715 24 14C24 19.5228 19.5228 24 14 24Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+							|     <path d="M21.0713 21.0703L28 27.9991" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
 							| </svg>
-							| <svg class="page-header__search-close-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-							| <circle cx="18" cy="18" r="17.5" fill="white" stroke="white"/>
-							| <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9411 17.9998L11 23.9409L12.0607 25.0016L18.0017 19.0605L23.9428 25.0016L25.0035 23.9409L19.0624 17.9998L25.0034 12.0587L23.9428 10.998L18.0017 16.9391L12.0607 10.998L11 12.0587L16.9411 17.9998Z" fill="#2B323A"/>
-							| </svg>
-						input.page-header__search-input(type="text" placeholder="Поиск по сайту" required)
-						button.btn.btn_orange.page-header__search-submit(type="submit") Найти
-				a.page-header__enter-lk-link.page-header__enter-lk-link_desctop(href="https://lk.rt-solar.ru/" target="_blank" rel="nofollow" aria-label="Вход в личный кабинет")
-					| <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-					| <path d="M17.7189 17.6852L17.6188 17.6851L17.6188 17.7851L17.6187 18.439L17.6187 18.539H17.7188H22.6461V24.7742V24.8742H22.7461H23.4025H23.5025V24.7742V18.5447C23.5025 18.5041 23.4911 18.4619 23.4766 18.4234C23.4616 18.3836 23.4406 18.341 23.4156 18.2978C23.3655 18.2114 23.2963 18.1169 23.217 18.0293C23.1377 17.9418 23.0459 17.8582 22.9498 17.7959C22.8551 17.7345 22.7472 17.6877 22.638 17.6877C22.638 17.6877 22.638 17.6877 22.638 17.6877L17.7189 17.6852Z" fill="white" stroke="white" stroke-width="0.2"/>
-					| <path d="M18.2968 17.6852L18.3968 17.6851L18.3968 17.7851L18.3969 18.439L18.3969 18.539H18.2969H13.3695V24.7742V24.8742H13.2695H12.6131H12.5131V24.7742V18.5447C12.5131 18.5041 12.5245 18.4619 12.539 18.4234C12.554 18.3836 12.5751 18.341 12.6001 18.2978C12.6501 18.2114 12.7193 18.1169 12.7987 18.0293C12.8779 17.9418 12.9697 17.8582 13.0659 17.7959C13.1605 17.7345 13.2684 17.6877 13.3776 17.6877C13.3776 17.6877 13.3777 17.6877 13.3777 17.6877L18.2968 17.6852Z" fill="white" stroke="white" stroke-width="0.2"/>
-					| <path class="svg-head" d="M17.8694 15.5278C19.7 15.5278 21.184 14.0438 21.184 12.2131C21.184 10.3825 19.7 8.89844 17.8694 8.89844C16.0387 8.89844 14.5547 10.3825 14.5547 12.2131C14.5547 14.0438 16.0387 15.5278 17.8694 15.5278Z" stroke="white" stroke-miterlimit="10"/>
-					| <circle cx="18" cy="18" r="17.5" stroke="white"/>
+				button.page-header__open-search.js-open-search
+					span.visually-hidden Показать окно поиска
+					| <svg class="page-header__search-svg page-header__search-svg-open" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+					|     <path d="M14 24C8.47715 24 4 19.5228 4 14C4 8.47715 8.47715 4 14 4C19.5228 4 24 8.47715 24 14C24 19.5228 19.5228 24 14 24Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+					|     <path d="M21.0713 21.0703L28 27.9991" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
 					| </svg>
-			.page-header__menu-tab.page-header__menu-tab_desctop
-				a.page-header__menu-tab-link(href="/space/") Для малого бизнеса
-				| <svg class="hidden" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-				| <path d="M9.58625 2H10.9963L7.09625 13.115H5.65625L9.58625 2Z" fill="white"/>
-				| </svg>
-				a.page-header__menu-tab-link.hidden(href="") Для государства
-		a.page-header__link-logo(href="/")
-			img.page-header__logo(src=`${baseDir}images/logo.svg` alt="Логотип компании Ростелеком Солар" width="107" height="20")
-		.page-header__additional-information
-			a.page-header__link-phone(href="tel:88003028523") 8 (800) 302-85-23
-			button.btn.btn_orange.page-header__consultation.page-header__consultation_desctop.js-open-consultation-popup Запросить консультацию
-	.page-header__wrapper-nav.page-header__wrapper-nav_hidden
-		include main-nav
+			.page-header__language
+				button.page-header__language-toggle.js-language-toggle(class=`page-header__language-toggle_${lang}` aria-expanded="false")
+					span.visually-hidden Выбор языка
+					span.page-header__cur-lang-bg
+					span.page-header__language-current #{lang}
+					| <svg class="page-header__language-arrow" viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					|     <path d="M26 12L16 22L6 12" fill-rule="nonzero" stroke="rgb(0,0,0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+					| </svg>
+				ul.page-header__language-dropdown
+					each language in ['ru', 'en', 'de', 'fr']
+						if lang !== language
+							- const langPrefix = (language === 'en') ? '' : `/${language}`;
+							li.page-header__language-item
+								a.page-header__language-link(
+									class=`page-header__language-link_${language}`
+									href=`${langPrefix}/${currentPage ? currentPage + '/' : ''}`
+									data-lang=language
+								) #{language.toUpperCase()}
+

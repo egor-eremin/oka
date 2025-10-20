@@ -1,0 +1,9 @@
+.lead-section-main {
+	padding-top: rem(93px);
+	padding-bottom: rem(112px);
+
+	@include laptop {
+		padding-top: rem(40px);
+		padding-bottom: rem(40px);
+	}
+}

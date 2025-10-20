@@ -1,0 +1,9 @@
+<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.000000" height="20.000000" fill="none" customFrame="#000000">
+	<defs>
+		<radialGradient id="paint_radial_0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-88.5647,16.125,0,3.875,9.99999)">
+			<stop stop-color="rgb(51.2335,118.38,50.6214)" offset="9.99999975e-05" stop-opacity="1" />
+			<stop stop-color="rgb(9,89,9)" offset="1" stop-opacity="1" />
+		</radialGradient>
+	</defs>
+	<path id="Star 6" d="M10 0L12.2451 6.90983L19.5106 6.90983L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983L7.75486 6.90983L10 0Z" fill="url(#paint_radial_0)" fill-rule="nonzero" />
+</svg>

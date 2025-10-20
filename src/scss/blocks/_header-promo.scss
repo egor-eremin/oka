@@ -13,18 +13,6 @@
 		pointer-events: none;
 	}
 
-	&_black {
-		background-color: var(--color-greyscale-black);
-	}
-
-	&_full-black {
-		background-color: var(--color-full-black);
-	}
-
-	&_grey-second {
-		background-color: var(--color-grey-second);
-	}
-
 	@include laptop {
 		padding-top: rem(40px);
 		padding-bottom: rem(40px);

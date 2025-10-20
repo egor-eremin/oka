@@ -1,26 +1,18 @@
 .title-h3 {
 	margin: 0;
-	font-size: $new-font-size__title-3;
-	line-height: $new-line-height__title-3;
-
-	&_dark {
-		color: var(--color-black);
-	}
+	font-size: rem(64px);
+	font-weight: 800;
+	line-height: 1;
 
 	&_white {
 		color: var(--color-white);
 	}
 
-	&_burgundy {
-		color: var(--color-burgundy);
-	}
-
-	&_uppercase {
-		text-transform: uppercase;
-	}
-
 	@include laptop {
-		font-size: $new-font-size__title-3_tablet;
-		line-height: $new-line-height__title-3_tablet;
+		font-size: rem(56px);
+	}
+
+	@include mobile {
+		font-size: rem(48px);
 	}
 }

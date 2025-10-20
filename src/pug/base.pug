@@ -198,6 +198,7 @@ html(class="page " + html.classList)&attributes(html.attrs)
 				meta(name="format-detection" content!=(typeof meta.formatDetection === 'string' ? meta.formatDetection : Object.entries(meta.formatDetection).filter(function (entry) { return !entry[1] || entry[1] === 'no' }).map(function (entry) { return `${entry[0]}=no` }).join(',')))
 		if title !== null
 			title!= title
+		block additional-meta
 		block links
 			if link.appvarouchIconPrecomposed !== null
 				link(rel="apple-touch-icon-precomposed" href!=link.appvarouchIconPrecomposed)

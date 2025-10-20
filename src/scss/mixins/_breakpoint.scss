@@ -16,20 +16,8 @@
 	}
 }
 
-@mixin tablet2 {
-	@media (max-width: ($tablet-width_2 * 1px)) {
-		@content;
-	}
-}
-
 @mixin laptop {
 	@media (max-width: ($laptop-width * 1px)) {
-		@content;
-	}
-}
-
-@mixin promo-laptop {
-	@media (max-width: ($promo-laptop * 1px)) {
 		@content;
 	}
 }

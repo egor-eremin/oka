@@ -1,0 +1,8 @@
+.link {
+	text-decoration: underline;
+	text-underline-offset: rem(3px);
+
+	&:hover {
+		text-decoration-color: transparent;
+	}
+}

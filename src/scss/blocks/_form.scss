@@ -33,14 +33,6 @@
 		transition: 0.3s ease-out;
 		transform: translateX(-101%);
 	}
-
-	&_for-white {
-		background-color: var(--color-grey-60);
-	}
-
-	&_light-grey {
-		background-color: var(--color-grey-20);
-	}
 }
 
 .form__input {
@@ -53,9 +45,7 @@
 	padding: 0;
 	width: 100%;
 	height: auto;
-	box-shadow: inset 0 0 0 rem(50px) var(--color-greyscale-black) !important;
-	font-size: $new-font-size__body-second;
-	line-height: $new-line-height__body-second;
+	box-shadow: inset 0 0 0 rem(50px) black !important;
 	color: var(--color-white);
 	caret-color: var(--color-white);
 	background: transparent;
@@ -70,48 +60,11 @@
 		caret-color: var(--color-white);
 	}
 
-	&_white {
-		box-shadow: inset 0 0 0 rem(50px) var(--color-white) !important;
-		color: var(--color-grey-90);
-		caret-color: var(--color-grey-90);
-
-		&:-webkit-autofill {
-			-webkit-text-fill-color: var(--color-grey-90);
-			caret-color: var(--color-grey-90);
-		}
-	}
-
-	&_burgundy {
-		box-shadow: inset 0 0 0 rem(50px) var(--color-burgundy) !important;
-		color: var(--color-white);
-		caret-color: var(--color-white);
-
-		&:-webkit-autofill {
-			-webkit-text-fill-color: var(--color-white);
-			caret-color: var(--color-white);
-		}
-	}
-
-	&_beige {
-		box-shadow: inset 0 0 0 rem(50px) var(--color-beige) !important;
-		color: var(--color-burgundy);
-		caret-color: var(--color-burgundy);
-
-		&:-webkit-autofill {
-			-webkit-text-fill-color: var(--color-burgundy);
-			caret-color: var(--color-burgundy);
-		}
-	}
-
 	&_transparent {
 		box-shadow: none !important;
 		color: var(--color-white);
 		caret-color: var(--color-white);
 		background-color: transparent;
-	}
-
-	&_black {
-		box-shadow: inset 0 0 0 rem(50px) var(--color-full-black) !important;
 	}
 
 	&_small {
@@ -127,8 +80,6 @@
 	&_not-empty {
 		& ~ .form__label {
 			top: rem(-2px);
-			font-size: $new-font-size__small;
-			line-height: $new-line-height__small;
 		}
 
 		& ~ .form__clear {
@@ -141,8 +92,6 @@
 		position: absolute;
 		right: 0;
 		bottom: rem(-4px);
-		font-size: $new-font-size__small;
-		line-height: $new-line-height__small;
 		color: var(--color-red);
 		transform: translateY(100%);
 	}
@@ -153,8 +102,6 @@
 
 		& ~ .form__label {
 			top: rem(-2px);
-			font-size: $new-font-size__small;
-			line-height: $new-line-height__small;
 		}
 
 		& ~ .form__border {
@@ -171,7 +118,7 @@
 
 	&_file:focus {
 		& ~ .form__file-btn  path {
-			fill: var(--color-orange);
+			//fill: var(--color-orange);
 		}
 	}
 
@@ -211,14 +158,7 @@
 	position: absolute;
 	left: 0;
 	top: rem(20px);
-	font-size: $new-font-size__body-second;
-	line-height: $new-line-height__body-second;
-	color: var(--color-grey-60);
 	transition: 0.3s ease-out;
-
-	span {
-		color: var(--color-orange);
-	}
 
 	&_for-small {
 		top: rem(15px);
@@ -232,13 +172,9 @@
 		color: var(--color-white);
 	}
 
-	&_light-grey {
-		color: var(--color-grey-20);
-	}
-
 	&_red-star {
 		span {
-			color: var(--color-error);
+			color: var(--color-red);
 		}
 	}
 
@@ -280,15 +216,10 @@
 	transition: 0.3s ease-out;
 	cursor: pointer;
 
-	&_orange {
-		border-color: var(--color-orange);
-	}
-
 	&::before {
 		content: "";
 		width: rem(18px);
 		height: 1px;
-		background-color: var(--color-orange);
 		transform: rotate(-45deg);
 		opacity: 0;
 		transition: 0.3s ease-out;
@@ -323,7 +254,6 @@
 
 	&:checked {
 		& ~ .form__fake-checked {
-			border-color: var(--color-orange);
 
 			&::before {
 				opacity: 1;
@@ -340,50 +270,13 @@
 
 .form__checkbox-text {
 	color: var(--color-white);
-	font-size: $new-font-size__small;
-	line-height: $new-line-height__small;
 	display: inline-block;
 
 	a {
-		color: var(--color-orange);
-
-		&:hover {
-			color: var(--color-light-orange);
-		}
-	}
-
-	&_small {
-		//font-size: $new-font-size__small;
-		//line-height: $new-line-height__small;
 	}
 
 	&_black {
 		color: var(--color-black);
-	}
-
-	@include laptop {
-		//font-size: $font-size-mobile-small;
-		//line-height: $line-height-mobile-small;
-	}
-
-	&_ultra-small {
-		font-size: $new-font-size__ultra-small;
-		line-height: $new-line-height__ultra-small;
-	}
-
-	&_big {
-		font-size: $new-font-size__body-second;
-		line-height: $new-line-height__body-second;
-
-		@include laptop {
-			font-size: $new-font-size__small;
-			line-height: $new-line-height__small;
-		}
-	}
-
-	&_big-2 {
-		font-size: $new-font-size__body-second;
-		line-height: $new-line-height__body-second;
 	}
 }
 
@@ -402,8 +295,6 @@
 
 .form__submit {
 	max-width: rem(305px);
-	font-size: $new-font-size__body-second;
-	line-height: $new-line-height__body-second;
 	padding: rem(9px);
 
 	@include laptop {
@@ -428,13 +319,11 @@
 
 	&:hover {
 		path {
-			fill: var(--color-light-orange);
 		}
 	}
 
 	&:active {
 		path {
-			fill: var(--color-dark-orange);
 		}
 	}
 }
@@ -467,13 +356,6 @@
 	transition: 0.3s ease-in-out;
 	color: var(--color-white);
 	cursor: pointer;
-	font-size: $new-font-size__body-second;
-	line-height: $new-line-height__body-second;
-
-	&_orange {
-		color: var(--color-orange);
-		border-color: var(--color-orange);
-	}
 }
 
 .form__radio-text {
@@ -488,8 +370,6 @@
 .form__radio {
 	&:checked {
 		& + .form__label-radio {
-			background-color: var(--color-orange);
-			border-color: var(--color-orange);
 			color: var(--color-white);
 		}
 	}
@@ -503,20 +383,14 @@
 	margin-top: rem(19px);
 	margin-bottom: rem(19px);
 	padding: 0;
-	font-size: $new-font-size__body-second;
-	line-height: $new-line-height__body-second;
 	//height: rem(60px);
 	max-height: rem(110px);
-	color: var(--color-grey-90);
-	caret-color: var(--color-grey-90);
 
 	&:focus {
 		outline: none;
 
 		& ~ .form__label {
 			top: rem(-2px);
-			font-size: $new-font-size__small;
-			line-height: $new-line-height__small;
 		}
 
 		& ~ .form__border {
@@ -535,8 +409,6 @@
 
 		& ~ .form__label {
 			top: rem(-2px);
-			font-size: $new-font-size__small;
-			line-height: $new-line-height__small;
 		}
 
 		& ~ .form__clear {
@@ -549,8 +421,6 @@
 		position: absolute;
 		right: 0;
 		bottom: rem(-4px);
-		font-size: $new-font-size__small;
-		line-height: $new-line-height__small;
 		color: var(--color-red);
 		transform: translateY(100%);
 	}
@@ -585,8 +455,6 @@
 }
 
 .form__file-text {
-	font-size: $new-font-size__body-base_tablet;
-	line-height: $new-line-height__body-base_tablet;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -613,10 +481,6 @@
 			height: 100%;
 		}
 	}
-
-	svg {
-		fill: var(--color-grey-60);
-	}
 }
 
 .form__select {
@@ -633,8 +497,6 @@
 .form__select-filled {
 	.form__label {
 		top: rem(-2px);
-		font-size: $new-font-size__small;
-		line-height: $new-line-height__small;
 
 		@include mobile {
 			width: rem(320px);
@@ -650,9 +512,6 @@
 		top: rem(19px);
 		bottom: rem(20px);
 	};
-	color: var(--color-grey-90);
-	font-size: $new-font-size__body-second;
-	line-height: $new-line-height__body-second;
 	background-color: transparent;
 	cursor: pointer;
 	user-select: none;
@@ -685,15 +544,10 @@
 	display: none;
 	max-height: rem(210px);
 	overflow-y: auto;
-	background-color: var(--color-grey-100);
 }
 
 .form__select-show .form__select-dropdown {
 	display: block;
-}
-
-.form__select-show .form__border_for-white {
-	background-color: var(--color-orange);
 }
 
 .form__select-options {
@@ -709,14 +563,6 @@
 	justify-content: space-between;
 	height: rem(42px);
 	padding: 0 rem(16px);
-	color: var(--color-grey-90);
-	font-size: $new-font-size__body-second;
-	line-height: $new-line-height__body-second;
-
-	@include mobile {
-		font-size: $new-font-size__small;
-		line-height: $new-line-height__small;
-	}
 }
 
 .form__select-option_selected {
@@ -733,58 +579,4 @@
 
 button[name="web_form_submit"].notEmpty {
 	pointer-events: none;
-}
-
-.form__suggestions-wrapper {
-	.suggestions-wrapper {
-		position: absolute;
-		width: 100%;
-		left: 0;
-		bottom: 0;
-		transform: translateY(100%);
-		z-index: 3;
-	}
-
-	.suggestions-suggestions {
-		max-height: rem(180px);
-		overflow: auto;
-		background-color: var(--color-grey-100);
-		border: none;
-	}
-
-	.suggestions-suggestion {
-		font-size: $new-font-size__body-second;
-		line-height: $new-line-height__body-second;
-		padding: rem(10px) rem(16px);
-		color: var(--color-grey-90);
-
-		strong {
-			color: var(--color-blue);
-		}
-
-		&:hover {
-			background: var(--color-grey-10);
-		}
-	}
-
-	.suggestions-selected {
-		background: var(--color-grey-10);
-
-		&:hover {
-			background: var(--color-grey-10);
-		}
-	}
-
-	.suggestions-subtext {
-		font-size: $new-font-size__small;
-		line-height: $new-line-height__small;
-		color: var(--color-grey-90);
-	}
-
-	.suggestions-hint {
-		padding: rem(8px) rem(16px);
-		color: var(--color-grey-60);
-		font-size: $new-font-size__small;
-		line-height: $new-line-height__small;
-	}
 }

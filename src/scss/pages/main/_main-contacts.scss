@@ -1,0 +1,89 @@
+.main-contacts {
+	padding-bottom: rem(160px);
+
+	@include laptop {
+		padding-bottom: rem(64px);
+	}
+}
+
+.main-contacts__content {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+
+	@include laptop {
+		grid-template-columns: 1fr;
+	}
+}
+
+.main-contacts__iframe {
+	max-width: 100%;
+	border-radius: rem(20px);
+
+	@include laptop {
+		width: 100%;
+	}
+
+	@include mobile {
+		height: rem(400px);
+	}
+}
+
+.main-contacts__info {
+	display: flex;
+	flex-direction: column;
+	gap: rem(30px);
+}
+
+.main-contacts__cta {
+	margin-top: auto;
+	padding: rem(38px) rem(25px);
+}
+
+.main-contacts__card-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+
+	@include laptop {
+		grid-template-columns: 1fr;
+	}
+}
+
+.main-contacts__card {
+	padding: rem(25px);
+}
+
+.main-contacts__label {
+	margin-bottom: rem(9px);
+}
+
+.main-contacts__text {
+	margin-bottom: rem(9px);
+}
+
+.main-contacts__card-item {
+	margin-bottom: rem(22px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.main-contacts__cta-title {
+	font-size: $font-size-medium;
+	margin-bottom: rem(25px);
+	text-align: center;
+}
+
+.main-contacts__cta-note {
+	text-align: center;
+}
+
+.main-contacts__cta-btn {
+	margin-bottom: rem(16px);
+}
+
+.main-contacts__map {
+	display: flex;
+}

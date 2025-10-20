@@ -1,0 +1,37 @@
+.ai-helper {
+	position: fixed;
+	right: rem(24px);
+	bottom: rem(16px);
+	transform: scale(0.7);
+	transform-origin: bottom right;
+	z-index: 2;
+
+	@include mobile {
+		right: rem(16px);
+	}
+}
+
+.ai-helper__card {
+	border-radius: rem(35px);
+	padding: rem(10px);
+	backdrop-filter: blur(3.125rem);
+	background: rgba(255, 255, 255, 0.6);
+}
+
+.ai-helper__title {
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: rem(6px);
+}
+
+.ai-helper__img {
+	width: rem(182px);
+	height: auto;
+	border-radius: rem(25px);
+	margin-bottom: rem(12px);
+
+	@include mobile {
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+	}
+}
