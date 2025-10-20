@@ -1,0 +1,26 @@
+section.section.partners.animation(data-aos)
+	.wrapper.animation__wrapper
+		.section__header.partners__header
+			h2.title-h2.partners__title Наши партнеры
+			.partners__controls.slider-nav
+				button.slider-nav__arrow.slider-nav__arrow-prev.partners__nav.partners__nav_prev(type="button")
+					span.visually-hidden Предыдущий слайд
+					.slider-nav__disabled-bg
+					| <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M0 0L22 0" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,27,16)"/><path d="M0 0L9 9L0 18" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,14,7)"/></svg>
+				button.slider-nav__arrow.slider-nav__arrow-next.partners__nav.partners__nav_next(type="button")
+					span.visually-hidden Следующий слайд
+					.slider-nav__disabled-bg
+					| <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M5 16L27 16" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M18 7L27 16L18 25" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+		.partners__slider.js-partners
+			.partners__slide.green-block
+				img.partners__img(src=`${baseDirCurImg}partners-1.webp` srcset=`${baseDirCurImg}partners-1@2x.webp 2x` width="" height="" alt="Logo «Школа 800 счастье учиться»")
+			.partners__slide.green-block
+				img.partners__img(src=`${baseDirCurImg}partners-2.webp` srcset=`${baseDirCurImg}partners-2@2x.webp 2x` width="" height="" alt="Logo «Корпорация развития Нижегородской области»")
+			.partners__slide.green-block
+				img.partners__img(src=`${baseDirCurImg}partners-3.webp` srcset=`${baseDirCurImg}partners-3@2x.webp 2x` width="" height="" alt="Logo «Корпоративный университет правительства Нижегородской области»")
+			.partners__slide.green-block
+				img.partners__img(src=`${baseDirCurImg}partners-4.webp` srcset=`${baseDirCurImg}partners-4@2x.webp 2x` width="" height="" alt="Logo «Go RK Tech»")
+			.partners__slide.green-block
+				img.partners__img(src=`${baseDirCurImg}partners-4.webp` srcset=`${baseDirCurImg}partners-4@2x.webp 2x` width="" height="" alt="Logo «Go RK Tech»")
+		.partners__pagination.pagination
+			span.visually-hidden Пагинация слайдера

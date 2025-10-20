@@ -45,7 +45,7 @@
 		}
 	}
 
-	&[disabled] {
+	&[disabled], &.slick-disabled {
 		background-color: transparent;
 		pointer-events: none;
 

@@ -432,52 +432,65 @@ function initAiHelperStick() {
 	window.addEventListener('resize', onResize);
 }
 
-function initAboutTeamSlider() {
-	const $slider = $('.js-about-team');
-
+function initCustomSlider({
+							  sliderSelector,
+							  prevArrowSelector,
+							  nextArrowSelector,
+							  paginationSelector,
+							  slideToShow = 4
+						  }) {
+	const $slider = $(sliderSelector);
 	if (!$slider.length) return;
 
 	const slidesCount = $slider.children().length;
 
-	// если слайдов <= 4 — не инициализируем (аналог watchOverflow)
-	if (slidesCount <= 4) {
+	// Аналог watchOverflow — если слайдов меньше, чем нужно, не инициализируем
+	if (slidesCount <= slideToShow) {
 		$slider.addClass('is-static');
-		$('.about-team__controls, .about-team__pagination').hide();
+		$(prevArrowSelector).closest('.slider-nav').hide();
+		$(paginationSelector).hide();
 		return;
 	}
 
 	$slider.slick({
-		slidesToShow: 4,
+		slidesToShow: slideToShow,
 		slidesToScroll: 1,
 		infinite: true,
 		speed: 600,
 		arrows: true,
 		dots: true,
-		appendArrows: '.about-team__controls',
-		prevArrow: $('.about-team__nav_prev'),
-		nextArrow: $('.about-team__nav_next'),
-		appendDots: '.about-team__pagination',
+		touchThreshold: 12,
+		appendArrows: $(prevArrowSelector).closest('.slider-nav'),
+		prevArrow: $(prevArrowSelector),
+		nextArrow: $(nextArrowSelector),
+		appendDots: $(paginationSelector),
 		dotsClass: 'pagination',
 		customPaging: function() {
 			return '<button type="button" class="pagination__item pagination__item_green"></button>';
 		},
 		responsive: [
 			{
-				breakpoint: 1280,
-				settings: { slidesToShow: 3 }
+				breakpoint: 1025,
+				settings: {
+					slidesToShow: 3
+				}
 			},
 			{
-				breakpoint: 1024,
-				settings: { slidesToShow: 2 }
+				breakpoint: 901,
+				settings: {
+					slidesToShow: 2
+				}
 			},
 			{
-				breakpoint: 768,
-				settings: { slidesToShow: 1 }
-			}
+				breakpoint: 651,
+				settings: {
+					slidesToShow: 1
+				}
+			},
 		]
 	});
-}
 
+}
 
 function aosInit() {
 	AOS.init({
@@ -558,7 +571,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMainServicesSlider();
 	initMainAdvantagesSlider();
 	initStagesSliders();
-	initAiHelperStick();
+	// initAiHelperStick();
 	aosInit();
-	initAboutTeamSlider();
+	initCustomSlider({
+		sliderSelector: '.js-about-team',
+		prevArrowSelector: '.about-team__nav_prev',
+		nextArrowSelector: '.about-team__nav_next',
+		paginationSelector: '.about-team__pagination',
+		slideToShow: 4
+	});
+	initCustomSlider({
+		sliderSelector: '.js-partners',
+		prevArrowSelector: '.partners__nav_prev',
+		nextArrowSelector: '.partners__nav_next',
+		paginationSelector: '.partners__pagination',
+		slideToShow: 4
+	});
 });

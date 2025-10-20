@@ -1,0 +1,153 @@
+.about-team__slide {
+	position: relative;
+	border-radius: rem(20px);
+	overflow: hidden;
+	height: rem(500px);
+
+	&:hover {
+		.about-team__item_info {
+			opacity: 1;
+			pointer-events: initial;
+		}
+	}
+
+	@include laptop {
+		aspect-ratio: 27 / 50;
+		height: auto;
+		max-height: rem(600px);
+	}
+
+}
+
+.about-team__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: rem(24px);
+}
+
+.about-team__controls {
+	gap: rem(20px);
+}
+
+.about-team__slider {
+	margin-right: rem(-15px);
+	margin-left: rem(-15px);
+	margin-bottom: rem(48px) !important;
+
+	.slick-slide {
+		& > div {
+			display: flex;
+			padding-right: rem(15px);
+			padding-left: rem(15px);
+		}
+	}
+
+	@include mobile {
+		max-width: rem(450px);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.is-static {
+		margin-left: 0;
+		margin-right: 0;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: rem(30px);
+		margin-bottom: 0 !important;
+
+		@include laptop {
+			grid-template-columns: repeat(2, 1fr);
+
+			.about-team__slide {
+				width: 100%;
+			}
+		}
+
+		@include mobile {
+			max-width: none;
+			gap: rem(16px);
+		}
+
+		@include ultraSmall {
+			grid-template-columns: 1fr;
+
+			.about-team__slide {
+				max-height: rem(550px);
+			}
+		}
+
+		.about-team__row {
+			@include mobile {
+				font-size: rem(14px);
+			}
+		}
+
+		.about-team__item_info {
+			@include mobile {
+				padding: rem(16px);
+			}
+		}
+	}
+}
+
+.about-team__item_info {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity 0.3s ease-out;
+	opacity: 0;
+	pointer-events: none;
+	padding: rem(30px);
+	display: flex;
+	flex-direction: column;
+}
+
+.about-team__item_photo {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		background: linear-gradient(180.00deg, rgba(0, 0, 0, 0) 66%,rgba(0, 0, 0, 1) 100%);
+	}
+}
+
+.about-team__caption {
+	position: absolute;
+	bottom: rem(30px);
+	left: rem(30px);
+	width: calc(100% - 3.75rem);
+}
+
+.about-team__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.about-team__name {
+	font-weight: 700;
+	margin-bottom: rem(12px);
+}
+
+.about-team__info {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	gap: rem(16px);
+}
+
+

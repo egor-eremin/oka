@@ -2,7 +2,7 @@ extends ../../../pug/base
 
 append vars
 	- lang = "ru"
-	- currentPage = "about"
+	- currentPage = "cases"
 	- baseDir = '../../'
 	- baseDirImg = `${baseDir}images/`
 	- baseDirCurImg = `${baseDir}images/${currentPage}/`
@@ -26,14 +26,9 @@ block body-start
 	header.page-header
 		include ../../../pug/blocks/header
 block content
-	include ../../../pug/pages/about/breadcrumbs-section
-	include ../../../pug/pages/about/about-intro
-	include ../../../pug/pages/about/about-advantages
-	include ../../../pug/pages/about/lead-section
-	include ../../../pug/pages/about/about-approach
-	include ../../../pug/pages/about/about-team
-	include ../../../pug/pages/about/lead-section-1
-	include ../../../pug/pages/about/partners
+	include ../../../pug/pages/cases/breadcrumbs-section
+	include ../../../pug/pages/cases/cases-promo
+	include ../../../pug/pages/cases/cases-cta
 	include ../../../pug/blocks/ai-helper
 
 block footer

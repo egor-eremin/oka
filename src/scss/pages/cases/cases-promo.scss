@@ -1,0 +1,143 @@
+.cases-promo {
+	padding-bottom: rem(161px);
+
+	@include laptop {
+		padding-bottom: rem(64px);
+	}
+}
+
+.cases-promo__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: rem(30px);
+
+	@include laptop {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include tablet {
+		gap: rem(24px);
+	}
+
+	@include mobile {
+		grid-template-columns: 1fr;
+	}
+}
+
+.cases-promo__item {
+	position: relative;
+	border-radius: rem(20px);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	padding: rem(30px);
+	padding-bottom: rem(45px);
+	min-height: rem(642px);
+
+	&:hover:not(.cases-promo__item_last) {
+		.cases-promo__bg.green-block {
+			opacity: 1;
+		}
+
+		.cases-promo__bg.glass-card {
+			opacity: 0;
+		}
+
+		.cases-promo__name,
+		.cases-promo__quote,
+		.cases-promo__link {
+			color: var(--color-white);
+		}
+	}
+
+	@include laptop {
+		min-height: auto;
+	}
+}
+
+.cases-promo__item_last {
+	padding-bottom: rem(30px);
+}
+
+.cases-promo__img {
+	width: rem(310px);
+	height: auto;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.cases-promo__bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-radius: rem(20px);
+	pointer-events: none;
+	transition: opacity 0.3s ease-out;
+
+	&.green-block {
+		background: radial-gradient(649% 39% at 50% 28%, rgba(51, 118, 51, 0.85), rgba(9, 89, 9, 1) 100%);
+		opacity: 0;
+	}
+}
+
+.cases-promo__media {
+	position: relative;
+	margin-bottom: rem(60px);
+
+	@include laptop {
+		margin-bottom: rem(40px);
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.cases-promo__content {
+	position: relative;
+}
+
+.cases-promo__name {
+	font-weight: 800;
+	margin-bottom: rem(20px);
+	transition: color 0.3s ease-out;
+
+	span {
+		color: var(--color-green);
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+
+.cases-promo__lead {
+	font-weight: 700;
+	max-width: rem(759px);
+	letter-spacing: rem(0.1px);
+	margin-bottom: rem(30px);
+}
+
+.cases-promo__quote {
+	margin-bottom: rem(32px);
+	transition: color 0.3s ease-out;
+}
+
+.cases-promo__link {
+	margin-top: auto;
+	position: relative;
+	font-weight: 700;
+	font-size: $font-size-second;
+	transition: 0.3s ease-out;
+}
+
+.cases-promo__btn {
+	margin-top: auto;
+	width: rem(163px);
+}
+
+.cases-promo__name_last {
+	@include laptop {
+		margin-bottom: rem(40px);
+	}
+}

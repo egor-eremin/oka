@@ -8,6 +8,16 @@
 	&.swiper-pagination-lock {
 		display: none;
 	}
+
+	li {
+		display: flex;
+
+		&.slick-active {
+			.pagination__item {
+				opacity: 1;
+			}
+		}
+	}
 }
 
 .pagination__item {
