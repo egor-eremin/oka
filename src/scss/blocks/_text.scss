@@ -51,10 +51,18 @@
 
 .text_mid {
 	font-size: $font-size-medium;
+
+	@include laptop {
+		font-size: $font-size-base;
+	}
 }
 
 .text_mid-1 {
 	font-size: $font-size-medium-1;
+
+	@include laptop {
+		font-size: $font-size-base;
+	}
 }
 
 .text_sm {
@@ -63,4 +71,10 @@
 
 .text_no-spacing {
 	letter-spacing: 0;
+}
+
+.text__accent {
+	color: var(--color-green);
+	font-weight: 700;
+	letter-spacing: rem(0.1px);
 }

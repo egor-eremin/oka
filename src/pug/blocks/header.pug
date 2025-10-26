@@ -27,15 +27,14 @@
 						a.main-nav__link(href=`${langPrefix}/contacts/`) Контакты
 							span.main-nav__decor-line
 					li.main-nav__item.main-nav__item-lang-wrapper.mobile
-						each language in ['ru', 'en', 'de', 'fr']
+						each language in ['ru','en','de','fr']
 							- const langPrefix = (language === 'en') ? '' : `/${language}`;
+							- const parts = [];
+							- if (typeof currentPage !== 'undefined' && currentPage) parts.push(currentPage);
+							- if (typeof currentSlug !== 'undefined' && currentSlug) parts.push(currentSlug);
+							- const pagePath = parts.length ? parts.join('/') + '/' : '';
 							.page-header__language-item
-								a.page-header__language-link(
-									class=`page-header__language-link_${language}`
-									href=`${langPrefix}/${currentPage ? currentPage + '/' : ''}`
-									data-lang=language
-								) #{language.toUpperCase()}
-
+								a.page-header__language-link(class=`page-header__language-link_${language}` href=`${langPrefix}/${pagePath}` data-lang=language)= language.toUpperCase()
 			button.page-header__close-search.js-close-search
 				span.visually-hidden Закрыть окно поиска
 				.page-header__circle
@@ -71,10 +70,14 @@
 					each language in ['ru', 'en', 'de', 'fr']
 						if lang !== language
 							- const langPrefix = (language === 'en') ? '' : `/${language}`;
+							- const parts = [];
+							- if (typeof currentPage !== 'undefined' && currentPage) parts.push(currentPage);
+							- if (typeof currentSlug !== 'undefined' && currentSlug) parts.push(currentSlug);
+							- const pagePath = parts.length ? parts.join('/') + '/' : '';
 							li.page-header__language-item
 								a.page-header__language-link(
 									class=`page-header__language-link_${language}`
-									href=`${langPrefix}/${currentPage ? currentPage + '/' : ''}`
+									href=`${langPrefix}/${pagePath}`
 									data-lang=language
-								) #{language.toUpperCase()}
+								)= language.toUpperCase()
 

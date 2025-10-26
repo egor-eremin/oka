@@ -1,8 +1,10 @@
 .btn {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	height: rem(50px);
+	padding-left: rem(8px);
+	padding-right: rem(8px);
 	font-weight: 700;
 	font-size: $font-size-second;
 	position: relative;
@@ -23,6 +25,7 @@
 		height: 100%;
 		transition: 0.3s ease-out;
 		opacity: 0;
+		pointer-events: none;
 	}
 }
 
@@ -130,6 +133,7 @@
 .btn_telegram {
 	padding-left: rem(30px);
 	padding-right: rem(62px);
+	justify-content: flex-start;
 }
 
 .btn__telegram-icon {

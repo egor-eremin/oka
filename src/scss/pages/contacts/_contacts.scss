@@ -1,0 +1,141 @@
+.contacts__grid {
+	display: flex;
+	justify-content: space-between;
+	gap: rem(32px);
+	margin-bottom: rem(80px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@include laptop {
+		flex-direction: column;
+		margin-bottom: rem(56px);
+	}
+}
+
+.contacts__col_1,
+.contacts__col_2 {
+	width: 100%;
+}
+
+.contacts__col_1 {
+	max-width: rem(400px);
+
+	@include laptop {
+		max-width: none;
+	}
+}
+
+.contacts__col_2 {
+	max-width: rem(570px);
+
+	@include laptop {
+		max-width: none;
+	}
+}
+
+.contacts__text-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: rem(27px);
+}
+
+.contacts__text {
+	letter-spacing: rem(0.2px);
+}
+
+.contacts__telegram {
+	min-width: rem(270px);
+}
+
+.contacts__company-info {
+	margin-top: rem(20px);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.contacts__information-blocks {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+
+	@include mobile {
+		grid-template-columns: 1fr;
+	}
+}
+
+.contacts__block {
+	padding: rem(30px);
+	display: flex;
+	flex-direction: column;
+	gap: rem(20px);
+}
+
+.contacts__social-link {
+	display: flex;
+	flex-direction: column;
+	gap: rem(23px);
+}
+
+.contacts__picture {
+	display: flex;
+	margin-bottom: rem(30px);
+}
+
+.contacts__img {
+	border-radius: rem(20px);
+
+	@include laptop {
+		width: 100%;
+	}
+}
+
+.contacts__working-hours {
+	padding: rem(30px);
+	display: flex;
+	flex-direction: column;
+	gap: rem(20px);
+	margin-bottom: rem(30px);
+}
+
+.contacts__office-status {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+
+	@include mobile {
+		grid-template-columns: 1fr;
+	}
+}
+
+.contacts__time-block,
+.contacts__state {
+	padding: rem(30px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: rem(30px);
+}
+
+.contacts__time,
+.contacts__status {
+	font-weight: 800;
+	font-size: rem(32px);
+}
+
+.contacts__map {
+	border-radius: rem(20px);
+	overflow: hidden;
+	display: flex;
+}
+
+.contacts__iframe {
+	height: rem(532px);
+
+	@include mobile {
+		height: rem(450px);
+	}
+}

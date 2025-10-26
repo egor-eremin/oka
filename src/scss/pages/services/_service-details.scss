@@ -1,0 +1,35 @@
+.service-details__img {
+	border-radius: rem(20px);
+
+	@include tablet {
+		width: 100%;
+	}
+}
+
+.service-details__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+}
+
+.service-details__container {
+	display: flex;
+	flex-direction: column;
+	gap: rem(80px);
+
+	@include laptop {
+		gap: rem(40px);
+	}
+}
+
+.service-details__title {
+	margin-bottom: rem(48px);
+
+	@include laptop {
+		margin-bottom: rem(32px);
+	}
+}

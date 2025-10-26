@@ -1,0 +1,10 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.000000" height="40.000000" fill="none">
+	<rect id="Icon" width="40.000000" height="40.000000" x="0.000000" y="0.000000" />
+	<path id="Vector" />
+	<path id="Vector" d="M25 7.5C26.9891 7.5 28.8968 8.29018 30.3033 9.6967C31.7098 11.1032 32.5 13.0109 32.5 15L32.5 33.75C32.5 34.0815 32.3683 34.3995 32.1339 34.6339C31.8995 34.8683 31.5815 35 31.25 35L8.75 35C8.41848 35 8.10054 34.8683 7.86612 34.6339C7.6317 34.3995 7.5 34.0815 7.5 33.75L7.5 15C7.5 13.0109 8.29018 11.1032 9.6967 9.6967C11.1032 8.29018 13.0109 7.5 15 7.5L25 7.5Z" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+	<path id="Vector" d="M12.5 35L12.5 23.75C12.5 23.087 12.7634 22.4511 13.2322 21.9822C13.7011 21.5134 14.337 21.25 15 21.25L25 21.25C25.663 21.25 26.2989 21.5134 26.7678 21.9822C27.2366 22.4511 27.5 23.087 27.5 23.75L27.5 35" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+	<path id="Vector" d="M15 7.5L15 5C15 4.33696 15.2634 3.70107 15.7322 3.23223C16.2011 2.76339 16.837 2.5 17.5 2.5L22.5 2.5C23.163 2.5 23.7989 2.76339 24.2678 3.23223C24.7366 3.70107 25 4.33696 25 5L25 7.5" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+	<path id="Vector" d="M17.5 13.75L22.5 13.75" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+	<path id="Vector" d="M12.5 26.25L27.5 26.25" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+	<path id="Vector" d="M0 0L2.5 0" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(0,1,-1,0,22.5,26.25)" />
+</svg>

@@ -1,0 +1,62 @@
+section.section.difficulties.animation(data-aos)
+	.wrapper.animation__wrapper
+		.section__header.difficulties__header
+			h2.title-h2.difficulties__title Почему самостоятельно переезжать в&nbsp;Россию значительно сложнее?
+		.tabs.difficulties__tabs.js-tabs-init(role="tablist" aria-label="Сравнение способов переезда")
+			.tabs__tabs-btn-wrapper.difficulties__btn-wrapper
+				button.link.text.text_sm.tabs__tabs-btn.tabs__tabs-btn_active(type="button" id="tab-alone" role="tab" aria-selected="true" aria-controls="panel-alone" tabindex="0") Самостоятельно
+				button.link.text.text_sm.tabs__tabs-btn(type="button" id="tab-help" role="tab" aria-selected="false" aria-controls="panel-help" tabindex="-1") С&nbsp;нашей помощью
+			.tabs__panels.difficulties__panels
+				#panel-alone.tabs__panel.difficulties__panel(role="tabpanel" aria-labelledby="tab-alone")
+					.difficulties__tabs-list
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-1.svg` width="40" height="40" alt="Иконка монет")
+							p.text.difficulties__text Потеря времени и&nbsp;денег на&nbsp;неверных шагах
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-2.svg` width="40" height="40" alt="Иконка документа")
+							p.text.difficulties__text Риски получить отказ из-за ошибок в&nbsp;документах
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-3.svg` width="40" height="40" alt="Иконка языков")
+							p.text.difficulties__text Языковой барьер при получении документов
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-4.svg` width="40" height="40" alt="Иконка здания")
+							p.text.difficulties__text Проблемы с&nbsp;поиском жилья без&nbsp;прописки
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-5.svg` width="40" height="40" alt="Иконка кресла")
+							p.text.difficulties__text Сложности с&nbsp;поиском работы в&nbsp;России
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-6.svg` width="40" height="40" alt="Иконка рюкзака")
+							p.text.difficulties__text Проблемы с&nbsp;обучением для&nbsp;детей
+				#panel-help.tabs__panel.difficulties__panel.is-hidden(role="tabpanel" aria-labelledby="tab-help" aria-hidden="true")
+					.difficulties__tabs-list
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-7.svg` width="40" height="40" alt="Иконка песочных часов")
+							p.text.difficulties__text Экономия ваших ресурсов с&nbsp;первого дня
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-2.svg` width="40" height="40" alt="Иконка документа")
+							p.text.difficulties__text Гарантия корректного оформления документов
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-3.svg` width="40" height="40" alt="Иконка языков")
+							p.text.difficulties__text Ускорение всех процедур с&nbsp;помощью носителя языка
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-4.svg` width="40" height="40" alt="Иконка здания")
+							p.text.difficulties__text Быстрый поиск жилья и&nbsp;оформление прописки
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-8.svg` width="40" height="40" alt="Иконка здания")
+							p.text.difficulties__text Карьерное консультирование и&nbsp;помощь с&nbsp;трудоустройством
+						.difficulties__tabs-item
+							.difficulties__icon-wrapper
+								img.difficulties__icon(src=`${baseDirCurImg}difficulties-icon-6.svg` width="40" height="40" alt="Иконка рюкзака")
+							p.text.difficulties__text Помощь с&nbsp;обучением и&nbsp;адаптацией детей
+

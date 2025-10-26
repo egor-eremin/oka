@@ -1,0 +1,43 @@
+.case-adaptation__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+}
+
+.case-adaptation__lead {
+	letter-spacing: rem(0.2px);
+	margin-bottom: rem(30px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.case-adaptation__note {
+	padding: rem(30px);
+	border-radius: rem(30px);
+}
+
+.case-adaptation__note-second {
+	padding: rem(30px);
+	border-radius: rem(20px);
+}
+
+.case-adaptation__col_2 {
+	display: flex;
+	flex-direction: column;
+	gap: rem(30px);
+}
+
+.case-adaptation__note-title {
+	font-weight: 700;
+	margin-bottom: rem(20px);
+}
+
+.case-adaptation__text {
+	letter-spacing: rem(0.2px);
+}

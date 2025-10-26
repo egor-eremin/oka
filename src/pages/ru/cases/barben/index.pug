@@ -3,6 +3,7 @@ extends ../../../../pug/base
 append vars
 	- lang = "ru"
 	- currentPage = "cases"
+	- currentSlug = 'barben'
 	- baseDir = '../../../'
 	- baseDirImg = `${baseDir}images/`
 	- baseDirCurImg = `${baseDir}images/${currentPage}/`
@@ -27,8 +28,11 @@ block body-start
 		include ../../../../pug/blocks/header
 block content
 	include ../../../../pug/pages/cases/barben/breadcrumbs-section
-	//include ../../../../pug/pages/cases/cases-promo
-	//include ../../../../pug/pages/cases/cases-cta
+	include ../../../../pug/pages/cases/barben/case-hero
+	include ../../../../pug/pages/cases/barben/case-section
+	include ../../../../pug/pages/cases/barben/case-adaptation
+	include ../../../../pug/pages/cases/barben/story
+	include ../../../../pug/pages/cases/barben/cases-footer
 	include ../../../../pug/blocks/ai-helper
 
 block footer

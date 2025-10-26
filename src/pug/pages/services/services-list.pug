@@ -1,0 +1,121 @@
+section.section.section_last.services-list.animation(data-aos)
+	.wrapper.animation__wrapper
+		.section__header.services-list__header
+			h2.title-h2 Услуги
+			.services-list__category-filter
+				.services-list__filter-item
+					button.link.text.text_sm.services-list__filter-btn.active(data-filter="all") Все
+				.services-list__filter-item
+					button.link.text.text_sm.services-list__filter-btn(data-filter="migration") Миграция
+				.services-list__filter-item
+					button.link.text.text_sm.services-list__filter-btn(data-filter="real-estate") недвижимость
+				.services-list__filter-item
+					button.link.text.text_sm.services-list__filter-btn(data-filter="life") жизнь
+				.services-list__filter-item
+					button.link.text.text_sm.services-list__filter-btn(data-filter="career") карьера и работа
+				.services-list__filter-item
+					button.link.text.text_sm.services-list__filter-btn(data-filter="business") бизнес и финансы
+				.services-list__filter-item
+					button.link.text.text_sm.services-list__filter-btn(data-filter="education") Образование
+		ul.services-list__cards
+			li.services-list__card-item(data-category="migration")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-1@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-1.webp` srcset=`${baseDirCurImg}services-card-1@2x.webp 2x` alt="Передача паспорта и документов при оформлении разрешения на временное проживание в России")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Миграция
+					p.text.services-list__title-card(role="heading" aria-level="3") Разрешение на&nbsp;временное проживание в&nbsp;РФ
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/temporary-residence-permit`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="migration")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-2@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-2.webp` srcset=`${baseDirCurImg}services-card-2@2x.webp 2x` alt="Женщина с чемоданом у двери получает вид на жительство в России")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Миграция
+					p.text.services-list__title-card(role="heading" aria-level="3") Вид на&nbsp;жительство в&nbsp;РФ
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/residence-permit`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="migration")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-3@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-3.webp` srcset=`${baseDirCurImg}services-card-3@2x.webp 2x` alt="Мужчина с портфелем идет по улице, символизируя получение гражданства России")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Миграция
+					p.text.services-list__title-card(role="heading" aria-level="3") Гражданство РФ
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/citizenship`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="real-estate")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-4@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-4.webp` srcset=`${baseDirCurImg}services-card-4@2x.webp 2x` alt="Рука с ключами от квартиры, символ недвижимости в России")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Недвижимость
+					p.text.services-list__title-card(role="heading" aria-level="3") Недвижимость в&nbsp;РФ
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/real-estate`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="life")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-5@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-5.webp` srcset=`${baseDirCurImg}services-card-5@2x.webp 2x` alt="Женщина заполняет документы на столе во время консультации")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Жизнь
+					p.text.services-list__title-card(role="heading" aria-level="3") Комплексная консультация
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/complex-consultation`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="life")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-6@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-6.webp` srcset=`${baseDirCurImg}services-card-6@2x.webp 2x` alt="Статуя Фемиды с весами правосудия, символ юридической консультации")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Жизнь
+					p.text.services-list__title-card(role="heading" aria-level="3") Юридическая консультация
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/legal-consultation`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="career")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-7@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-7.webp` srcset=`${baseDirCurImg}services-card-7@2x.webp 2x` alt="Мужчина с сумкой уходит по улице, символ карьерного роста")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Карьера и работа
+					p.text.services-list__title-card(role="heading" aria-level="3") Карьерное консультирование
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/career-consulting`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="business")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-8@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-8.webp` srcset=`${baseDirCurImg}services-card-8@2x.webp 2x` alt="Стопка монет и росток растения, символ инвестиций и бизнеса")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Бизнес и финансы
+					p.text.services-list__title-card(role="heading" aria-level="3") Бизнес и&nbsp;инвестиции в&nbsp;России
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/business-and-investments`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="education")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-9@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-9.webp` srcset=`${baseDirCurImg}services-card-9@2x.webp 2x` alt="Ребенок рисует на бумаге во время учебного занятия")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Образование
+					p.text.services-list__title-card(role="heading" aria-level="3") Обучение для детей
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/children-education`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+			li.services-list__card-item(data-category="education")
+				picture.services-list__picture
+					source(media="(max-width: 650px)" srcset=`${baseDirCurImg}services-card-10@2x.webp`)
+					img(width="270" height="270" src=`${baseDirCurImg}services-card-10.webp` srcset=`${baseDirCurImg}services-card-10@2x.webp 2x` alt="Буквы на деревянных кубиках, символ обучения русскому языку")
+				.services-list__text-wrapper
+					p.text.text_sm.services-list__tag Образование
+					p.text.services-list__title-card(role="heading" aria-level="3") Обучение русскому языку
+					a.link.link_second.text.text_sm.services-list__details(href=`${langPrefix}/services/russian-language-course`) Подробнее
+				a.btn.btn_white.services-list__consultation(href=`${langPrefix}/request-form/`)
+					span Получить консультацию
+		button.link.link_second.services-list__show-more Показать еще

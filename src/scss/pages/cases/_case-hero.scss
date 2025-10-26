@@ -1,0 +1,99 @@
+.case-hero__img {
+	width: 100%;
+	border-radius: rem(20px);
+}
+
+.case-hero__media {
+	position: relative;
+}
+
+.case-hero__bubble-text {
+	font-size: rem(32px);
+	font-weight: 700;
+
+	@include laptop {
+		font-size: rem(24px);
+	}
+
+	@include tablet {
+		font-size: rem(18px);
+	}
+
+	@include mobile {
+		font-size: rem(16px);
+	}
+}
+
+.case-hero__bubble {
+	position: absolute;
+	padding: rem(30px);
+	border-radius: rem(20px);
+
+	@include laptop {
+		padding: rem(16px);
+	}
+}
+
+.case-hero__bubble_1 {
+	max-width: rem(431px);
+	bottom: rem(30px);
+	left: rem(30px);
+
+	@include laptop {
+		bottom: rem(16px);
+		left: rem(16px);
+		max-width: 50%;
+	}
+
+	@include mobile {
+		max-width: none;
+		width: calc(100% - 1rem);
+		bottom: rem(8px);
+		left: rem(8px);
+	}
+}
+
+.case-hero__bubble_2 {
+	max-width: rem(464px);
+	top: rem(30px);
+	right: rem(30px);
+
+	@include laptop {
+		top: auto;
+		bottom: rem(30px);
+	}
+
+	@include tablet {
+		max-width: none;
+		width: calc(100% - 2rem);
+		bottom: rem(16px);
+		right: rem(16px);
+	}
+}
+
+.case-hero__bubble_3 {
+	max-width: rem(473px);
+	right: rem(30px);
+	bottom: rem(30px);
+	letter-spacing: rem(-0.2px);
+
+	@include tablet {
+		width: calc(100% - 2rem);
+		max-width: none;
+		bottom: rem(16px);
+		right: rem(16px);
+	}
+}
+
+.case-hero__bubble_4 {
+	max-width: rem(579px);
+	right: rem(30px);
+	bottom: rem(30px);
+
+	@include tablet {
+		max-width: none;
+		width: calc(100% - 2rem);
+		bottom: rem(16px);
+		right: rem(16px);
+	}
+}

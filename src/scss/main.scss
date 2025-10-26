@@ -29,7 +29,9 @@
 @import "blocks/slider-nav";
 @import "blocks/glass-card";
 @import "blocks/green-block";
+@import "blocks/white-block";
 @import "blocks/animation";
+@import "blocks/faq";
 @import "pages/main/promo-slider";
 @import "pages/main/main-about";
 @import "blocks/lead-section";
@@ -52,6 +54,17 @@
 @import "pages/about/partners";
 @import "pages/cases/cases-promo";
 @import "pages/cases/cases-cta";
+@import "pages/cases/case-hero";
+@import "pages/cases/case-section";
+@import "pages/cases/case-adaptation";
+@import "pages/cases/story";
+@import "pages/cases/cases-footer";
+@import "pages/services/difficulties";
+@import "pages/services/services-list";
+@import "pages/services/service-intro";
+@import "pages/services/service-details";
+@import "pages/services/service-steps";
+@import "pages/contacts/contacts";
 
 //Всегда самый последний!
 @import "helpers";

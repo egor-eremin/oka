@@ -1,0 +1,19 @@
+.tabs__tabs-btn {
+	text-transform: uppercase;
+	color: var(--color-dark-grey);
+	transition: color 0.3s ease-out, text-decoration-color 0.3s ease-out;
+
+	&_active {
+		font-weight: 700;
+		color: var(--color-green);
+	}
+}
+
+.tabs__panel {
+	display: block;
+}
+
+.tabs__panel.is-hidden {
+	display: none;
+}
+

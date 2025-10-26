@@ -1,0 +1,47 @@
+.story__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: end;
+	gap: rem(30px);
+
+	@include laptop {
+		grid-template-areas: "img img1" "text text";
+		grid-template-columns: repeat(2, 1fr);
+		align-items: start;
+	}
+
+	@include mobile {
+		grid-template-areas: "img" "img1" "text";
+		grid-template-columns: 1fr;
+	}
+}
+
+.story__picture {
+	@include laptop {
+		@include laptop {
+			&:nth-of-type(1) {
+				grid-area: img;
+			}
+
+			&:last-child {
+				grid-area: img1;
+			}
+		}
+	}
+}
+
+.story__img {
+	border-radius: rem(20px);
+
+	@include laptop {
+		width: 100%;
+	}
+}
+
+.story__lead {
+	letter-spacing: rem(0.2px);
+
+	@include laptop {
+		grid-area: text;
+	}
+}

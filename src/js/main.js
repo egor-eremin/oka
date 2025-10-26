@@ -498,6 +498,37 @@ function aosInit() {
 	});
 }
 
+function initTabs(selector) {
+	const tabContainers = document.querySelectorAll(selector);
+
+	tabContainers.forEach(function(container) {
+		const tabs = container.querySelectorAll('[role="tab"]');
+		const panels = container.querySelectorAll('[role="tabpanel"]');
+
+		tabs.forEach(function(tab, index) {
+			tab.addEventListener('click', function() {
+				activateTab(container, tabs, panels, index);
+			});
+		});
+	});
+
+	function activateTab(container, tabs, panels, index) {
+		tabs.forEach(function(tab, i) {
+			const isActive = i === index;
+			tab.setAttribute('aria-selected', isActive);
+			tab.setAttribute('tabindex', isActive ? '0' : '-1');
+			tab.classList.toggle('tabs__tabs-btn_active', isActive);
+		});
+
+		panels.forEach(function(panel, i) {
+			const isActive = i === index;
+			panel.classList.toggle('is-hidden', !isActive);
+			panel.setAttribute('aria-hidden', !isActive);
+		});
+	}
+
+}
+
 $.validator.addMethod('filesize', function (value, element, param) {
 	let allSize = 0;
 
@@ -560,6 +591,98 @@ function setupValidationMessages() {
 	$.extend($.validator.messages, errorMessages[pageLang] || errorMessages.en);
 }
 
+function updateOfficeStatus() {
+	const root = document.getElementById('office-hours-widget');
+	if (!root) return;
+
+	const timeEl = document.querySelector('.contacts__time');
+	const openBox = document.querySelector('.contacts__state.open');
+	const closedBox = document.querySelector('.contacts__state.closed');
+
+	const timeZone = root.dataset.timezone || 'Europe/Moscow';
+	let schedule;
+
+	try {
+		schedule = JSON.parse(root.dataset.schedule || '{}');
+	} catch (e) {
+		console.error('Bad data-schedule JSON', e);
+		schedule = {};
+	}
+
+	const DOW = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+	function nowInTZ(tz) {
+		const now = new Date();
+
+		const fmt = new Intl.DateTimeFormat('ru-RU', {
+			timeZone: tz,
+			hour12: false,
+			hour: '2-digit',
+			minute: '2-digit'
+		});
+		const hhmm = fmt.format(now);
+
+		const parts = new Intl.DateTimeFormat('en-CA', {
+			timeZone: tz,
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		}).formatToParts(now);
+
+		const map = Object.fromEntries(parts.map(p => [p.type, p.value]));
+		const y = Number(map.year);
+		const m = Number(map.month);
+		const d = Number(map.day);
+		const todayLocal = new Date(Date.UTC(y, m - 1, d, 0, 0, 0));
+		const weekday = DOW[todayLocal.getUTCDay()];
+
+		return {
+			hhmm,
+			y,
+			m,
+			d,
+			weekday,
+			yyyy_mm_dd: `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`
+		};
+	}
+
+	function toMinutes(hhmm) {
+		const [h, m] = hhmm.split(':').map(Number);
+		return h * 60 + m;
+	}
+
+	function isOpenAt(schedule, info) {
+		const exceptions = (schedule.exceptions || []).reduce((acc, [date, intervals]) => {
+			acc[date] = intervals;
+			return acc;
+		}, {});
+
+		let intervals = exceptions[info.yyyy_mm_dd];
+		if (intervals == null) intervals = schedule[info.weekday] || [];
+
+		const nowMin = toMinutes(info.hhmm);
+
+		return intervals.some(([start, end]) => {
+			const s = toMinutes(start);
+			const e = toMinutes(end);
+			if (s <= e) {
+				return nowMin >= s && nowMin < e;
+			} else {
+				return nowMin >= s || nowMin < e;
+			}
+		});
+	}
+
+	const t = nowInTZ(timeZone);
+	if (timeEl) timeEl.textContent = t.hhmm;
+
+	const open = isOpenAt(schedule, t);
+	if (openBox && closedBox) {
+		openBox.classList.toggle('hidden', !open);
+		closedBox.classList.toggle('hidden', open);
+	}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	setupValidationMessages();
 	openFormSearch();
@@ -587,4 +710,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		paginationSelector: '.partners__pagination',
 		slideToShow: 4
 	});
+	initTabs('.js-tabs-init');
+	updateOfficeStatus();
+	setInterval(updateOfficeStatus, 15000);
 });
+

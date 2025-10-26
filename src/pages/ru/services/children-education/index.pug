@@ -1,0 +1,42 @@
+extends ../../../../pug/base
+
+append vars
+	- lang = "ru"
+	- currentPage = "children-education"
+	- baseDir = '../../../'
+	- baseDirImg = `${baseDir}images/`
+	- baseDirCurImg = `${baseDir}images/services/${currentPage}/`
+	- const langPrefix = (lang === 'en') ? '' : `/${lang}`;
+	- title = "The OKA Agency facilitates relocation to Russia by assisting with TRPs, residence permits, citizenship, and offering personal consultations. - Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship.  Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship."
+	- description = "Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship."
+	- meta.ogTitle = "The OKA Agency facilitates relocation to Russia by assisting with TRPs, residence permits, citizenship, and offering personal consultations. - Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship.  Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship."
+	- meta.ogDescription = "Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship."
+	- link.icon = `${baseDir}favicons/favicon.ico`
+	- link.iconSvg = `${baseDir}favicons/favicon.svg`
+	- link.icon96x96 = `${baseDir}favicons/favicon-96x96.png`
+	- link.appleTouchIcon = `${baseDir}favicons/apple-touch-icon.png`
+	- link.manifest = `${baseDir}favicons/site.webmanifest`
+
+block additional-meta
+	meta(property="og:locale:alternate" content="en_US")
+	meta(property="og:locale:alternate" content="de_DE")
+	meta(property="og:locale:alternate" content="fr_FR")
+
+block body-start
+	header.page-header
+		include ../../../../pug/blocks/header
+block content
+	include ../../../../pug/pages/services/children-education/breadcrumbs-section
+	include ../../../../pug/pages/services/children-education/service-intro
+	include ../../../../pug/pages/services/children-education/service-details
+	include ../../../../pug/pages/services/children-education/service-intro-1
+	include ../../../../pug/pages/services/children-education/service-steps
+	include ../../../../pug/pages/services/children-education/faq
+	include ../../../../pug/pages/services/children-education/cases-cta
+	//include ../../../../pug/pages/services/difficulties
+	//include ../../../../pug/pages/services/services-list
+	include ../../../../pug/blocks/ai-helper
+
+block footer
+	include ../../../../pug/blocks/footer
+

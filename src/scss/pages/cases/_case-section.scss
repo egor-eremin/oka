@@ -1,0 +1,47 @@
+.case-section__lead {
+	letter-spacing: rem(0.19px);
+	margin-bottom: rem(30px);
+}
+
+.case-section__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(30px);
+	align-items: flex-start;
+
+	@include laptop {
+		grid-template-columns: 1fr;
+	}
+}
+
+.case-section__img {
+	border-radius: rem(20px);
+
+	@include laptop {
+		width: 100%;
+	}
+}
+
+.case-section__note {
+	border-radius: rem(30px);
+	padding: rem(30px);
+}
+
+.case-section__text {
+	margin-bottom: rem(31px);
+	letter-spacing: rem(0.15px);
+
+	span {
+		color: var(--color-green);
+		font-weight: 700;
+		letter-spacing: rem(-0.1px);
+	}
+
+	@include laptop {
+		margin-bottom: rem(24px);
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

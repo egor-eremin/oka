@@ -133,7 +133,8 @@
 
 .cases-promo__btn {
 	margin-top: auto;
-	width: rem(163px);
+	min-width: rem(163px);
+	align-self: flex-start;
 }
 
 .cases-promo__name_last {

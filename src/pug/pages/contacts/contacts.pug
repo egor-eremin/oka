@@ -1,0 +1,85 @@
+section.section.section_last.contacts
+	.wrapper
+		.section__header
+			h2.title-h2 Контакты
+		.contacts__grid
+			.contacts__col.contacts__col_1
+				h3.text.text_mid.contacts__title-h3 Наш телеграм-канал
+			.contacts__col.contacts__col_2
+				.contacts__text-wrapper
+					p.text.contacts__text В&nbsp;нашем Telegram-канале вы&nbsp;найдёте ответы на&nbsp;все вопросы. А&nbsp;если не&nbsp;найдёте&nbsp;&mdash; просто спросите!
+					p.text.contacts__text Мы&nbsp;всегда на&nbsp;связи.
+				a.btn.btn_green.btn_telegram.contacts__telegram(href="https://telegram.me/relocation_to_russia" target="_blank")
+					span Telegram-канал
+					.btn__telegram-icon
+						| <svg class="btn__telegram-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+						|     <path d="M21.2835 26.7498C21.4134 26.8645 21.571 26.9434 21.7406 26.9788C21.9103 27.0143 22.0862 27.005 22.2512 26.9519C22.4162 26.8989 22.5646 26.8038 22.6818 26.6761C22.799 26.5485 22.881 26.3925 22.9197 26.2236L28.001 4.15234C28.0059 4.1302 28.0048 4.10714 27.9976 4.08561C27.9905 4.06409 27.9776 4.04491 27.9604 4.03014C27.9432 4.01537 27.9223 4.00556 27.8999 4.00176C27.8776 3.99797 27.8546 4.00032 27.8335 4.00858L2.50098 13.9223C2.34371 13.9829 2.21033 14.0928 2.12084 14.2356C2.03135 14.3783 1.99059 14.5463 2.00468 14.7142C2.01877 14.8821 2.08694 15.041 2.19897 15.1668C2.31099 15.2927 2.46083 15.3789 2.62598 15.4123L10.001 16.8586L21.2835 26.7498Z" fill-rule="nonzero" stroke="rgb(9,89,9)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+						|     <path d="M10 16.8592L27.9263 4.01172" stroke="rgb(9,89,9)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+						|     <path d="M15.5463 21.7231L11.72 25.6931C11.5817 25.8366 11.4038 25.9354 11.209 25.9771C11.0141 26.0187 10.8113 26.0012 10.6265 25.9268C10.4417 25.8524 10.2833 25.7245 10.1717 25.5595C10.0601 25.3944 10.0003 25.1998 10 25.0006L10 16.8594" fill-rule="nonzero" stroke="rgb(9,89,9)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+						| </svg>
+		.contacts__grid
+			.contacts__col.contacts__col_1
+				p.text.contacts__text Автономная некоммерческая организация &laquo;Областное кадровое агентство&raquo; (АНО&nbsp;&laquo;ОКА&raquo;)
+				.contacts__company-info
+					p.text.contacts__text
+						b ИНН 5260482877
+					p.text.contacts__text
+						b ОГРН 1225200011981
+			.contacts__col.contacts__col_2
+				.contacts__information-blocks
+					.contacts__block.green-block
+						p.text.text_white.contacts__block-title
+							b Телефон
+						a.text.text_white.link.contacts__link(href="tel:+79300357823") +7 930 035-78-23
+					.contacts__block.glass-card
+						p.text.contacts__block-title
+							b Email
+						a.text.link.contacts__link(href="mailto:info@okakreml.ru") info@okakreml.ru
+					.contacts__block.glass-card
+						p.text.contacts__block-title
+							b Социальные сети
+						.contacts__social-link
+							a.text.text_sm.link.link_second(href="https://telegram.me/relocation_to_russia" target="_blank")
+								b Telegram
+							a.text.text_sm.link.link_second(href="" target="_blank")
+								b ВКонтакте
+					.contacts__block.glass-card
+						p.text.contacts__block-title
+							b Офис
+						p.text.contacts__text 603006, г.&nbsp;Нижний&nbsp;Новгород, ул. Варварская 27/8, пом. п3
+		.contacts__grid
+			.contacts__col.contacts__col_1
+				h3.text.text_mid.contacts__title-h3 Наш офис
+			.contacts__col.contacts__col_2
+				picture.contacts__picture
+					source(media="(max-width: 1024px)" srcset=`${baseDirCurImg}contacts@2x.webp`)
+					img.contacts__img(width="569" height="398" src=`${baseDirCurImg}contacts.webp` srcset=`${baseDirCurImg}contacts@2x.webp 2x` alt="")
+				#office-hours-widget.hidden(
+					data-timezone="Europe/Moscow"
+					data-schedule=`{
+						"mon": [["09:00","18:00"]],
+						"tue": [["09:00","18:00"]],
+						"wed": [["09:00","18:00"]],
+						"thu": [["09:00","18:00"]],
+						"fri": [["09:00","17:00"]],
+						"sat": [],
+						"sun": [],
+						"exceptions": []
+					}`
+				)
+				.contacts__working-hours.green-block
+					p.text.text_white.contacts__block-title
+						b Рабочее время:
+					p.text.text_white.contacts__text Пн–Чт с 09:00 до 18:00  (Московское время, UTC+3)
+				.contacts__office-status
+					.contacts__time-block.glass-card
+						p.text.contacts__text Текущее время в&nbsp;нашем офисе
+						p.text.contacts__time 14:25
+					.contacts__state.open.green-block
+						p.text.text_white.contacts__text Мы сейчас
+						p.text.text_white.contacts__status Открыты
+					.contacts__state.closed.glass-card.hidden
+						p.text.contacts__text Мы сейчас
+						p.text.contacts__status Закрыты
+		.contacts__map
+			|<iframe class="contacts__iframe" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9074de447a07fc7bfebb616f6e80702dec418e456d0c47b8c2a37d31d4a6ced&amp;source=constructor" width="100%" height="532" frameborder="0"></iframe>

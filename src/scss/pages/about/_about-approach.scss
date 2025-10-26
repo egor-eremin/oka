@@ -1,5 +1,9 @@
 .about-approach {
 	padding-top: rem(111px);
+
+	@include laptop {
+		padding-top: rem(40px);
+	}
 }
 
 .about-approach__img {

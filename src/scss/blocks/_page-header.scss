@@ -72,7 +72,7 @@
 }
 
 .page-header__consultation {
-	width: rem(158px);
+	min-width: rem(158px);
 	margin-right: rem(36px);
 	flex-shrink: 0;
 
