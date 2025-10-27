@@ -1,0 +1,71 @@
+section.section.section_last.request-form.form
+	.wrapper
+		.section__header
+			h2.title-h2 Форма заявки
+		.request-form__wrapper
+			.request-form__steps-container
+				ul.request-form__steps
+					li.request-form__steps-item.active
+						p.text.text_mid.request-form__step-number 1
+						p.text.text_mid.request-form__step-title Личные данные
+					li.request-form__steps-item
+						p.text.text_mid.request-form__step-number 2
+						p.text.text_mid.request-form__step-title Гражданство и&nbsp;цели
+					li.request-form__steps-item
+						p.text.text_mid.request-form__step-number 3
+						p.text.text_mid.request-form__step-title Семья и&nbsp;работа
+					li.request-form__steps-item
+						p.text.text_mid.request-form__step-number 4
+						p.text.text_mid.request-form__step-title Как вы&nbsp;нашли нас?
+				.request-form__privacy-card.green-block
+					p.text.text_white.request-form__privacy-title Не беспокойтесь!
+					p.text.text_white.request-form__privacy-text Форма является конфиденциальной, с&nbsp;ней работают только сотрудники агентства, далее информация не&nbsp;передается.
+					picture.request-form__picture
+						//source(media="(max-width: 1024px)" srcset=`${baseDirCurImg}about-approach-1@2x.webp`)
+						img.request-form__img(src=`${baseDirCurImg}privacy.webp` srcset=`${baseDirCurImg}privacy@2x.webp 2x` width="335" height="255" alt="")
+			.request-form__form-container
+				.request-form__form
+					form(action="#" method="post")
+						fieldset.request-form__form-field
+							legend.request-form__form-legend 1. Личные данные
+							.request-form__item.form__item
+								label.form__label(for="first-name") Имя*
+								input#first-name.form__input(type="text" name="first_name" placeholder="Имя" required)
+							.request-form__item.form__item
+								label.form__label(for="last-name") Фамилия*
+								input#last-name.form__input(type="text" name="last_name" placeholder="Фамилия" required)
+							.request-form__item.form__item
+								label.form__label(for="birthdate") Дата рождения*
+								.request-form__control.form__control
+									input#birthdate.form__input.form__input-date(type="text" name="birthdate" placeholder="Например: 18/10/1975" inputmode="numeric" required)
+									span.form__date-btn(type="button")
+										span.visually-hidden Открыть календарь
+										| <svg class="form__date-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										| <path d="M16.25 3.125H3.75C3.40482 3.125 3.125 3.40482 3.125 3.75V16.25C3.125 16.5952 3.40482 16.875 3.75 16.875H16.25C16.5952 16.875 16.875 16.5952 16.875 16.25V3.75C16.875 3.40482 16.5952 3.125 16.25 3.125Z" stroke="#808080" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										| <path d="M13.75 1.875V4.375" stroke="#808080" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										| <path d="M6.25 1.875V4.375" stroke="#808080" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										| <path d="M3.125 6.875H16.875" stroke="#808080" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										| <path d="M6.875 10L8.125 9.375V14.375" stroke="#808080" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										| <path d="M10.7922 10.0011C10.8777 9.85385 10.9924 9.72562 11.1293 9.62428C11.2662 9.52295 11.4223 9.45065 11.5881 9.41182C11.7539 9.373 11.9259 9.36847 12.0936 9.3985C12.2612 9.42854 12.4209 9.49252 12.563 9.5865C12.705 9.68049 12.8263 9.8025 12.9195 9.94506C13.0126 10.0876 13.0757 10.2477 13.1048 10.4155C13.1338 10.5833 13.1283 10.7553 13.0885 10.9209C13.0488 11.0865 12.9756 11.2422 12.8734 11.3785L10.625 14.3761H13.125" stroke="#808080" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										| </svg>
+										//svg(width="20" height="20" aria-hidden="true")
+										//	use(xlink:href="#icon-calendar")
+								p.form__hint Можно ввести дату вручную в формате ДД/ММ/ГГГГ или выбрать из календаря
+							.request-form__item.form__item
+								label.form__label(for="phone") Номер телефона*
+								input#phone.form__input(type="tel" name="phone" placeholder="Телефон" required)
+							.request-form__item.form__item
+								label.form__label(for="email") Email*
+								input#email.form__input(type="email" name="email" placeholder="E-mail" required)
+							.request-form__actions.form__item
+								button.btn.btn_green.request-form__submit(type="submit")
+									span Следующий шаг
+						.request-form__meta
+							.request-form__report-wrapper
+								a.text.text_grey.link.request-form__report(href="https://www.bitrix24.ru/abuse/?b24_form_id=60&amp;b24_address=https%3A%2F%2Fano-oka.bitrix24.ru&amp;b24_form_address=https%3A%2F%2Foka-agency.com%2Fru%2Frequest-form%2F" target="_blank" rel="nofollow") Report abuse
+								.request-form__report-tooltip
+									.request-form__report-icon
+									.request-form__tooltip-wrapper
+										.request-form__tooltip
+											p.text.request-form__tooltip-text Bitrix24&nbsp;is not responsible for information supplied in&nbsp;this form. However, you can always report a&nbsp;violation.
+							p.text.text_grey.request-form__report Powered by Bitrix 24

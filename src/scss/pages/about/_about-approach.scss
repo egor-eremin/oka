@@ -1,52 +1,71 @@
-.about-approach {
-	padding-top: rem(111px);
-
-	@include laptop {
-		padding-top: rem(40px);
-	}
+.about-advantages__picture {
+	display: flex;
 }
 
 .about-approach__img {
-	width: rem(270px);
 	border-radius: rem(20px);
 
-	@include tablet {
+	@include laptop {
 		width: 100%;
 	}
 }
 
-.about-approach__col {
+.about-approach__content-wrapper {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: rem(30px);
+
+	@include laptop {
+		grid-template-columns: 1fr;
+		gap: rem(24px);
+	}
 }
 
-.about-approach__col_media {
-	margin-bottom: rem(30px);
+.about-approach__text-wrapper {
+	border-radius: rem(20px);
+	padding: rem(30px);
 }
 
-.about-approach__images-col_1 {
+.about-approach__header {
 	display: flex;
-	justify-content: flex-end;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.about-approach__controls {
+	display: flex;
+	gap: rem(20px);
 }
 
 .about-approach__text {
-	margin-bottom: rem(11px);
-	letter-spacing: rem(0.2px);
+	font-weight: 700;
 
-	&:last-child {
-		margin-bottom: 0;
+	span {
+		color: var(--color-green);
 	}
 }
 
-.about-approach__col_content {
-	@include tablet {
-		grid-template-columns: 1fr;
-	}
-}
+.about-approach__slider {
+	margin-bottom: rem(50px) !important;
+	margin-left: rem(-12px);
+	margin-right: rem(-12px);
 
-.about-approach__img_second {
-	@include tablet {
-		width: calc(50% - 0.9375rem);
+	.slick-slide {
+		& > div {
+			display: flex;
+			padding-left: rem(12px);
+			padding-right: rem(12px);
+
+			@include laptop {
+				padding-left: rem(8px);
+				padding-right: rem(8px);
+			}
+		}
+	}
+
+	@include mobile {
+		margin-left: rem(-8px);
+		margin-right: rem(-8px);
 	}
 }

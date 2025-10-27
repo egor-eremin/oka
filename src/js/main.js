@@ -437,14 +437,17 @@ function initCustomSlider({
 							  prevArrowSelector,
 							  nextArrowSelector,
 							  paginationSelector,
-							  slideToShow = 4
+							  slideToShow = 4,
+							  slideToShowLaptop = 3,
+							  slideToShowTablet = 2,
+							  slideToShowMobile = 1
 						  }) {
 	const $slider = $(sliderSelector);
 	if (!$slider.length) return;
 
 	const slidesCount = $slider.children().length;
 
-	// Аналог watchOverflow — если слайдов меньше, чем нужно, не инициализируем
+	// Если слайдов меньше, чем нужно — не инициализируем
 	if (slidesCount <= slideToShow) {
 		$slider.addClass('is-static');
 		$(prevArrowSelector).closest('.slider-nav').hide();
@@ -465,36 +468,36 @@ function initCustomSlider({
 		nextArrow: $(nextArrowSelector),
 		appendDots: $(paginationSelector),
 		dotsClass: 'pagination',
-		customPaging: function() {
+		customPaging: function () {
 			return '<button type="button" class="pagination__item pagination__item_green"></button>';
 		},
 		responsive: [
 			{
 				breakpoint: 1025,
 				settings: {
-					slidesToShow: 3
+					slidesToShow: slideToShowLaptop
 				}
 			},
 			{
 				breakpoint: 901,
 				settings: {
-					slidesToShow: 2
+					slidesToShow: slideToShowTablet
 				}
 			},
 			{
 				breakpoint: 651,
 				settings: {
-					slidesToShow: 1
+					slidesToShow: slideToShowMobile
 				}
-			},
+			}
 		]
 	});
-
 }
 
 function aosInit() {
 	AOS.init({
 		// duration: 500,
+		// offset: -800,
 	});
 }
 
@@ -752,7 +755,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMainAdvantagesSlider();
 	initStagesSliders();
 	// initAiHelperStick();
-	aosInit();
 	initCustomSlider({
 		sliderSelector: '.js-about-team',
 		prevArrowSelector: '.about-team__nav_prev',
@@ -767,10 +769,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		paginationSelector: '.partners__pagination',
 		slideToShow: 4
 	});
+	initCustomSlider({
+		sliderSelector: '.js-about-approach-slider',
+		prevArrowSelector: '.about-approach__nav_prev',
+		nextArrowSelector: '.about-approach__nav_next',
+		paginationSelector: '.about-approach__pagination',
+		slideToShow: 1,
+		slideToShowLaptop: 1,
+		slideToShowTablet: 1,
+		slideToShowMobile: 1
+	});
 	initTabs('.js-tabs-init');
 	updateOfficeStatus();
 	setInterval(updateOfficeStatus, 15000);
 	initFilterSort();
 	initSearchClear();
+	setTimeout(() => {
+		aosInit();
+	}, 100)
 });
 

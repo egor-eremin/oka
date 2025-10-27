@@ -2,22 +2,42 @@ section.section.about-approach.animation(data-aos)
 	.wrapper.animation__wrapper
 		.section__header.about-approach__header
 			h2.title-h2.about-approach__title Наш подход
-		.about-approach__grid
-			.about-approach__col.about-approach__col_media
-					.about-approach__images-col.about-approach__images-col_1
+			.about-approach__controls.slider-nav
+				button.slider-nav__arrow.slider-nav__arrow-prev.about-approach__nav.about-approach__nav_prev(type="button")
+					span.visually-hidden Предыдущий слайд
+					.slider-nav__disabled-bg
+					| <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M0 0L22 0" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,27,16)"/><path d="M0 0L9 9L0 18" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1,0,0,1,14,7)"/></svg>
+				button.slider-nav__arrow.slider-nav__arrow-next.about-approach__nav.about-approach__nav_next(type="button")
+					span.visually-hidden Следующий слайд
+					.slider-nav__disabled-bg
+					| <svg class="slider-nav__svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path d="M5 16L27 16" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M18 7L27 16L18 25" fill-rule="nonzero" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+		.about-approach__slider.js-about-approach-slider
+			.about-approach__slider-item
+				.about-approach__content-wrapper
+					.about-approach__col.about-approach__col_1
 						picture.about-advantages__picture
-							source(media="(max-width: 768px)" srcset=`${baseDirCurImg}about-approach-1@2x.webp`)
-							img.about-approach__img(src=`${baseDirCurImg}about-approach-1.webp` srcset=`${baseDirCurImg}about-approach-1@2x.webp 2x` width="270" height="270" alt="Танцы на культурном мероприятии")
-					.about-approach__images-col.about-approach__images-col_2
+							source(media="(max-width: 1024px)" srcset=`${baseDirCurImg}about-approach-1@2x.webp`)
+							img.about-approach__img(src=`${baseDirCurImg}about-approach-1.webp` srcset=`${baseDirCurImg}about-approach-1@2x.webp 2x` width="570" height="400" alt="Пара танцует на празднике вместе с участниками в национальных костюмах")
+					.about-approach__col.about-approach__col_2
+						.about-approach__text-wrapper.glass-card
+							p.text.text_mid.about-approach__text <span>Наш подход основан на&nbsp;профессионализме, глубоком опыте и&nbsp;системном видении процесса переезда.</span> Мы&nbsp;выстроили работу так, чтобы для вас он&nbsp;был максимально прозрачным, понятным и&nbsp;предсказуемым на&nbsp;каждом этапе.
+			.about-approach__slider-item
+				.about-approach__content-wrapper
+					.about-approach__col.about-approach__col_1
 						picture.about-advantages__picture
-							source(media="(max-width: 768px)" srcset=`${baseDirCurImg}about-approach-2@2x.webp`)
-							img.about-approach__img(src=`${baseDirCurImg}about-approach-2.webp` srcset=`${baseDirCurImg}about-approach-2@2x.webp 2x` width="270" height="270" alt="Люди в национальных костюмах")
-			.about-approach__col.about-approach__col_content
-				.about-approach__content-img
-					picture.about-advantages__picture
-						source(media="(max-width: 768px)" srcset=`${baseDirCurImg}about-approach-3@2x.webp`)
-						img.about-approach__img.about-approach__img_second(src=`${baseDirCurImg}about-approach-3.webp` srcset=`${baseDirCurImg}about-approach-3@2x.webp 2x` width="360" height="300" alt="Чайная церемония")
-				.about-approach__text-wrapper
-					p.text.about-approach__text Наш подход основан на&nbsp;профессионализме, глубоком опыте и&nbsp;системном видении процесса переезда. Мы&nbsp;выстроили работу так, чтобы для вас он&nbsp;был максимально прозрачным, понятным и&nbsp;предсказуемым на&nbsp;каждом этапе.
-					p.text.about-approach__text Мы&nbsp;не&nbsp;просто консультируем, а&nbsp;ведем полное сопровождение, беря на&nbsp;себя решение всех задач&nbsp;&mdash; от&nbsp;юридических до&nbsp;бытовых. Наша уникальность в&nbsp;том, что мы&nbsp;понимаем вас с&nbsp;полуслова: часть нашей команды, включая генерального директора Якоба Пиннекера, сама прошла путь интеграции в&nbsp;новой стране.
-					p.text.about-approach__text Для нас важны долгосрочные отношения, поэтому мы&nbsp;не&nbsp;только оказываем услуги, но&nbsp;и&nbsp;интегрируем вас в&nbsp;комьюнити переселенцев, оказывая поддержку и&nbsp;после переезда.
+							source(media="(max-width: 1024px)" srcset=`${baseDirCurImg}about-approach-2@2x.webp`)
+							img.about-approach__img(src=`${baseDirCurImg}about-approach-2.webp` srcset=`${baseDirCurImg}about-approach-2@2x.webp 2x` width="570" height="400" alt="Женщина обнимает ребёнка, рядом улыбаются участники встречи")
+					.about-approach__col.about-approach__col_2
+						.about-approach__text-wrapper.glass-card
+							p.text.text_mid.about-approach__text Мы&nbsp;не&nbsp;просто консультируем, <span>а&nbsp;ведем полное сопровождение, беря на&nbsp;себя решение всех задач&nbsp;&mdash; от&nbsp;юридических до&nbsp;бытовых.</span> Наша уникальность в&nbsp;том, что мы&nbsp;понимаем вас с&nbsp;полуслова: часть нашей команды, включая генерального директора Якоба Пиннекера, сама прошла путь интеграции в&nbsp;новой стране.
+			.about-approach__slider-item
+				.about-approach__content-wrapper
+					.about-approach__col.about-approach__col_1
+						picture.about-advantages__picture
+							source(media="(max-width: 1024px)" srcset=`${baseDirCurImg}about-approach-3@2x.webp`)
+							img.about-approach__img(src=`${baseDirCurImg}about-approach-3.webp` srcset=`${baseDirCurImg}about-approach-3@2x.webp 2x` width="570" height="400" alt="Женщина общается с ребёнком на природе, создавая атмосферу доверия и поддержки")
+					.about-approach__col.about-approach__col_2
+						.about-approach__text-wrapper.glass-card
+							p.text.text_mid.about-approach__text Для нас важны долгосрочные отношения, поэтому мы&nbsp;не&nbsp;только оказываем услуги, но&nbsp;и&nbsp;<span>интегрируем вас в&nbsp;комьюнити переселенцев, оказывая поддержку и&nbsp;после переезда.</span>
+		.about-approach__pagination.pagination
+			span.visually-hidden Пагинация слайдера
