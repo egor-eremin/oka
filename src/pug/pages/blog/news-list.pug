@@ -1,0 +1,72 @@
+section.section.section_last.news-list
+	.wrapper
+		.section__header
+			h2.title-h2 Новости и&nbsp;статьи
+		.filter.news-list__filter
+			.filter__btn-wrapper
+				button.btn.btn_white-second-2.filter__btn(data-filter="all") Все
+				button.btn.btn_white-second-2.filter__btn.is-checked(data-filter="migration") Миграция
+				button.btn.btn_white-second-2.filter__btn(data-filter="real-estate") Недвижимость
+				button.btn.btn_white-second-2.filter__btn.is-checked(data-filter="life") Жизнь
+				button.btn.btn_white-second-2.filter__btn(data-filter="career") Карьера и работа
+				button.btn.btn_white-second-2.filter__btn(data-filter="business") Бизнес и финансы
+				button.btn.btn_white-second-2.filter__btn(data-filter="education") Образование
+			.filter__select-wrapper
+				.filter__sort
+					button(type="button").filter__sort-btn
+						span.filter__sort-label Сначала новые
+					ul.filter__sort-menu
+						li.filter__sort-menu-item
+							button(type="button" data-value="new").filter__sort-option.is-active Сначала новые
+						li.filter__sort-menu-item
+							button(type="button" data-value="old").filter__sort-option Сначала старые
+		.news-list__wrapper
+			arcticle.news-list__item(data-category="migration")
+				.news-list__img-wrapper
+					picture.news-list__picture
+						source(media="(max-width: 768px)" srcset=`${baseDirCurImg}news-1@2x.webp`)
+						img.news-list__img(src=`${baseDirCurImg}news-1.webp` srcset=`${baseDirCurImg}news-1@2x.webp 1x` width="568" height="227" alt="Молодой предприниматель в деловом костюме сидит за столом")
+				.news-list__text-wrapper
+					h3.text.news-list__title-h3 Бизнес в&nbsp;России: просто, легально, с&nbsp;государственной поддержкой
+					p.text.text_sm.news-list__prev-text Россия активно привлекает иностранных предпринимателей и&nbsp;инвесторов, предлагая выгодные условия для ведения бизнеса. Благодаря специальным программам, упрощенным процедурам регистрации и&nbsp;налоговым льготам, иностранцы могут успешно запускать и&nbsp;развивать свои проекты на&nbsp;одном из&nbsp;самых перспективных рынков Евразии.
+					a.text.link.link_second.news-list__link(href=`${langPrefix}/blog/details/`) Читать далее
+					.news-list__footer
+						p.text.text_sm.news-list__info 06 августа 2025
+						p.text.text_sm.news-list__info 5 мин.
+			arcticle.news-list__item(data-category="real-estate")
+				.news-list__img-wrapper
+					picture.news-list__picture
+						source(media="(max-width: 768px)" srcset=`${baseDirCurImg}news-2@2x.webp`)
+						img.news-list__img(src=`${baseDirCurImg}news-2.webp` srcset=`${baseDirCurImg}news-2@2x.webp 1x` width="568" height="227" alt="Человек передает паспорт в руки другому человеку")
+				.news-list__text-wrapper
+					h3.text.news-list__title-h3 Как стать гражданином России
+					p.text.text_sm.news-list__prev-text Мы&nbsp;подготовили дорожную карту и&nbsp;некоторые рекомендации о&nbsp;том, как получить гражданство в&nbsp;России в&nbsp;соответствии с&nbsp;Федеральным законом &laquo;О&nbsp;гражданстве Российской Федерации&raquo; &#8470; 138-ФЗ.
+					a.text.link.link_second.news-list__link(href=`${langPrefix}/blog/details/`) Читать далее
+					.news-list__footer
+						p.text.text_sm.news-list__info 17 апреля 2025
+						p.text.text_sm.news-list__info 5 мин.
+			arcticle.news-list__item(data-category="education")
+				.news-list__img-wrapper
+					picture.news-list__picture
+						source(media="(max-width: 768px)" srcset=`${baseDirCurImg}news-3@2x.webp`)
+						img.news-list__img(src=`${baseDirCurImg}news-3.webp` srcset=`${baseDirCurImg}news-3@2x.webp 1x` width="568" height="227" alt="Мужчина в рубашке и фартуке стоит на фоне зеленого поля")
+				.news-list__text-wrapper
+					h3.text.news-list__title-h3 Фермерство в&nbsp;России&nbsp;&mdash; иммиграция в&nbsp;Россию и&nbsp;создание фермы
+					p.text.text_sm.news-list__prev-text Несмотря на&nbsp;то, что в&nbsp;настоящее время в&nbsp;России отсутствует специальная программа по&nbsp;привлечению иностранных фермеров для переезда и&nbsp;ведения сельского хозяйства в&nbsp;стране, многие интересные возможности все еще доступны! И&nbsp;мы&nbsp;можем предложить ценную информацию о&nbsp;том, как начать фермерский бизнес в&nbsp;России и&nbsp;как переехать сюда.
+					a.text.link.link_second.news-list__link(href=`${langPrefix}/blog/details/`) Читать далее
+					.news-list__footer
+						p.text.text_sm.news-list__info 20 октября 2024
+						p.text.text_sm.news-list__info 5 мин.
+			arcticle.news-list__item(data-category="business")
+				.news-list__img-wrapper
+					picture.news-list__picture
+						source(media="(max-width: 768px)" srcset=`${baseDirCurImg}news-4@2x.webp`)
+						img.news-list__img(src=`${baseDirCurImg}news-4.webp` srcset=`${baseDirCurImg}news-4@2x.webp 1x` width="568" height="227" alt="Деловые люди обсуждают документы за ноутбуком")
+				.news-list__text-wrapper
+					h3.text.news-list__title-h3 Виза общих ценностей и&nbsp;вид на&nbsp;жительство в&nbsp;России
+					p.text.text_sm.news-list__prev-text Уникальная иммиграционная инициатива, запущенная российским правительством 19&nbsp;сентября 2024&nbsp;года. Эта программа позволяет гражданам и&nbsp;постоянным жителям некоторых стран переехать в&nbsp;Россию при условии, что они принимают и&nbsp;продвигают традиционные российские ценности.
+					a.text.link.link_second.news-list__link(href=`${langPrefix}/blog/details/`) Читать далее
+					.news-list__footer
+						p.text.text_sm.news-list__info 06 сентября 2024
+						p.text.text_sm.news-list__info 5 мин.
+		button.text.link.link_second.news-list__show-more Показать еще

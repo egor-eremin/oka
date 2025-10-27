@@ -86,3 +86,21 @@
 		margin-bottom: 0;
 	}
 }
+
+.faq__btn-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: rem(16px) rem(40px);
+	margin-bottom: rem(30px);
+}
+
+.faq__title-h3 {
+	max-width: rem(970px);
+	letter-spacing: rem(-1.13px);
+	margin-bottom: rem(30px);
+
+	@include laptop {
+		margin-bottom: 0;
+	}
+}

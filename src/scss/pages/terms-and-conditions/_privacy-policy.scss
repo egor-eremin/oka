@@ -1,0 +1,28 @@
+.privacy-policy__prev-text {
+	max-width: rem(570px);
+	margin-bottom: rem(30px);
+}
+
+.privacy-policy__header {
+	display: grid;
+	grid-template-columns: rem(70px) 1fr;
+	gap: rem(20px) rem(130px);
+	padding-right: rem(100px);
+
+	@include laptop {
+		padding-right: rem(40px);
+		gap: rem(20px) rem(60px);
+	}
+
+	@include mobile {
+		gap: rem(20px) rem(32px);
+	}
+}
+
+.privacy-policy__header_answer {
+	padding-right: 0;
+}
+
+.privacy-policy__answer {
+	max-width: none;
+}

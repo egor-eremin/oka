@@ -18,13 +18,11 @@
 
 .main-contacts__iframe {
 	max-width: 100%;
+	height: 100%;
 	border-radius: rem(20px);
 
 	@include laptop {
 		width: 100%;
-	}
-
-	@include mobile {
 		height: rem(400px);
 	}
 }
@@ -51,15 +49,24 @@
 }
 
 .main-contacts__card {
-	padding: rem(25px);
+	padding: rem(30px);
+
+	&_full-width {
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
 }
 
 .main-contacts__label {
-	margin-bottom: rem(9px);
+	margin-bottom: rem(20px);
 }
 
 .main-contacts__text {
 	margin-bottom: rem(9px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .main-contacts__card-item {

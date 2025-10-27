@@ -42,3 +42,67 @@ img {
 div[id^="wait_comp_"] {
 	display: none !important;
 }
+
+input {
+	&:-webkit-autofill {
+		-webkit-text-fill-color: var(--color-black);
+		caret-color: var(--color-black);
+	}
+
+	&::-webkit-input-placeholder {
+		transition: 0.3s ease-out;
+		color: var(--color-grey);
+		opacity: 1;
+		font-size: $font-size-second;
+		line-height: 1;
+	}
+
+	&::-moz-placeholder {
+		transition: 0.3s ease-out;
+		color: var(--color-grey);
+		opacity: 1;
+		font-size: $font-size-second;
+		line-height: 1;
+	}
+
+	&::-moz-placeholder {
+		transition: 0.3s ease-out;
+		color: var(--color-grey);
+		opacity: 1;
+		font-size: $font-size-second;
+		line-height: 1;
+	}
+
+	&::-ms-input-placeholder {
+		transition: 0.3s ease-out;
+		color: var(--color-grey);
+		opacity: 1;
+		font-size: $font-size-second;
+		line-height: 1;
+	}
+
+	&::placeholder {
+		transition: 0.3s ease-out;
+		color: var(--color-grey);
+		opacity: 1;
+		font-size: $font-size-second;
+		line-height: 1;
+	}
+
+	&:focus {
+		outline: none;
+
+		&::-webkit-input-placeholder {
+			opacity: 0;
+		}
+		&::-moz-placeholder {
+			opacity: 0;
+		}
+		&:-moz-placeholder {
+			opacity: 0;
+		}
+		&:-ms-input-placeholder {
+			opacity: 0;
+		}
+	}
+}

@@ -65,6 +65,13 @@
 @import "pages/services/service-details";
 @import "pages/services/service-steps";
 @import "pages/contacts/contacts";
+@import "pages/terms-and-conditions/privacy-policy";
+@import "pages/404/main-404";
+@import "pages/blog/news-list";
+@import "blocks/filter";
+@import "pages/blog/details/blog-content";
+@import "blocks/content";
+@import "pages/search/search";
 
 //Всегда самый последний!
 @import "helpers";

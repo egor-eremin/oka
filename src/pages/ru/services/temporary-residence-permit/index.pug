@@ -2,10 +2,11 @@ extends ../../../../pug/base
 
 append vars
 	- lang = "ru"
-	- currentPage = "temporary-residence-permit"
+	- currentPage = "services"
+	- currentSlug = "temporary-residence-permit"
 	- baseDir = '../../../'
 	- baseDirImg = `${baseDir}images/`
-	- baseDirCurImg = `${baseDir}images/services/${currentPage}/`
+	- baseDirCurImg = `${baseDir}images/${currentPage}/${currentSlug}/`
 	- const langPrefix = (lang === 'en') ? '' : `/${lang}`;
 	- title = "The OKA Agency facilitates relocation to Russia by assisting with TRPs, residence permits, citizenship, and offering personal consultations. - Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship.  Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship."
 	- description = "Simplify Your Move to Russia. Relocating to a new country is challenging—we make it effortless. Our services include: Personal Consultations, Temporary Residence Permits (TRP), Residence Permits, Russian Citizenship."

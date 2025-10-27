@@ -100,6 +100,7 @@
 
 .main-about__info-text {
 	margin-bottom: rem(11px);
+	line-height: rem(24px);
 
 	&:last-child {
 		margin-bottom: 0;
@@ -107,6 +108,10 @@
 
 	span {
 		color: var(--color-green);
+	}
+
+	@include laptop {
+		line-height: 1.2;
 	}
 }
 
@@ -125,7 +130,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: rem(30px);
-	margin-top: rem(101px);
+	margin-top: rem(80px);
 
 	@include laptop {
 		grid-template-columns: repeat(2, 1fr);

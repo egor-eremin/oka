@@ -16,3 +16,13 @@
 		font-size: rem(48px);
 	}
 }
+
+.title-h3_second {
+	font-size: rem(32px);
+	font-weight: 800;
+	line-height: 1.2;
+
+	@include laptop {
+		font-size: rem(24px);
+	}
+}

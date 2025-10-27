@@ -9,7 +9,7 @@
 }
 
 .success-stories__header {
-	margin-bottom: rem(90px);
+	margin-bottom: rem(77px);
 
 	@include laptop {
 		margin-bottom: rem(32px);
@@ -38,7 +38,7 @@
 }
 
 .success-stories__left {
-	max-width: rem(544px);
+	max-width: rem(450px);
 
 	@include laptop {
 		max-width: none;
@@ -53,7 +53,7 @@
 	backdrop-filter: blur(3.125rem);
 	background: rgba(255, 255, 255, 0.6);
 	border: 1px solid rgba(255, 255, 255, 0.5);
-	margin-bottom: rem(74px);
+	margin-bottom: rem(30px);
 
 	@include laptop {
 		margin-bottom: rem(32px);
@@ -61,14 +61,10 @@
 }
 
 .success-stories__card-title {
-	font-weight: 800;
-	font-size: rem(32px);
-	letter-spacing: rem(-1.3px);
+	font-weight: 700;
+	font-size: rem(24px);
+	//letter-spacing: rem(-1.3px);
 	margin-bottom: rem(16px);
-
-	@include laptop {
-		font-size: $font-size-medium;
-	}
 }
 
 .success-stories__card-author {
@@ -77,11 +73,13 @@
 }
 
 .success-stories__image {
-	width: rem(476px);
+	width: rem(600px);
 	border-radius: rem(20px);
 
 	@include laptop {
 		width: auto;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	@include tablet {
@@ -93,7 +91,7 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	right: rem(60px);
+	right: rem(40px);
 	z-index: 1;
 
 	@include laptop {
@@ -106,7 +104,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: rem(30px);
-	margin-top: rem(90px);
+	margin-top: rem(77px);
 
 	@include laptop {
 		grid-template-columns: 1fr;

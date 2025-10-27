@@ -1,0 +1,174 @@
+.filter {
+	display: flex;
+	justify-content: space-between;
+	gap: rem(32px);
+	align-items: flex-end;
+
+	@include mobile {
+		flex-direction: column;
+		gap: rem(16px);
+	}
+}
+
+.filter__btn {
+	padding: rem(3px) rem(11px);
+	font-weight: 400;
+	transition: background-color 0.3s ease-out;
+	height: rem(27px);
+
+	&.is-checked {
+		color: var(--color-white);
+		background-color: var(--color-green);
+		border-color: var(--color-green);
+		padding-right: rem(41px);
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			right: rem(10px);
+			left: auto;
+			top: 50%;
+			transform: translateY(-50%);
+			width: rem(16px);
+			height: rem(16px);
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-image: url($baseDirMain + "filter-close.svg");
+			opacity: 1;
+		}
+	}
+
+	@include laptop {
+		font-size: rem(14px);
+	}
+}
+
+.filter__btn-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(14px);
+
+	@include laptop {
+		gap: rem(10px) rem(8px);
+	}
+
+	@include mobile {
+		margin-right: auto;
+	}
+}
+
+.filter__select-wrapper {
+	flex-shrink: 0;
+}
+
+.filter__sort {
+	position: relative;
+}
+
+.filter__sort-menu {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: rem(8px);
+	width: max-content;
+	min-width: 100%;
+	opacity: 0;
+	border-radius: rem(6px);
+	padding: rem(16px);
+	box-shadow: 0px rem(4px) rem(10px) rem(2px) rgba(0, 0, 0, 0.25);
+	background-color: var(--color-white);
+	transition: opacity 0.3s ease-out;
+	pointer-events: none;
+	right: 0;
+	bottom: rem(-8px);
+	transform: translateY(100%);
+
+	&.is-open {
+		opacity: 1;
+		pointer-events: initial;
+	}
+}
+
+.filter__sort-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: rem(27px);
+	position: relative;
+	padding-right: rem(48px);
+	color: var(--color-green);
+
+	&::before {
+		content: "";
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: rem(32px);
+		height: rem(32px);
+		background: url($baseDirMain + "filter-select.svg") no-repeat;
+		background-size: 100%;
+
+		@include laptop {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&:hover {
+		color: var(--color-dark-green);
+	}
+
+	&:active {
+		color: var(--color-dark);
+	}
+
+	&.is-reversed {
+		&::before {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+
+	@include laptop {
+		padding-right: rem(32px);
+		font-size: rem(16px);
+	}
+}
+
+.filter__sort-label {
+	font-weight: 700;
+	transition: color 0.3s ease-out;
+}
+
+.filter__sort-option {
+	font-size: rem(16px);
+	width: 100%;
+	text-align: left;
+	position: relative;
+	padding-right: rem(26px);
+
+	&:hover {
+		color: var(--color-green);
+	}
+
+	&:active {
+		color: var(--color-dark-green);
+	}
+
+	&.is-active {
+		&::before {
+			content: "";
+			width: rem(20px);
+			height: rem(20px);
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-image: url($baseDirMain + "check-icon.svg");
+		}
+	}
+}

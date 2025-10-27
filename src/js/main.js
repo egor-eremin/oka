@@ -683,6 +683,63 @@ function updateOfficeStatus() {
 	}
 }
 
+function initFilterSort() {
+	const sortBlock = document.querySelector('.filter__sort');
+	if (!sortBlock) return;
+
+	const btn = sortBlock.querySelector('.filter__sort-btn');
+	const label = sortBlock.querySelector('.filter__sort-label');
+	const menu = sortBlock.querySelector('.filter__sort-menu');
+	const options = menu.querySelectorAll('.filter__sort-option');
+
+	btn.addEventListener('click', () => {
+		menu.classList.toggle('is-open');
+	});
+
+	menu.addEventListener('click', (e) => {
+		if (e.target.matches('.filter__sort-option')) {
+			const value = e.target.dataset.value;
+			const text = e.target.textContent.trim();
+
+			// Обновляем надпись в кнопке
+			label.textContent = text;
+
+			// Закрываем меню
+			menu.classList.remove('is-open');
+
+			// Поворачиваем иконку (через класс)
+			btn.classList.toggle('is-reversed', value === 'old');
+
+			// Подсветка активного пункта
+			options.forEach(opt => opt.classList.remove('is-active'));
+			e.target.classList.add('is-active');
+
+			// Вызов сортировки (если нужно)
+			console.log('Сортировка:', value);
+		}
+	});
+
+	document.addEventListener('click', (e) => {
+		if (!e.target.closest('.filter__sort')) {
+			menu.classList.remove('is-open');
+		}
+	});
+}
+
+function initSearchClear() {
+	const searchForm = document.querySelector('.search__search-form');
+	const searchInput = searchForm?.querySelector('.search__search-input');
+	const clearBtn = document.querySelector('.js-clear-search');
+
+	if (clearBtn && searchInput) {
+		clearBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+			searchInput.value = '';
+			searchInput.focus();
+		});
+	}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	setupValidationMessages();
 	openFormSearch();
@@ -713,5 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initTabs('.js-tabs-init');
 	updateOfficeStatus();
 	setInterval(updateOfficeStatus, 15000);
+	initFilterSort();
+	initSearchClear();
 });
 
