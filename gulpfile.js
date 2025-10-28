@@ -243,15 +243,18 @@ gulp.task('js', () => {
 		'node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
 		'node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
 		'node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js',
+		'node_modules/select2/dist/js/select2.full.js',
 		'src/js/vendor/aos.js',
 		'src/js/vendor/validation.js',
 		'src/js/vendor/select.js',
 		'node_modules/slick-slider/slick/slick.js',
-	])
-		.pipe(concat('vendor.js'))
+		'node_modules/air-datepicker/air-datepicker.js',
+	], { allowEmpty: true })
+		.pipe(concat('vendor.js', { newLine: ';\n' }))   // <-- важный момент
 		// .pipe(uglify())
-		.pipe(gulp.dest('build/js'))
+		.pipe(gulp.dest('build/js'));
 });
+
 
 gulp.task('js:main', () => {
 	return gulp.src('src/js/main.js')

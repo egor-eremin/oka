@@ -743,6 +743,172 @@ function initSearchClear() {
 	}
 }
 
+function initDatePicker() {
+	const inputs = document.querySelectorAll('.js-init-datepicker');
+	if (!inputs.length || typeof AirDatepicker === 'undefined') return;
+
+	// Определяем язык сайта
+	const currentLang = document.documentElement.lang || 'en';
+
+	// Локали
+	const locales = {
+		ru: {
+			days: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
+			daysShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+			daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+			months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+			monthsShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+			today: 'Сегодня',
+			clear: 'Очистить',
+			dateFormat: 'dd/MM/yyyy',
+			timeFormat: 'HH:mm',
+			firstDay: 1
+		},
+		de: {
+			days: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
+			daysShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
+			daysMin: ['So','Mo','Di','Mi','Do','Fr','Sa'],
+			months: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+			monthsShort: ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
+			today: 'Heute',
+			clear: 'Löschen',
+			dateFormat: 'dd.MM.yyyy',
+			timeFormat: 'HH:mm',
+			firstDay: 1
+		},
+		fr: {
+			days: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+			daysShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+			daysMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+			months: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+			monthsShort: ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Aoû','Sep','Oct','Nov','Déc'],
+			today: 'Aujourd’hui',
+			clear: 'Effacer',
+			dateFormat: 'dd/MM/yyyy',
+			timeFormat: 'HH:mm',
+			firstDay: 1
+		},
+		en: {
+			days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+			daysShort: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+			daysMin: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+			months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+			monthsShort: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+			today: 'Today',
+			clear: 'Clear',
+			dateFormat: 'MM/dd/yyyy',
+			timeFormat: 'HH:mm',
+			firstDay: 0
+		}
+	};
+
+	// Фолбэк, если язык не найден
+	const locale = locales[currentLang] || locales.en;
+
+	// Инициализация для всех инпутов
+	inputs.forEach(input => {
+		new AirDatepicker(input, {
+			locale: locale,
+			dateFormat: 'dd/MM/yyyy',
+			autoClose: true,
+			maxDate: new Date(),
+			// isMobile: window.innerWidth < 650,  // ← адаптивное определение
+			isMobile: false,
+			position: 'bottom right',
+
+			// Для мобильных добавляем кнопку
+			// buttons: window.innerWidth < 650 ? ['clear', {
+			// 	content: locale.today || 'Today',
+			// 	onClick: (dp) => {
+			// 		dp.hide();
+			// 	}
+			// }] : ['clear']
+		});
+	});
+}
+
+function initDateMask() {
+	const $inputs = $('.js-init-datepicker');
+	if (!$inputs.length || typeof $.fn.mask === 'undefined') return;
+
+	$inputs.mask('00/00/0000');
+}
+
+// Инициализация всех кастомных селектов (Select2)
+function initCustomSelects(context = document) {
+	const $root = $(context);
+	const $selects = $root.find('.js-custom-select select');
+
+	if (!$selects.length || !$.fn.select2) return;
+
+	// язык берём из <html lang="...">
+	const lang = (document.documentElement.lang || 'en').toLowerCase();
+
+	// Минимальный набор переводов (если не подключены i18n файлы select2)
+	const i18n = {
+		ru: {
+			errorLoading: () => 'Результаты не могут быть загружены.',
+			inputTooShort: args => `Введите ещё ${args.minimum - args.input.length} символ(а)`,
+			loadingMore: () => 'Загрузка…',
+			maximumSelected: args => `Вы можете выбрать не более ${args.maximum} элемент(ов)`,
+			noResults: () => 'Ничего не найдено',
+			searching: () => 'Поиск…',
+			removeAllItems: () => 'Удалить все элементы'
+		},
+		de: {
+			errorLoading: () => 'Die Ergebnisse konnten nicht geladen werden.',
+			inputTooShort: a => `Bitte ${a.minimum - a.input.length} Zeichen eingeben`,
+			loadingMore: () => 'Lade mehr…',
+			maximumSelected: a => `Sie können nur ${a.maximum} Element(e) auswählen`,
+			noResults: () => 'Keine Ergebnisse gefunden',
+			searching: () => 'Suchen…',
+			removeAllItems: () => 'Alle entfernen'
+		},
+		fr: {
+			errorLoading: () => 'Les résultats ne peuvent pas être chargés.',
+			inputTooShort: a => `Saisissez encore ${a.minimum - a.input.length} caractère(s)`,
+			loadingMore: () => 'Chargement…',
+			maximumSelected: a => `Vous ne pouvez sélectionner que ${a.maximum} élément(s)`,
+			noResults: () => 'Aucun résultat',
+			searching: () => 'Recherche…',
+			removeAllItems: () => 'Tout supprimer'
+		},
+		en: {
+			errorLoading: () => 'The results could not be loaded.',
+			inputTooShort: a => `Please enter ${a.minimum - a.input.length} more character(s)`,
+			loadingMore: () => 'Loading more…',
+			maximumSelected: a => `You can only select ${a.maximum} item(s)`,
+			noResults: () => 'No results found',
+			searching: () => 'Searching…',
+			removeAllItems: () => 'Remove all items'
+		}
+	};
+
+	$selects.each(function () {
+		const $el = $(this);
+
+		// если уже инициализирован — переинициализируем чисто
+		if ($el.data('select2')) $el.select2('destroy');
+
+		const $parent = $el.closest('.form__select'); // чтобы дропдаун жил внутри блока формы
+		const placeholder =
+			$el.attr('data-placeholder') ||
+			($el.find('option[disabled][selected]').text() || '');
+
+		$el.select2({
+			width: '100%',
+			dropdownAutoWidth: true,
+			dropdownParent: $parent.length ? $parent : $(document.body),
+			placeholder: placeholder || undefined,
+			allowClear: !!placeholder,
+			// Если нужно скрыть строку поиска для коротких списков — сделай Infinity
+			minimumResultsForSearch: 8,
+			language: i18n[lang] || i18n.en
+		});
+	});
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
 	setupValidationMessages();
 	openFormSearch();
@@ -784,6 +950,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	setInterval(updateOfficeStatus, 15000);
 	initFilterSort();
 	initSearchClear();
+	initDatePicker();
+	initDateMask();
+	initCustomSelects();
+
 	setTimeout(() => {
 		aosInit();
 	}, 100)

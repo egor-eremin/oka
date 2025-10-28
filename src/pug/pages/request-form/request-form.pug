@@ -5,10 +5,10 @@ section.section.section_last.request-form.form
 		.request-form__wrapper
 			.request-form__steps-container
 				ul.request-form__steps
-					li.request-form__steps-item.active
+					li.request-form__steps-item.request-form__steps-item_compeled
 						p.text.text_mid.request-form__step-number 1
 						p.text.text_mid.request-form__step-title Личные данные
-					li.request-form__steps-item
+					li.request-form__steps-item.request-form__steps-item_active
 						p.text.text_mid.request-form__step-number 2
 						p.text.text_mid.request-form__step-title Гражданство и&nbsp;цели
 					li.request-form__steps-item
@@ -21,12 +21,12 @@ section.section.section_last.request-form.form
 					p.text.text_white.request-form__privacy-title Не беспокойтесь!
 					p.text.text_white.request-form__privacy-text Форма является конфиденциальной, с&nbsp;ней работают только сотрудники агентства, далее информация не&nbsp;передается.
 					picture.request-form__picture
-						//source(media="(max-width: 1024px)" srcset=`${baseDirCurImg}about-approach-1@2x.webp`)
+						source(media="(max-width: 768px)" srcset=`${baseDirCurImg}privacy@2x.webp`)
 						img.request-form__img(src=`${baseDirCurImg}privacy.webp` srcset=`${baseDirCurImg}privacy@2x.webp 2x` width="335" height="255" alt="")
 			.request-form__form-container
 				.request-form__form
 					form(action="#" method="post")
-						fieldset.request-form__form-field
+						fieldset.request-form__form-field.hidden
 							legend.request-form__form-legend 1. Личные данные
 							.request-form__item.form__item
 								label.form__label(for="first-name") Имя*
@@ -37,7 +37,7 @@ section.section.section_last.request-form.form
 							.request-form__item.form__item
 								label.form__label(for="birthdate") Дата рождения*
 								.request-form__control.form__control
-									input#birthdate.form__input.form__input-date(type="text" name="birthdate" placeholder="Например: 18/10/1975" inputmode="numeric" required)
+									input#birthdate.form__input.form__input-date.js-init-datepicker(type="text" name="birthdate" placeholder="Например: 18/10/1975" inputmode="numeric" required)
 									span.form__date-btn(type="button")
 										span.visually-hidden Открыть календарь
 										| <svg class="form__date-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,8 +58,56 @@ section.section.section_last.request-form.form
 								label.form__label(for="email") Email*
 								input#email.form__input(type="email" name="email" placeholder="E-mail" required)
 							.request-form__actions.form__item
-								button.btn.btn_green.request-form__submit(type="submit")
+								button.btn.btn_green.request-form__btn.request-form__next(type="submit")
 									span Следующий шаг
+						fieldset.request-form__form-field
+							legend.request-form__form-legend 2. Гражданство и цели
+
+							// Родной язык*
+							.request-form__item.form__item
+								label.form__label(for="native-lang") Родной язык*
+								.form__select.js-custom-select
+									select#native-lang(name="native_lang" required)
+										option(value="" selected disabled) Выберите язык
+										option(value="ru") Русский
+										option(value="en") Английский
+										option(value="de") Немецкий
+										option(value="fr") Французский
+
+							// Гражданство*
+							.request-form__item.form__item
+								label.form__label(for="citizenship") Гражданство*
+								.form__select.js-custom-select
+									select#citizenship(name="citizenship" required)
+										option(value="" selected disabled) Выберите гражданство
+										option(value="ru") Россия
+										option(value="by") Беларусь
+										option(value="kz") Казахстан
+										option(value="other") Другая страна
+
+							// Цель обращения (input)
+							.request-form__item.form__item
+								label.form__label(for="goal") Цель обращения
+								input#goal.form__input(type="text" name="goal" placeholder="Укажите цель обращения")
+
+							// Регион
+							.request-form__item.form__item
+								label.form__label(for="region") Какой регион вы рассматриваете для проживания в России?
+								.form__select.js-custom-select
+									select#region(name="region")
+										option(value="" selected disabled) Выберите регион
+										option(value="msk") Москва
+										option(value="spb") Санкт-Петербург
+										option(value="nnov") Нижегородская область
+										option(value="other") Другой регион
+
+							// Кнопки
+							.request-form__actions.form__item
+								button.btn.btn_white.request-form__btn.request-form__prev(type="button")
+									span Назад
+								button.btn.btn_green.request-form__btn.request-form__next(type="submit")
+									span Следующий шаг
+
 						.request-form__meta
 							.request-form__report-wrapper
 								a.text.text_grey.link.request-form__report(href="https://www.bitrix24.ru/abuse/?b24_form_id=60&amp;b24_address=https%3A%2F%2Fano-oka.bitrix24.ru&amp;b24_form_address=https%3A%2F%2Foka-agency.com%2Fru%2Frequest-form%2F" target="_blank" rel="nofollow") Report abuse

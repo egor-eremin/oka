@@ -3,6 +3,24 @@
 	grid-template-columns: rem(343px) 1fr;
 	gap: rem(80px);
 	max-width: rem(1093px);
+
+	@include laptop {
+		grid-template-columns: 1fr;
+		gap: rem(40px);
+	}
+}
+
+.request-form__steps-container {
+	@include laptop {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		gap: rem(32px);
+	}
+
+	@include tablet {
+		flex-direction: column-reverse;
+	}
 }
 
 .request-form__steps {
@@ -10,6 +28,16 @@
 	flex-direction: column;
 	gap: rem(30px);
 	margin-bottom: rem(80px);
+
+	@include laptop {
+		margin-bottom: 0;
+		width: 100%;
+		max-width: 50%;
+	}
+
+	@include tablet {
+		max-width: 100%;
+	}
 }
 
 .request-form__steps-item {
@@ -37,7 +65,7 @@
 		}
 	}
 
-	&.active {
+	&_active {
 		&::before {
 			background-color: var(--color-green);
 		}
@@ -51,6 +79,27 @@
 			font-weight: 700;
 			color: var(--color-green);
 		}
+	}
+
+	&_compeled {
+		&::before {
+			background-color: var(--color-green);
+		}
+
+		.request-form__step-number {
+			border-color: var(--color-green);
+			background-color: var(--color-green);
+			color: var(--color-white);
+		}
+
+		.request-form__step-title {
+			font-weight: 700;
+			color: var(--color-green);
+		}
+	}
+
+	@include laptop {
+		gap: rem(24px);
 	}
 }
 
@@ -75,19 +124,40 @@
 
 .request-form__step-title {
 	flex-grow: 1;
-	transition: 0.3s ease-out;
+	transition: color 0.3s ease-out;
 	color: var(--color-grey);
 }
 
 .request-form__privacy-card {
 	padding: rem(30px) rem(4px) rem(4px);
 	border-radius: rem(20px);
+
+	@include laptop {
+		width: 100%;
+		max-width: 50%;
+		padding: rem(16px) rem(4px) rem(4px);
+	}
+
+	@include tablet {
+		max-width: 100%;
+		padding: rem(20px);
+	}
 }
 
 .request-form__privacy-title,
 .request-form__privacy-text {
 	padding-right: rem(30px);
 	padding-left: rem(30px);
+
+	@include laptop {
+		padding-right: rem(16px);
+		padding-left: rem(16px);
+	}
+
+	@include tablet {
+		padding-right: 0;
+		padding-left: 0;
+	}
 }
 
 .request-form__privacy-title {
@@ -96,6 +166,10 @@
 
 .request-form__privacy-text {
 	margin-bottom: rem(30px);
+
+	@include laptop {
+		margin-bottom: rem(16px);
+	}
 }
 
 .request-form__picture {
@@ -105,6 +179,11 @@
 .request-form__img {
 	border-radius: rem(16px);
 	width: 100%;
+
+	@include tablet {
+		max-height: rem(400px);
+		object-fit: cover;
+	}
 }
 
 .request-form__form {
@@ -127,18 +206,52 @@
 	color: var(--color-green);
 	border-bottom: 1px solid var(--color-light-grey);
 	margin-bottom: rem(30px);
+
+	@include laptop {
+		padding: rem(20px) rem(30px);
+	}
+
+	@include mobile {
+		font-size: rem(24px);
+		padding: rem(20px);
+	}
 }
 
 .request-form__item {
 	padding-left: rem(50px);
 	padding-right: rem(50px);
 	margin-bottom: rem(20px);
+
+	@include laptop {
+		padding-right: rem(30px);
+		padding-left: rem(30px);
+		margin-bottom: rem(32px);
+	}
+
+	@include mobile {
+		padding-right: rem(20px);
+		padding-left: rem(20px);
+	}
 }
 
 .request-form__actions {
 	padding-left: rem(50px);
 	padding-right: rem(50px);
 	margin-top: rem(50px);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: rem(20px);
+
+	@include laptop {
+		margin-top: rem(30px);
+		padding-left: rem(30px);
+		padding-right: rem(30px);
+	}
+
+	@include mobile {
+		padding-left: rem(20px);
+		padding-right: rem(20px);
+	}
 }
 
 .request-form__meta {
@@ -147,6 +260,15 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: rem(32px);
+
+	@include laptop {
+		padding: rem(30px);
+	}
+
+	@include mobile {
+		padding-right: rem(20px);
+		padding-left: rem(20px);
+	}
 }
 
 .request-form__report-tooltip {
@@ -172,6 +294,12 @@
 	opacity: 0;
 	pointer-events: none;
 	transition: 0.3s ease-out;
+
+	@include laptop {
+		left: rem(-24px);
+		transform: translateX(0) translateY(-100%);
+		width: rem(300px);
+	}
 }
 
 .request-form__report {
@@ -197,4 +325,11 @@
 	background-color: var(--color-white);
 	border-radius: rem(20px);
 	padding: rem(20px);
+}
+
+.request-form__btn {
+	&:last-child:first-child {
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
 }
