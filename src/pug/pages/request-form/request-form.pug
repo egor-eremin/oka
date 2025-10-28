@@ -25,7 +25,7 @@ section.section.section_last.request-form.form
 						img.request-form__img(src=`${baseDirCurImg}privacy.webp` srcset=`${baseDirCurImg}privacy@2x.webp 2x` width="335" height="255" alt="")
 			.request-form__form-container
 				.request-form__form
-					form(action="#" method="post")
+					form(action="#" method="post" enctype="multipart/form-data")
 						fieldset.request-form__form-field.hidden
 							legend.request-form__form-legend 1. Личные данные
 							.request-form__item.form__item
@@ -60,7 +60,7 @@ section.section.section_last.request-form.form
 							.request-form__actions.form__item
 								button.btn.btn_green.request-form__btn.request-form__next(type="submit")
 									span Следующий шаг
-						fieldset.request-form__form-field
+						fieldset.request-form__form-field.hidden
 							legend.request-form__form-legend 2. Гражданство и цели
 
 							// Родной язык*
@@ -72,6 +72,13 @@ section.section.section_last.request-form.form
 										option(value="ru") Русский
 										option(value="en") Английский
 										option(value="de") Немецкий
+										option(value="fr") Французский
+										option(value="fr") Французский
+										option(value="fr") Французский
+										option(value="fr") Французский
+										option(value="fr") Французский
+										option(value="fr") Французский
+										option(value="fr") Французский
 										option(value="fr") Французский
 
 							// Гражданство*
@@ -100,6 +107,45 @@ section.section.section_last.request-form.form
 										option(value="spb") Санкт-Петербург
 										option(value="nnov") Нижегородская область
 										option(value="other") Другой регион
+
+							// Кнопки
+							.request-form__actions.form__item
+								button.btn.btn_white.request-form__btn.request-form__prev(type="button")
+									span Назад
+								button.btn.btn_green.request-form__btn.request-form__next(type="submit")
+									span Следующий шаг
+
+						fieldset.request-form__form-field
+							legend.request-form__form-legend 3. Семья и работа
+
+							// Состав семьи*
+							.request-form__item.form__item
+								label.form__label(for="family") Состав семьи*
+								input#family.form__input(type="text" name="family" placeholder="Укажите количество и состав членов семьи" required)
+
+							// Нужна ли помощь с трудоустройством в России?
+							.request-form__item.form__item
+								p.form__label Нужна ли будет помощь с трудоустройством в России?
+								.form__radios
+									label.form__radio
+										input.form__radio-input.visually-hidden(type="radio" name="employment_help" value="yes")
+										span.form__radio-mark
+										span.form__radio-text Да
+									label.form__radio
+										input.form__radio-input.visually-hidden(type="radio" name="employment_help" value="no" checked)
+										span.form__radio-mark
+										span.form__radio-text Нет
+
+							// Резюме (загрузка файлов)
+							.request-form__item.form__item
+								p.form__label Резюме
+								.form__upload.js-native-upload
+									label.form__upload-label(for="resume")
+										span.form__upload-text Загрузить документ
+										span.form__upload-hint pdf, doc
+										input#resume.form__upload-input(type="file" name="resume[]" multiple accept=".pdf,.doc,.docx")
+									ul.form__upload-list.js-upload-list
+
 
 							// Кнопки
 							.request-form__actions.form__item

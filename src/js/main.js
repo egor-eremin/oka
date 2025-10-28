@@ -841,16 +841,22 @@ function initCustomSelects(context = document) {
 
 	if (!$selects.length || !$.fn.select2) return;
 
-	// язык берём из <html lang="...">
+	// какие селекты чем наполнять
+	const DATA_SOURCES = {
+		'#native-lang': '/select-options/select-lang.json',
+		'#citizenship': '/select-options/select-citizenship.json',
+		'#region': '/select-options/select-region.json',
+	};
+
+	// язык из <html lang="...">
 	const lang = (document.documentElement.lang || 'en').toLowerCase();
 
-	// Минимальный набор переводов (если не подключены i18n файлы select2)
 	const i18n = {
 		ru: {
 			errorLoading: () => 'Результаты не могут быть загружены.',
-			inputTooShort: args => `Введите ещё ${args.minimum - args.input.length} символ(а)`,
+			inputTooShort: a => `Введите ещё ${a.minimum - a.input.length} символ(а)`,
 			loadingMore: () => 'Загрузка…',
-			maximumSelected: args => `Вы можете выбрать не более ${args.maximum} элемент(ов)`,
+			maximumSelected: a => `Вы можете выбрать не более ${a.maximum} элемент(ов)`,
 			noResults: () => 'Ничего не найдено',
 			searching: () => 'Поиск…',
 			removeAllItems: () => 'Удалить все элементы'
@@ -884,16 +890,13 @@ function initCustomSelects(context = document) {
 		}
 	};
 
-	$selects.each(function () {
-		const $el = $(this);
-
-		// если уже инициализирован — переинициализируем чисто
+	const buildSelect2 = ($el) => {
 		if ($el.data('select2')) $el.select2('destroy');
 
-		const $parent = $el.closest('.form__select'); // чтобы дропдаун жил внутри блока формы
+		const $parent = $el.closest('.form__select');
 		const placeholder =
 			$el.attr('data-placeholder') ||
-			($el.find('option[disabled][selected]').text() || '');
+			($el.find('option[disabled][selected]').first().text() || '');
 
 		$el.select2({
 			width: '100%',
@@ -901,13 +904,91 @@ function initCustomSelects(context = document) {
 			dropdownParent: $parent.length ? $parent : $(document.body),
 			placeholder: placeholder || undefined,
 			allowClear: !!placeholder,
-			// Если нужно скрыть строку поиска для коротких списков — сделай Infinity
-			minimumResultsForSearch: 8,
-			language: i18n[lang] || i18n.en
+			minimumResultsForSearch: 8,  // сделай Infinity чтобы отключить поиск
+			language: i18n[lang] || i18n.en,
+			dropdownPosition: 'below'
 		});
+	};
+
+	$selects.each(function () {
+		const $el = $(this);
+		const id = this.id ? ('#' + this.id) : null;
+		const src = id && DATA_SOURCES[id];
+
+		// если источника нет — просто инициализируем
+		if (!src) {
+			buildSelect2($el);
+			return;
+		}
+
+		// сохраняем плейсхолдер
+		const $ph = $el.find('option[disabled][selected]').first();
+		// очищаем текущие опции, кроме плейсхолдера
+		$el.find('option').not($ph).remove();
+
+		$.getJSON(src)
+			.done(function (items) {
+				// ожидается массив объектов { value, label }
+				const frag = document.createDocumentFragment();
+				items.forEach(item => {
+					const opt = new Option(item.label, item.value, false, false);
+					frag.appendChild(opt);
+				});
+				$el.append(frag);
+				buildSelect2($el);
+			})
+			.fail(function () {
+				// даже если не загрузилось — инициализируем, чтобы не ломать UX
+				buildSelect2($el);
+			});
 	});
 }
 
+function initFilePond() {
+	if (!window.FilePond) return;
+
+	FilePond.registerPlugin(
+		FilePondPluginFileValidateType,
+		FilePondPluginFileValidateSize
+	);
+
+	FilePond.setOptions({
+		allowFileTypeValidation: true,
+		// Разрешаем только по расширениям
+		acceptedFileTypes: ['.pdf', '.doc', '.docx'],
+		fileValidateTypeDetectType: (source, type) =>
+			new Promise(resolve => {
+				const name = (source?.name || '').toLowerCase();
+				if (name.endsWith('.docx')) return resolve('.docx');
+				if (name.endsWith('.doc')) return resolve('.doc');
+				if (name.endsWith('.pdf')) return resolve('.pdf');
+				resolve(type);
+			}),
+
+		labelIdle:
+			'Перетащите файлы сюда или <span class="filepond--label-action">выберите</span>',
+		labelFileTypeNotAllowed: 'Недопустимый тип файла',
+		fileValidateTypeLabelExpectedTypes: 'Ожидаются PDF, DOC или DOCX',
+		maxFileSize: '5MB',
+		labelMaxFileSizeExceeded: 'Файл слишком большой',
+		labelMaxFileSize: 'Максимальный размер: {filesize}',
+	});
+
+	const inputs = document.querySelectorAll('.js-upload input[type="file"]');
+	inputs.forEach(input => {
+		if (input.dataset.filepondAttached === 'true') return;
+		FilePond.create(input, {
+			allowMultiple: input.hasAttribute('multiple'),
+			maxFiles: 5,
+		});
+		input.dataset.filepondAttached = 'true';
+	});
+
+	document.addEventListener('FilePond:addfile', e => {
+		const file = e.detail?.file?.file;
+		if (file) console.log('Добавлен файл:', file.name, 'type:', file.type);
+	});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 	setupValidationMessages();
