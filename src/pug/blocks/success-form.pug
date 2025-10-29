@@ -1,7 +1,14 @@
 .popup.success.mfp-hide.js-success-popup
-	p.success__title(role="heading" aria-level="2") Спасибо, заявка получена
-	p.success__text Мы свяжемся с вами в течение двух дней<br> по вашему запросу.
-	p.success__text Узнать больше о компании, предстоящих событиях и новостях кибербезопасности можно у нас на сайте.
-	button.btn.success__btn-close.js-success-close-btn Закрыть окно
+	p.title-h2.success__title-h2(role="heading" aria-level="2") Спасибо за вашу заявку!
+	p.text.text_mid.success__prev-title Мы свяжемся с вами в ближайшее время, а пока...
+	.success__telegram-wrapper.green-block
+		p.text.text_white.success__text Приглашаем вас заглянуть в&nbsp;наш телеграм-канал и&nbsp;почитать новости о&nbsp;России и&nbsp;деятельности агентства &laquo;ОКА&raquo;
+		a.btn.btn_white-second.success__telegram(href="https://telegram.me/relocation_to_russia" target="_blank") Telegram-канал
+	a.popup__close.js-close-popup(href=`${langPrefix}/`)
+		span.visually-hidden Закрыть окно
+		| <svg class="popup__svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+		|     <path d="M12.5 3.5L3.5 12.5" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.20000005" />
+		|     <path d="M12.5 12.5L3.5 3.5" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.20000005" />
+		| </svg>
 
 

@@ -251,6 +251,10 @@
 		padding-right: rem(30px);
 	}
 
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+
 	@include mobile {
 		padding-left: rem(20px);
 		padding-right: rem(20px);
@@ -335,4 +339,26 @@
 		grid-column-start: 1;
 		grid-column-end: -1;
 	}
+}
+
+.request-form__item-file {
+	&.is-disabled {
+		pointer-events: none;
+
+		.form__label {
+			color: var(--color-light-grey);
+		}
+
+		.form__upload {
+			border-color: var(--color-light-grey);
+		}
+
+		.form__upload-text, .form__upload-hint {
+			color: var(--color-light-grey);
+		}
+	}
+}
+
+.request-form__checkboxes {
+	margin-top: rem(7px);
 }

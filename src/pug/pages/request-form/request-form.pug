@@ -26,7 +26,7 @@ section.section.section_last.request-form.form
 			.request-form__form-container
 				.request-form__form
 					form(action="#" method="post" enctype="multipart/form-data")
-						fieldset.request-form__form-field.hidden
+						fieldset.request-form__form-field
 							legend.request-form__form-legend 1. Личные данные
 							.request-form__item.form__item
 								label.form__label(for="first-name") Имя*
@@ -73,13 +73,6 @@ section.section.section_last.request-form.form
 										option(value="en") Английский
 										option(value="de") Немецкий
 										option(value="fr") Французский
-										option(value="fr") Французский
-										option(value="fr") Французский
-										option(value="fr") Французский
-										option(value="fr") Французский
-										option(value="fr") Французский
-										option(value="fr") Французский
-										option(value="fr") Французский
 
 							// Гражданство*
 							.request-form__item.form__item
@@ -115,7 +108,7 @@ section.section.section_last.request-form.form
 								button.btn.btn_green.request-form__btn.request-form__next(type="submit")
 									span Следующий шаг
 
-						fieldset.request-form__form-field
+						fieldset.request-form__form-field.hidden
 							legend.request-form__form-legend 3. Семья и работа
 
 							// Состав семьи*
@@ -128,22 +121,23 @@ section.section.section_last.request-form.form
 								p.form__label Нужна ли будет помощь с трудоустройством в России?
 								.form__radios
 									label.form__radio
-										input.form__radio-input.visually-hidden(type="radio" name="employment_help" value="yes")
+										input.form__radio-input.visually-hidden.js-employment-yes(type="radio" name="employment_help" value="yes")
 										span.form__radio-mark
 										span.form__radio-text Да
 									label.form__radio
-										input.form__radio-input.visually-hidden(type="radio" name="employment_help" value="no" checked)
+										input.form__radio-input.visually-hidden.js-employment-no(type="radio" name="employment_help" value="no" checked)
 										span.form__radio-mark
 										span.form__radio-text Нет
 
 							// Резюме (загрузка файлов)
-							.request-form__item.form__item
+							.request-form__item.request-form__item-file.form__item
 								p.form__label Резюме
-								.form__upload.js-native-upload
-									label.form__upload-label(for="resume")
-										span.form__upload-text Загрузить документ
-										span.form__upload-hint pdf, doc
-										input#resume.form__upload-input(type="file" name="resume[]" multiple accept=".pdf,.doc,.docx")
+								.form__upload-wrapper
+									.form__upload.js-native-upload
+										label.form__upload-label(for="resume")
+											span.form__upload-text Загрузить документ
+											span.form__upload-hint pdf, doc
+											input#resume.form__upload-input(type="file" name="resume[]" multiple accept=".pdf,.doc,.docx")
 									ul.form__upload-list.js-upload-list
 
 
@@ -154,6 +148,40 @@ section.section.section_last.request-form.form
 								button.btn.btn_green.request-form__btn.request-form__next(type="submit")
 									span Следующий шаг
 
+						fieldset.request-form__form-field.hidden
+							legend.request-form__form-legend 4. Как вы нашли нас?
+							.request-form__item.form__item
+								p.form__label.form__label_lg Из какого источника вы узнали об OKA Agency?
+								.form__checkboxes.request-form__checkboxes
+									label.form__checkbox
+										input.form__checkbox-input.visually-hidden(type="checkbox" name="discovery[]" value="google")
+										span.form__checkbox-mark
+										span.form__checkbox-text Google
+									label.form__checkbox
+										input.form__checkbox-input.visually-hidden(type="checkbox" name="discovery[]" value="telegram")
+										span.form__checkbox-mark
+										span.form__checkbox-text Telegram
+									label.form__checkbox
+										input.form__checkbox-input.visually-hidden(type="checkbox" name="discovery[]" value="friends")
+										span.form__checkbox-mark
+										span.form__checkbox-text Рекомендация друзей
+									label.form__checkbox
+										input.form__checkbox-input.visually-hidden.js-discovery-other(type="checkbox" name="discovery[]" value="other")
+										span.form__checkbox-mark
+										span.form__checkbox-text Другое
+							.request-form__item.form__item.js-discovery-other-wrap.hidden
+								.request-form__control.form__control.form__textarea-wrapper
+									textarea#discovery-other.form__input.form__textarea-custom(name="discovery_other" placeholder="Напишите здесь свой вариант" maxlength="300")
+									p.form__counter
+										span.js-textarea-count 0
+										| /300
+
+							// Кнопки
+							.request-form__actions.form__item
+								button.btn.btn_white.request-form__btn.request-form__prev(type="button")
+									span Назад
+								button.btn.btn_green.request-form__btn.request-form__next(type="submit")
+									span Пропустить и отправить
 						.request-form__meta
 							.request-form__report-wrapper
 								a.text.text_grey.link.request-form__report(href="https://www.bitrix24.ru/abuse/?b24_form_id=60&amp;b24_address=https%3A%2F%2Fano-oka.bitrix24.ru&amp;b24_form_address=https%3A%2F%2Foka-agency.com%2Fru%2Frequest-form%2F" target="_blank" rel="nofollow") Report abuse

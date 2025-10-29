@@ -532,25 +532,6 @@ function initTabs(selector) {
 
 }
 
-$.validator.addMethod('filesize', function (value, element, param) {
-	let allSize = 0;
-
-	$.each(element.files, function () {
-		if (typeof this.size !== 'undefined') {
-			allSize += this.size;
-		}
-	});
-
-	return this.optional(element) || allSize <= param;
-}, 'Размер файла не должен превышать 5 мегабайт');
-$.validator.addMethod('fileType', function (value, element) {
-	let allowedExtensions = ['pdf', 'pptx', 'docx', 'doc'];
-	let fileName = element.files[0].name;
-	let fileExtension = fileName.split('.').pop().toLowerCase();
-
-	return this.optional(element) || $.inArray(fileExtension, allowedExtensions) !== -1;
-}, 'Файл не допустимого типа. Разрешены: pdf, pptx, docx, doc');
-
 $.validator.methods.email = function (value, element) {
 	/* return this.optional(element) || /^[a-zA-Z0-9А-Яа-яёЁ.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9А-Яа-яёЁ](?:[a-zA-Z0-9А-Яа-яёЁ-]{0,61}[a-zA-Z0-9А-Яа-яёЁ])?(?:\.[a-zA-Z0-9А-Яа-яёЁ](?:[a-zA-Z0-9А-Яа-яёЁ-]{0,61}[a-zA-Z0-9А-Яа-яёЁ])?)*\.[a-zA-ZА-Яа-яёЁ]{2,}$/.test(value);*/
 	let valueDecode = punycode.toUnicode(value);
@@ -815,6 +796,11 @@ function initDatePicker() {
 			// isMobile: window.innerWidth < 650,  // ← адаптивное определение
 			isMobile: false,
 			position: 'bottom right',
+			onSelect({ date }) {
+				// триггерим change, чтобы jQuery Validation сняла ошибку
+				input.dispatchEvent(new Event('change', { bubbles: true }));
+				if (typeof $ !== 'undefined' && $.fn.validate) $(input).valid();
+			}
 
 			// Для мобильных добавляем кнопку
 			// buttons: window.innerWidth < 650 ? ['clear', {
@@ -908,7 +894,11 @@ function initCustomSelects(context = document) {
 			language: i18n[lang] || i18n.en,
 			dropdownPosition: 'below'
 		});
+
+		$el.addClass('form__select');
+
 	};
+
 
 	$selects.each(function () {
 		const $el = $(this);
@@ -944,50 +934,265 @@ function initCustomSelects(context = document) {
 	});
 }
 
-function initFilePond() {
-	if (!window.FilePond) return;
+function initNativeUpload() {
+	const uploadBlocks = document.querySelectorAll('.js-native-upload');
+	if (!uploadBlocks.length) return;
 
-	FilePond.registerPlugin(
-		FilePondPluginFileValidateType,
-		FilePondPluginFileValidateSize
-	);
+	const allowedTypes = [
+		'application/pdf',
+		'application/msword',
+		'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+	];
 
-	FilePond.setOptions({
-		allowFileTypeValidation: true,
-		// Разрешаем только по расширениям
-		acceptedFileTypes: ['.pdf', '.doc', '.docx'],
-		fileValidateTypeDetectType: (source, type) =>
-			new Promise(resolve => {
-				const name = (source?.name || '').toLowerCase();
-				if (name.endsWith('.docx')) return resolve('.docx');
-				if (name.endsWith('.doc')) return resolve('.doc');
-				if (name.endsWith('.pdf')) return resolve('.pdf');
-				resolve(type);
-			}),
+	uploadBlocks.forEach(upload => {
+		const input = upload.querySelector('input[type="file"]');
+		// теперь ищем список рядом, на том же уровне (через closest + querySelector)
+		const wrapper = upload.closest('.form__upload-wrapper') || upload.parentElement;
+		const list = wrapper.querySelector('.js-upload-list');
+		if (!input || !list) return;
 
-		labelIdle:
-			'Перетащите файлы сюда или <span class="filepond--label-action">выберите</span>',
-		labelFileTypeNotAllowed: 'Недопустимый тип файла',
-		fileValidateTypeLabelExpectedTypes: 'Ожидаются PDF, DOC или DOCX',
-		maxFileSize: '5MB',
-		labelMaxFileSizeExceeded: 'Файл слишком большой',
-		labelMaxFileSize: 'Максимальный размер: {filesize}',
-	});
+		let currentFiles = [];
 
-	const inputs = document.querySelectorAll('.js-upload input[type="file"]');
-	inputs.forEach(input => {
-		if (input.dataset.filepondAttached === 'true') return;
-		FilePond.create(input, {
-			allowMultiple: input.hasAttribute('multiple'),
-			maxFiles: 5,
+		// === DRAG & DROP ===
+		['dragenter', 'dragover'].forEach(evt => {
+			upload.addEventListener(evt, e => {
+				e.preventDefault();
+				e.stopPropagation();
+				upload.classList.add('is-dragover');
+			});
 		});
-		input.dataset.filepondAttached = 'true';
+		['dragleave', 'drop'].forEach(evt => {
+			upload.addEventListener(evt, e => {
+				e.preventDefault();
+				e.stopPropagation();
+				upload.classList.remove('is-dragover');
+			});
+		});
+
+		upload.addEventListener('drop', e => {
+			addFiles(e.dataTransfer.files);
+		});
+		input.addEventListener('change', () => addFiles(input.files));
+
+		// === Добавление новых файлов, не удаляя старые ===
+		function addFiles(files) {
+			const newFiles = Array.from(files);
+			currentFiles = [...currentFiles, ...newFiles];
+			updateInput();
+			renderFiles();
+		}
+
+		// === Перерисовка списка файлов ===
+		function renderFiles() {
+			list.innerHTML = '';
+
+			currentFiles.forEach(file => {
+				const li = document.createElement('li');
+				const size = file.size < 1024 * 1024
+					? `${Math.round(file.size / 1024)} КБ`
+					: `${(file.size / 1024 / 1024).toFixed(1)} МБ`;
+				const valid = allowedTypes.includes(file.type);
+
+				li.classList.add('form__upload-list-item');
+
+				li.innerHTML = `
+					<span class="form__name-file" title="${file.name}">${file.name}</span>
+					<span class="form__size-file">${size}</span>
+					<button type="button" class="form__remove-file file-remove" title="Удалить">
+						<svg class="form__remove-svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+							\t<path d="M12.5 3.5L3.5 12.5" stroke="rgb(0,0,0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.20000005" />
+							\t<path d="M12.5 12.5L3.5 3.5" stroke="rgb(0,0,0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.20000005" />
+						</svg>
+					</button>
+				`;
+
+				if (!valid) li.classList.add('is-invalid');
+				list.appendChild(li);
+
+				const btn = li.querySelector('.file-remove');
+				btn.addEventListener('click', () => {
+					removeFile(file);
+					li.remove();
+				});
+			});
+		}
+
+		// === Удаление конкретного файла ===
+		function removeFile(file) {
+			currentFiles = currentFiles.filter(f => f !== file);
+			updateInput();
+		}
+
+		// === Обновление input.files через DataTransfer ===
+		function updateInput() {
+			const dt = new DataTransfer();
+			currentFiles.forEach(f => dt.items.add(f));
+			input.files = dt.files;
+			// console.log('input.files:', input.files); // проверка
+		}
+	});
+}
+
+function initEmploymentToggle() {
+	const radioYes = document.querySelector('.js-employment-yes');
+	const radioNo = document.querySelector('.js-employment-no');
+	const fileBlock = document.querySelector('.request-form__item-file');
+	if (!radioYes || !radioNo || !fileBlock) return;
+
+	function updateFileBlock() {
+		if (radioNo.checked) {
+			fileBlock.classList.add('is-disabled');
+		} else {
+			fileBlock.classList.remove('is-disabled');
+		}
+	}
+
+	[radioYes, radioNo].forEach(radio => {
+		radio.addEventListener('change', updateFileBlock);
 	});
 
-	document.addEventListener('FilePond:addfile', e => {
-		const file = e.detail?.file?.file;
-		if (file) console.log('Добавлен файл:', file.name, 'type:', file.type);
+	// Проверяем состояние при загрузке страницы
+	updateFileBlock();
+}
+
+function initDiscoveryOtherToggle() {
+	const otherCheckbox = document.querySelector('.js-discovery-other');
+	const otherWrap = document.querySelector('.js-discovery-other-wrap');
+	if (!otherCheckbox || !otherWrap) return;
+
+	function toggleOtherField() {
+		if (otherCheckbox.checked) {
+			otherWrap.classList.remove('hidden');
+		} else {
+			otherWrap.classList.add('hidden');
+		}
+	}
+
+	// При изменении состояния чекбокса
+	otherCheckbox.addEventListener('change', toggleOtherField);
+
+	// Проверка состояния при загрузке страницы
+	toggleOtherField();
+}
+
+function initTextareaCounters() {
+	const wrappers = document.querySelectorAll('.form__textarea-wrapper');
+	if (!wrappers.length) return;
+
+	wrappers.forEach(wrapper => {
+		const textarea = wrapper.querySelector('.form__textarea-custom');
+		const counterSpan = wrapper.querySelector('.js-textarea-count');
+		const counterWrap = wrapper.querySelector('.form__counter');
+		if (!textarea || !counterSpan || !counterWrap) return;
+
+		const max = Number(textarea.getAttribute('maxlength')) || 0;
+
+		// синхронизируем "/300" с фактическим maxlength
+		const siblingText = counterSpan.nextSibling;
+		if (siblingText && siblingText.nodeType === Node.TEXT_NODE) {
+			siblingText.nodeValue = `/${max}`;
+		}
+
+		function update() {
+			const length = textarea.value.length;
+			counterSpan.textContent = length;
+
+			// добавляем / убираем класс при достижении лимита
+			if (max && length >= max) {
+				counterWrap.classList.add('is-limit');
+			} else {
+				counterWrap.classList.remove('is-limit');
+			}
+		}
+
+		textarea.addEventListener('input', update);
+		textarea.addEventListener('change', update);
+		update(); // инициализация
 	});
+}
+
+function initRequestFormWizard() {
+	const form = $('.request-form__form form');
+	if (!form.length) return;
+
+	const fieldsets = form.find('.request-form__form-field');
+	const steps = $('.request-form__steps .request-form__steps-item');
+
+	let current = fieldsets.index(fieldsets.not('.hidden').first());
+	if (current < 0) current = 0;
+
+	// === Инициализация jQuery Validation ===
+	form.validate({
+		errorPlacement: (error, element) => {
+			error.insertAfter(element);
+		},
+
+		submitHandler: function(formEl) {
+			$.magnificPopup.open({
+				items: {
+					src: '.js-success-popup',
+					type: 'inline',
+				},
+				fixedContentPos: true,
+				showCloseBtn: false,
+				closeOnBgClick: false,
+				removalDelay: 300,
+				mainClass: 'mfp-fade',
+				// callbacks: {
+				// 	open() {
+				// 		$('.js-close-popup').on('click', () => {
+				// 			$.magnificPopup.close();
+				// 		});
+				// 	},
+				// },
+			});
+
+			// HTMLFormElement.prototype.submit.call(form);
+		}
+	});
+
+	function showStep(i) {
+		current = Math.max(0, Math.min(i, fieldsets.length - 1));
+
+		fieldsets.addClass('hidden').eq(current).removeClass('hidden');
+
+		// обновляем шаги
+		steps.removeClass('request-form__steps-item_active request-form__steps-item_compeled')
+			.each((idx, el) => {
+				if (idx < current) $(el).addClass('request-form__steps-item_compeled');
+				if (idx === current) $(el).addClass('request-form__steps-item_active');
+			});
+
+		fieldsets.eq(current)[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
+
+	// === обработка кнопок ===
+	fieldsets.each((idx, fs) => {
+		const $fs = $(fs);
+		const btnPrev = $fs.find('.request-form__prev');
+		const btnNext = $fs.find('.request-form__next');
+
+		btnPrev.on('click', e => {
+			e.preventDefault();
+			showStep(idx - 1);
+		});
+
+		btnNext.on('click', e => {
+			// если не последний шаг — валидируем перед переходом
+			if (idx < fieldsets.length - 1) {
+				e.preventDefault();
+
+				// валидируем только видимые поля
+				const valid = form.valid();
+				if (valid) {
+					showStep(idx + 1);
+				}
+			}
+			// если последний шаг — форма отправляется
+		});
+	});
+
+	showStep(current);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1034,6 +1239,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	initDatePicker();
 	initDateMask();
 	initCustomSelects();
+	initNativeUpload();
+	initEmploymentToggle();
+	initDiscoveryOtherToggle();
+	initTextareaCounters();
+	initRequestFormWizard();
+
+	$(document).on('change.select2 select2:select select2:unselect', 'select.select2-hidden-accessible', function () {
+		$(this).valid(); // триггерим проверку для конкретного select
+	});
 
 	setTimeout(() => {
 		aosInit();
